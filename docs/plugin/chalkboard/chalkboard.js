@@ -151,7 +151,7 @@ try {
 		button.style.bottom = toggleChalkboardButton.bottom ||  "30px";
 		button.style.top = toggleChalkboardButton.top ||  "auto";
 		button.style.right = toggleChalkboardButton.right ||  "auto";
-
+		//button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa fa-pen-square"></i></a>'
 		button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fas fa-pen-square"></i></a>'
 		document.querySelector(".reveal").appendChild( button );
 	}
