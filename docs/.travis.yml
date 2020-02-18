@@ -3,3 +3,10 @@ node_js:
   - 11
 after_script:
   - npm run build -- retire
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $HGNAME  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
