@@ -645,7 +645,10 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: true,
 				center: true,
 				hash: true,
-
+                chalkboard: {
+                // optionally load pre-recorded chalkboard drawing from file
+                    src: "chalkboard.json",
+                },
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
@@ -655,11 +658,20 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/highlight/highlight.js' },
 					{ src: 'plugin/search/search.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/chalkboard/chalkboard.js' },
 					{ src: 'plugin/notes/notes.js', async: true }
-				]
+				],
+                keyboard: {
+                        67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+                        66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+                        46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+                         8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+                        68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+                        88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+                        89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                }                               
 			});
 
 		</script>
-
 	</body>
 </html>
