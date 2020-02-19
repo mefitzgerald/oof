@@ -177,6 +177,9 @@ body {
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0; }
+  
+.reveal fadedtable {
+  color: "grey"; }
 
 .reveal table th {
   font-weight: bold; }
