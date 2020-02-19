@@ -325,7 +325,8 @@
 					{ src: 'plugin/search/search.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
                     { src: 'plugin/chalkboard/chalkboard.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/menu/menu.js' }
 				],
  				chalkboard: { // font-awesome.min.css must be available
 					toggleChalkboardButton: { left: "80px" },
@@ -348,7 +349,28 @@
 				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
 				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
 //				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
-				},                               
+				}, 
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h1, h2, h3, h4, h5, h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: false,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: 'css/theme/',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: false,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    loadIcons: true
+                },                
 			});
 
 		</script>
