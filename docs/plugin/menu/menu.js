@@ -11,19 +11,16 @@ var RevealMenu = window.RevealMenu || (function(){
 	if (!options.path.endsWith('/')) {
 		options.path += '/';
 	}
-	var loadIcons = options.loadIcons;
-	if (typeof loadIcons === "undefined") loadIcons = true;
+	///var loadIcons = options.loadIcons;
+	//if (typeof loadIcons === "undefined") loadIcons = true;
 	var initialised = false;
 	
 	var module = {};
 
-	loadResource(options.path + 'menu.css', 'stylesheet', function() {
-		if (loadIcons) {
-			loadResource(options.path + 'font-awesome/css/all.css', 'stylesheet', loadPlugin)
-		} else {
-			loadPlugin();
+ 	loadResource(options.path + 'menu.css', 'stylesheet', function() {
+		loadPlugin();
 		}
-	})
+	}) 
 
 	function loadPlugin() {
 		// does not support IE8 or below
