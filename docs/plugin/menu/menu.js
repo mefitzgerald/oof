@@ -17,14 +17,13 @@ var RevealMenu = window.RevealMenu || (function(){
 	
 	var module = {};
 
-    loadPlugin();
-/* 	loadResource(options.path + 'menu.css', 'stylesheet', function() {
+	loadResource(options.path + 'menu.css', 'stylesheet', function() {
 		if (loadIcons) {
 			loadResource(options.path + 'font-awesome/css/all.css', 'stylesheet', loadPlugin)
 		} else {
 			loadPlugin();
 		}
-	}) */
+	})
 
 	function loadPlugin() {
 		// does not support IE8 or below
