@@ -179,13 +179,13 @@ body {
   border-spacing: 0; }
   
 .reveal table.fadedtable {
-  color: "grey"; }
+  color: "red"; }
   
 .reveal table.fadedtable td {
-  color: "grey"; }
+  color: "red"; }
   
 .reveal table.fadedtable th {
-  color: "grey"; }
+  color: "red"; }
 
 .reveal table th {
   font-weight: bold; }
