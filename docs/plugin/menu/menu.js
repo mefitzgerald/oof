@@ -12,7 +12,7 @@ var RevealMenu = window.RevealMenu || (function(){
 		options.path += '/';
 	}
 	///var loadIcons = options.loadIcons;
-	//if (typeof loadIcons === "undefined") loadIcons = true;
+
 	var initialised = false;
 	
 	var module = {};
