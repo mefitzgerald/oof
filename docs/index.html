@@ -18,13 +18,9 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/latrobe.css" id="theme">
         
-        <!-- Font awesome for chalkboard -->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> -->
-        <!--<link rel="stylesheet" href="plugin/font-awesome/css/fontawesome.css"> -->
+        <!-- Font awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 
-
-        
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
 
@@ -328,17 +324,10 @@
 					{ src: 'plugin/notes/notes.js', async: true },
                     { src: 'plugin/menu/menu.js' }
 				],
- 				chalkboard: { // font-awesome.min.css must be available
+ 				chalkboard: { 
 					toggleChalkboardButton: { left: "80px" },
 					toggleNotesButton: { left: "130px" },
-                    theme: "whiteboard",
-// 					pen:  [ 'crosshair', 'pointer' ]
-//					theme: "whiteboard",
-//					background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/whiteboard.png' ],
-// 					pen:  [ 'crosshair', 'pointer' ]
-//					pen: [ url('reveal.js-plugins/chalkboard/img/boardmarker.png), auto' , 'url(reveal.js-plugins/chalkboard/img/boardmarker.png), auto' ],
-//				        color: [ 'rgba(0,0,255,1)', 'rgba(0,0,255,0.5)' ],
-//				        draw: [ (RevealChalkboard) ?  RevealChalkboard.drawWithPen : null , (RevealChalkboard) ? RevealChalkboard.drawWithPen : null ],
+                    theme: "whiteboard",  // or "chalkboard"
 				},
 				keyboard: {
 				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
@@ -348,7 +337,7 @@
 				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
 				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
 				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
-				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
 //				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
 				}, 
                 menu: {
