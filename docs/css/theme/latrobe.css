@@ -178,7 +178,13 @@ body {
   border-collapse: collapse;
   border-spacing: 0; }
   
-.reveal fadedtable {
+.reveal table.fadedtable {
+  color: "grey"; }
+  
+.reveal table.fadedtable td {
+  color: "grey"; }
+  
+.reveal table.fadedtable th {
   color: "grey"; }
 
 .reveal table th {
