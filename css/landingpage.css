@@ -1,0 +1,95 @@
+/**
+ * LaTrobe Theme
+ *
+ * Latrobe Navy #001621
+ * Latrobe Red #EE0010
+ */
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+    background: #fff;
+    background-color: #fff; 
+    position: relative;
+	justify-content: center;
+	color: #fff;
+	text-align: center;}
+
+
+/*********************************************
+ * LINKS
+ *********************************************/
+a {
+    color: #EE0010;
+    text-decoration: none;
+    -webkit-transition: color .15s ease;
+    -moz-transition: color .15s ease;
+    transition: color .15s ease; }
+
+a:hover {
+  color: #001621;
+  text-shadow: none;
+  border: none; }
+
+.roll span:after {
+  color: #fff;
+  background: #1a53a1; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+img {
+  border: 0;
+  box-shadow: none; 
+  margin: 15px 0px;}
+
+a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+/*********************************************
+ * TEXT
+ *********************************************/
+
+h1{
+	font: bold 60px "Source Sans Pro", Helvetica, sans-serif;
+	margin-bottom: 40px;
+    color: #001621;
+}
+
+h2{
+	font: bold 60px "Source Sans Pro", Helvetica, sans-serif;
+	margin-bottom: 30px;
+    color: #EE0010;
+}
+
+
+h3{
+	font: normal 28px "Source Sans Pro", Helvetica, sans-serif;
+	margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+h4{
+	font: normal 28px "Source Sans Pro", Helvetica, sans-serif;
+	margin-bottom: 15px;
+    color: #222;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1em; 
+  	font: normal 28px "Source Sans Pro", Helvetica, sans-serif;
+	margin-bottom: 15px;
+    color: #222;
+}
+
+
+    

@@ -22,7 +22,7 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : './css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
         
@@ -34,9 +34,12 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-menu-title="Start Slide">
-                    <!-- Note, Latrobe logo is in repo base all other images should be sotred in local image dir -->
-                    <img class="plain" src="../images/alphalgsmall.png">
+                    <!-- 
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir 
+                    as per example below;
                     <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
 					<h1>CSE1OOF</h1>
 					<h3>Workshop 1</h3>
 					<p>
@@ -356,7 +359,7 @@
                     delayInit: false,
                     openOnInit: false,
                     custom: [
-                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' },
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, // until I come up with a fix menu_tools print link will have to be updated manually each slide deck. bah!
                         ],
                     loadIcons: false
                 },                
