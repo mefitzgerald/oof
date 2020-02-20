@@ -291,10 +291,68 @@
 						</tbody>
 					</table>                     
                 </section> 
-                
+				<section>
+                    <h5 class="fragment fade-up" >New Statement<br> power = current * voltage;</h5>
+                    <div class="flexcontainer">
+                        <div class="col">
+                            <table class="fragment fade-in-then-semi-out">
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">Original Values</th>
+                                    </tr>
+                                    <tr>
+                                        <td>voltage</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>power</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>current</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>resistance</td>
+                                        <td>6</td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>
+                        <div class="col">
+                            <table class="fragment fade-up">
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">After Statement</th>
+                                    </tr>
+                                    <tr>
+                                        <td>voltage</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>power</td>
+                                        <td>150</td>
+                                    </tr>
+                                    <tr>
+                                        <td>current</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>resistance</td>
+                                        <td>6</td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>
+                    </div>                                
+				</section>                
 				<section>
                     <iframe src="https://trinket.io/embed/python/98d786a2eb?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 				</section>
+                <section>
+                    <iframe src="http://tpcg.io/c0csULse" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+                </section>
 			</div>
 		</div>
 
@@ -307,6 +365,7 @@
 				center: true,
 				hash: true,
                 controlsTutorial: true,
+                embedded: false,
                 help: true,
                 hideAddressBar: true,
                 slideNumber: true,
