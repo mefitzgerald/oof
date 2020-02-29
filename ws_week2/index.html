@@ -46,7 +46,7 @@
 					</p>
 				</section>
                 <!-- Task 1-->
-				<section data-menu-title="Start Slide">
+				<section data-menu-title="length()">
 					<h6> Task 1 - The String Class </h6>
 					<small>For the following declarations, what is output to screen by each of the statements below?</small>
                     <blockquote>
@@ -55,67 +55,66 @@
                         int <span class="purpleText">z</span> = 3;<br>
                         String <span class="redText">s</span> = "123";
                     </blockquote>
-                    <div class="fragment current-visible">
+                    <div>
                         <h5>System.out.println("It's as easy as " + s);</h5><br>
                     </div>
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + s);</h5><br>
+                    <div class="fragment fade-up">
                         It's as easy as 
                         <span class="redText">123</span>
-                    </div>                 
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + x + y + z);</h5>
-                    </div> 
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + x + y + z);</h5>
+                    </div>  
+                </section>
+				<section>
+                    <blockquote>
+                        int <span class="blueText">x</span> = 1;<br>
+                        int <span class="greenText">y</span> = 2;<br>
+                        int <span class="purpleText">z</span> = 3;<br>
+                        String <span class="redText">s</span> = "123";
+                    </blockquote>
+                    <h5>System.out.println("It's as easy as " + x + y + z);</h5>
+                    <div class="fragment fade-up">
                         It's as easy as 
                         <span class="blueText">1</span><span class="greenText">2</span><span class="purpleText">3</span>
                     </div> 
-                    <div class="fragment current-visible">
+                    <div class="fragment fade-up">
                         <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
                     </div> 
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
+                    <div class="fragment fade-up">
                         It's as easy as 6<br>
                         Because :
                         (<span class="blueText">1</span> +
                         <span class="greenText">2</span> +
                         <span class="purpleText">3</span>) = 6
-                    </div>      
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + (x + y) + z);</h5>
-                    </div> 
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + (x + y) + z);</h5>
+                    </div>  
+                </section>  
+                <section>
+                    <blockquote>
+                        int <span class="blueText">x</span> = 1;<br>
+                        int <span class="greenText">y</span> = 2;<br>
+                        int <span class="purpleText">z</span> = 3;<br>
+                        String <span class="redText">s</span> = "123";
+                    </blockquote>
+                    <h5>System.out.println("It's as easy as " + (x + y) + z);</h5> 
+                    <div class="fragment fade-up">
                         It's as easy as 3<span class="purpleText">3</span><br>
                         <small>Because :
                         (<span class="blueText">1</span> +
                         <span class="greenText">2</span> = 3) then the result is concatenated with z with NO whitespace</small>
-                    </div>   
-                    <div class="fragment current-visible">
-                        <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
-                        It's as easy as 6<br>
-                        <small>Because :
-                        (<span class="blueText">1</span> +
-                        <span class="greenText">2</span> +
-                        <span class="purpleText">3</span>) = 6</small>
-                    </div>      
-                    <div class="fragment current-visible">
+                    </div>        
+                    <div class="fragment fade-up">
                         <h5>System.out.println(x + y + z + "It's as easy as ");</h5>
                     </div> 
-                    <div class="fragment current-visible">
-                        <h5>System.out.println(x + y + z + "It's as easy as ");</h5>
+                    <div class="fragment fade-up">
                         <small>6It's as easy as<br>
                         Because : x, y and z are primitive data types (so they contain a value) so their value is added togther and then concatenated with the text String which is an object.</small>                     
                     </div>                      
 				</section>
                 <section>
-                    <iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws2task1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                    <iframe height="400px" width="100%" src="https://repl.it/@mefitzgerald/ws2task1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
                 </section>
                 <!-- Task 2 Length -->
 				<section data-menu-title="length()">
 					<h6> Task 2 - String Methods</h6>
-                    <img class="plain" src="../ws_week2/images/length.jpg">
+                    <img class="plain" src="../ws_week2/images/length.JPG">
 					<small>For any println statements, indicate what is output to screen.</small>
                     <blockquote>
                         String little = "a";<br>
