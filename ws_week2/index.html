@@ -45,21 +45,321 @@
 						<small>Semester 1 2020</small>
 					</p>
 				</section>
-				<section>
-					<h6> The String class </h6>
+                <!-- Task 1-->
+				<section data-menu-title="Start Slide">
+					<h6> Task 1 - The String Class </h6>
 					<small>For the following declarations, what is output to screen by each of the statements below?</small>
-					int x = 1;<br>
-					int y = 2;<br>
-					int z = 3;<br>
-					String s = "123";<br>
-					<h5>System.out.println("It’s as easy as " + s);</h5>
-					<div class="fragment fade-up">
-						<iframe src="https://trinket.io/embed/java/6dd10b3398" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-					</div>
+                    <blockquote>
+                        int <span class="blueText">x</span> = 1;<br>
+                        int <span class="greenText">y</span> = 2;<br>
+                        int <span class="purpleText">z</span> = 3;<br>
+                        String <span class="redText">s</span> = "123";
+                    </blockquote>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + s);</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + s);</h5><br>
+                        It's as easy as 
+                        <span class="redText">123</span>
+                    </div>                 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + x + y + z);</h5>
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + x + y + z);</h5>
+                        It's as easy as 
+                        <span class="blueText">1</span><span class="greenText">2</span><span class="purpleText">3</span>
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
+                        It's as easy as 6<br>
+                        Because :
+                        (<span class="blueText">1</span> +
+                        <span class="greenText">2</span> +
+                        <span class="purpleText">3</span>) = 6
+                    </div>      
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + (x + y) + z);</h5>
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + (x + y) + z);</h5>
+                        It's as easy as 3<span class="purpleText">3</span><br>
+                        <small>Because :
+                        (<span class="blueText">1</span> +
+                        <span class="greenText">2</span> = 3) then the result is concatenated with z with NO whitespace</small>
+                    </div>   
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
+                        It's as easy as 6<br>
+                        <small>Because :
+                        (<span class="blueText">1</span> +
+                        <span class="greenText">2</span> +
+                        <span class="purpleText">3</span>) = 6</small>
+                    </div>      
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(x + y + z + "It's as easy as ");</h5>
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(x + y + z + "It's as easy as ");</h5>
+                        <small>6It's as easy as<br>
+                        Because : x, y and z are primitive data types (so they contain a value) so their value is added togther and then concatenated with the text String which is an object.</small>                     
+                    </div>                      
 				</section>
-<section>
-<iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws2task1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></section>
-			</div>
+                <section>
+                    <iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws2task1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                </section>
+                <!-- Task 2 Length -->
+				<section data-menu-title="length()">
+					<h6> Task 2 - String Methods</h6>
+                    <img class="plain" src="../ws_week2/images/length.jpg">
+					<small>For any println statements, indicate what is output to screen.</small>
+                    <blockquote>
+                        String little = "a";<br>
+                        String longer = "aha";<br>
+                        String longest = "aahaa";
+                    </blockquote>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(little.length());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(little.length());</h5><br>
+                        1
+                    </div>   
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(longer.length() + longest.length());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(longer.length() + longest.length());</h5><br>
+                        8
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("".length());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("".length());</h5><br>
+                        0
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("12".length());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("12".length());</h5><br>
+                        2
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("u & me".length());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("u & me".length());</h5><br>
+                        6
+                    </div> 
+				</section>
+                <section>
+                    <iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws2task2length?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                </section>
+                <!-- Task 2 isEmpty()-->
+				<section data-menu-title="isEmpty()">
+                    <img class="plain" src="../ws_week2/images/isempty.JPG">
+					<small>For any println statements, indicate what is output to screen.</small>
+                    <blockquote>
+                        String yourGlass = "full";<br>
+                        String myGlass = "empty";<br>
+                        String emptyString = "";
+                    </blockquote>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(yourGlass.isEmpty());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(yourGlass.isEmpty());</h5><br>
+                        false
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("".isEmpty());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("".isEmpty());</h5><br>
+                        true
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(myGlass.isEmpty());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(myGlass.isEmpty());</h5><br>
+                        false
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(emptyString.isEmpty());</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(emptyString.isEmpty());</h5><br>
+                        true
+                    </div> 
+                </section>
+               <section>
+                    <iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws2task2isempty?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                </section>
+                <!-- Task 2 charAt()-->
+				<section data-menu-title="charAt()">
+                    <img class="plain" src="../ws_week2/images/charat.JPG">
+                    <blockquote>
+                        String a1 = "8 bits per byte";
+                    </blockquote>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">8</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">s</th>
+                            <th class="strtable"> </th>
+                            <th class="strtable">p</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">y</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">e</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td  class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                        </tr>
+                    </table>
+					<small>For any println statements, indicate what is output to screen.</small>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(4));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(4));</h5><br>
+                        t
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(0));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(0));</h5><br>
+                        8
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(14));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(14));</h5><br>
+                        e
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(-2));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(a1.charAt(-2));</h5><br>
+                        !! Out of bounds error!
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("eIgHt".charAt(3));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("eIgHt".charAt(3));</h5><br>
+                        H
+                    </div>
+				</section>
+                <section>
+                    <iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws2task2charat?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                </section>
+                <!-- Task 2 equals()-->
+				<section data-menu-title="equals() & equalsIgnoreCase()">
+                    <img class="plain" src="../ws_week2/images/equals.JPG">
+                    <blockquote>
+                        String lizard1 = "dragon";<br>
+                        String insect1 = "dragonfly";<br>
+                        String insect2 = "fly";
+                    </blockquote>
+					<small>For any println statements, indicate what is output to screen.</small>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                        true
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals(insect1)); </h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals(insect1));</h5><br>
+                        false
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(insect2.equalsIgnoreCase("fLy"));</h5><br>
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(insect2.equalsIgnoreCase("fLy"));</h5><br>
+                        true
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("FLY".equals(insect2));</h5><br>
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println("FLY".equals(insect2));</h5><br>
+                        false
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(insect1.equals(lizard1 + insect2));</h5><br>
+                    </div>  
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(insect1.equals(lizard1 + insect2));</h5><br>
+                        true
+                    </div>       
+				</section>
+                <section>
+                    <iframe height="400px" width="100%" src="https://repl.it/@mefitzgerald/ws2task2equals?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                </section>
+                <!-- Task 2 equals()-->
+				<section data-menu-title="compareTo()"> 
+                    <img class="plain" src="../ws_week2/images/compareto.JPG">
+                    <img class="plain" src="../ws_week1/images/ascii.png" height="65%" width="65%">
+                </section>
+                <section>
+                    <blockquote>
+                        String name1 = "fred"; <br>
+                        String name2 = "barney"; <br>
+                        String name3 = "frederica"; <br>
+                        String name4 = "Fred";
+                    </blockquote>
+					<small>Are the values given to the integer variables by the compareTo() and compareToIgnoreCase() statements below positive, negative or zero?</small>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                        true
+                    </div> 
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                    </div>
+                    <div class="fragment current-visible">
+                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                        true
+                    </div> 
+            </div>
 		</div>
 
 

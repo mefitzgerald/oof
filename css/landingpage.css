@@ -45,7 +45,7 @@ a:hover {
 img {
   border: 0;
   box-shadow: none; 
-  margin: 15px 0px;}
+  margin: 0px 0px;}
 
 a img {
   -webkit-transition: all .15s linear;
@@ -61,12 +61,14 @@ h1{
 	margin-bottom: 40px;
     color: #001621;
     text-transform: uppercase;
+    line-height: 1.2em;
 }
 
 h2{
 	font: bold 60px "Source Sans Pro", Helvetica, sans-serif;
 	margin-bottom: 30px;
     color: #EE0010;
+    line-height: 1.2em;
 }
 
 
@@ -75,12 +77,14 @@ h3{
 	margin-bottom: 20px;
     text-transform: uppercase;
     color: #222;
+    line-height: 1.1em;
 }
 
 h4{
 	font: normal 28px "Source Sans Pro", Helvetica, sans-serif;
 	margin-bottom: 15px;
     color: #222;
+    line-height: 1.1em;
 }
 
 ul {

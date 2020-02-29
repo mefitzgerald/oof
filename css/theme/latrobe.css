@@ -47,6 +47,31 @@ body {
     text-align: left;
 }
 
+.redText
+{
+    color: red;
+}
+
+.pinkText
+{
+    color: pink;
+}
+
+.greenText
+{
+    color: green;
+}
+
+.purpleText
+{
+    color: purple;
+}
+
+.blueText
+{
+    color: blue;
+}
+
 /*********************************************
  * HEADINGS
  *********************************************/
@@ -87,7 +112,7 @@ body {
   color: #EE0010;
   text-transform: none;}
 
-/* h6 (it looks like h3) style is picked up by the menu automatically! */
+/* h6 (it looks like h3) this style is picked up by the menu automatically! */
 .reveal h6 {
   color: #EE0010;
   font-size: 1.3em; }
@@ -165,6 +190,7 @@ body {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
+  font-size: 0.75em;
   background: rgba(211,211,211, 0.8);
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
 
@@ -215,25 +241,6 @@ body {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.reveal table.condensedtable  {
-    font-size: 0.7em;
-    line-height: 1;
-    padding: 5px;
-    margin: auto;
-    border-collapse: collapse;
-    width: 98%;
-    border: 1px solid;
-  }
-
-.reveal table.fadedtable {
-  color: "red"; }
-
-.reveal table.fadedtable td {
-  color: "red"; }
-
-.reveal table.fadedtable th {
-  color: "red"; }
-
 .reveal table th {
   font-weight: bold; }
 
@@ -241,13 +248,8 @@ body {
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid; }
-
-.reveal table.condensedtable th,
-.reveal table.condensedtable td {
-    text-align: left;
-    padding: 0.1em 0.2em 0.1em 0.2em;
-    border: 1px solid; }
+  border-bottom: 1px solid; 
+  text-align: center; }
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
@@ -260,6 +262,41 @@ body {
 .reveal table tbody tr:last-child th,
 .reveal table tbody tr:last-child td {
   border-bottom: none; }
+  
+ .reveal table.condensedtable  {
+    font-size: 0.65em;
+    line-height: 0.95;
+    padding: 5px;
+    margin: auto;
+    border-collapse: collapse;
+    width: 95%;
+    border: 1px solid;
+}
+
+.reveal table.condensedtable th,
+.reveal table.condensedtable td {
+    text-align: left;
+    padding: 0.1em 0.2em 0.1em 0.2em;
+    border: 1px solid; }
+    
+.reveal table.strtable{
+    padding: 5px;
+    border: 4px solid #EE0010;
+    width: 95%;
+    table-layout: fixed;
+}
+
+.reveal th.strtable,
+.reveal td.strtable {
+    padding: 5px;
+    border: 3px solid rgba(211,211,211, 0.8); }
+
+.reveal table.fadedtable {
+  color: "red"; }
+
+.reveal table.fadedtable td,
+.reveal table.fadedtable th {
+  color: "red"; }
 
 .reveal sup {
   vertical-align: super;
@@ -343,6 +380,16 @@ body {
  *********************************************/
 .reveal .controls {
   color: #EE0010; }
+  
+/*********************************************
+ * MAKE NON VISABLE FRAGMENTS FADE
+ * use class="fragment current-visible" to step through fragments without leaving layoutspace
+ *********************************************/  
+.fragment.current-visible.visible:not(.current-fragment) {
+    display: none;
+    height:0px;
+    line-height: 0px;
+    font-size: 0px;}
 
 /*********************************************
  * PROGRESS BAR
