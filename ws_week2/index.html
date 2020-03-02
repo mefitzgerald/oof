@@ -349,36 +349,108 @@
                     </div>       
 				</section>
                 <section>
-                    <iframe src="https://paiza.io/projects/e/UB-O26pDMiyLw6QAM6ZPAw?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
-                <section>
-                </section>
+                    <iframe src="https://paiza.io/projects/e/UB-O26pDMiyLw6QAM6ZPAw?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>                </section>
                 <!-- Task 2 equals()-->
 				<section data-menu-title="compareTo()"> 
-                    <img class="plain" src="../ws_week2/images/compareto.JPG">
-                    <img class="plain" src="../ws_week1/images/ascii.png" height="65%" width="65%">
+                    <h5> compareTo()</h5>
+                    <div class="flexcontainer">
+                        <div class="col">
+                            <small class="ltextalign">
+                            The java string compareTo() method compares the given string with current string lexicographically. 
+                            It returns positive number, negative number or 0.<br>
+                            It compares strings on the basis of Unicode value of each character in the strings.
+                            If first string is lexicographically greater than second string, it returns positive number 
+                            (difference of character value). If first string is less than second string lexicographically, 
+                            it returns negative number and if first string is lexicographically equal to second string, it returns 0<br>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <img class="plain" src="../ws_week1/images/ascii.png" height="99%" width="99%">
+                        </div>
+                    </div>
                 </section>
                 <section>
+					<small>Are the values given to the integer variables by the compareTo() and compareToIgnoreCase() 
+                    statements below positive, negative or zero?</small>
                     <blockquote>
                         String name1 = "fred"; <br>
                         String name2 = "barney"; <br>
                         String name3 = "frederica"; <br>
-                        String name4 = "Fred";
+                        String name4 = "Fred";<br>
+                        NOTE: decimal unicode values: f = 102 , b = 98 , F = 70
                     </blockquote>
-					<small>Are the values given to the integer variables by the compareTo() and compareToIgnoreCase() statements below positive, negative or zero?</small>
-                    <div class="fragment current-visible">
-                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                    <div>
+                        <br>
+                        <h5>int v = name1.compareTo(name2);</h5>
+                        <small>Answer: v is positive (for interest it is 4 as 'f' comes 4 after 'b' in Unicode)</small><br>
+                        <h5>int w = name1.compareTo(name3);</h5>
+                        <small>Answer: w is negative (for interest -5 as "fred" is shorter than "frederica")</small> 
                     </div>
-                    <div class="fragment current-visible">
-                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
-                        true
-                    </div> 
-                    <div class="fragment current-visible">
-                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                </section>
+                <section>
+                    <small>Are the values given to the integer variables by the compareTo() and compareToIgnoreCase() 
+                    statements below positive, negative or zero?</small>
+                    <blockquote>
+                        String name1 = "fred"; <br>
+                        String name2 = "barney"; <br>
+                        String name3 = "frederica"; <br>
+                        String name4 = "Fred";<br>
+                        NOTE: decimal unicode values: f = 102 , b = 98 , F = 70
+                    </blockquote>
+                    <div>
+                        <h5>int x = name3.compareTo(name4);</h5>
+                        <small>Answer: x is positive (for interest 32 as 'f' comes after 'F' in Unicode)</small><br>
+                        <h5>int y = name1.compareToIgnoreCase(name4);</h5>
+                        <small>Answer: y is zero</small> 
+                        <h5>int z = name2.compareToIgnoreCase("BaRn");</h5>
+                        <small>Answer: z is positive (for interest 2 as "BaRn" is shorter than "barney"</small> 
                     </div>
-                    <div class="fragment current-visible">
-                        <h5>System.out.println(lizard1.equals("dragon"));</h5><br>
+                </section>
+                <section>
+                    <h3> Your turn </h3>
+                    <small>Are the values given to the integer variables by the compareTo() and compareToIgnoreCase() 
+                    statements below positive, negative or zero?</small>
+                    <blockquote>
+                        String robot1 = "data";<br>
+                        String robot2 = "marvin";<br>
+                        String robot3 = "marvin the magnificient";<br>
+                        String robot4 = "Data";<br>
+                        NOTE: decimal unicode values: d = 100 , m = 109 , D = 68
+                    </blockquote>
+                    <div>
+                        <small>
+                        int v1 = robot1.compareTo(robot2);<br>
+                        int w1 = robot4.compareTo(robot1);<br>
+                        int x1 = robot2.compareTo(robot3);<br>
+                        int y1 = robot1.compareToIgnoreCase(robot4);<br>
+                        int z1 = robot3.compareToIgnoreCase("MARVIN");
+                        </small> 
+                    </div>
+                </section>
+                 <section>
+                    <iframe src="https://paiza.io/projects/e/5Rf7iNdj4Nvx7KKtVCRHLA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>    
+				<section data-menu-title="indexOf() and lastIndexOf()">
+                    <img src="../ws_week2/images/equals.JPG">
+                    <blockquote>
+                        String lizard1 = "dragon";<br>
+                        String insect1 = "dragonfly";<br>
+                        String insect2 = "fly";
+                    </blockquote>
+                    <h5>System.out.println(lizard1.equals("dragon"));</h5>
+                    <div class="fragment fade-up">
                         true
+                    </div>  
+                    <div class="fragment fade-up">
+                        <h5>System.out.println(lizard1.equals(insect1)); </h5>
+                    </div>
+                    <div class="fragment fade-up">
+                        false
                     </div> 
+                </section>   
+                <section>
+                <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+                </section>
             </div>
 		</div>
 
