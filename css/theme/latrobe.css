@@ -248,9 +248,17 @@ body {
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid; 
-  text-align: center; }
-
+  border-bottom: 1px solid;  
+  } /*removed text-align:center for pretty code
+  
+/* need to fix for pretty code 
+.reveal hljs-ln.table th,
+.reveal hljs-ln.table td,
+{
+    text-align:left;
+}
+*/
+  
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
   text-align: center; }
@@ -278,6 +286,7 @@ body {
     text-align: left;
     padding: 0.1em 0.2em 0.1em 0.2em;
     border: 1px solid; }
+    
     
 .reveal table.strtable{
     padding: 5px;
@@ -415,7 +424,7 @@ body {
  *********************************************/
 
 .flexcontainer{
-    display: flex;
+    display: flex; 
 }
 .col{
     flex: 1;

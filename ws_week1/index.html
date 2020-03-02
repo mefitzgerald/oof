@@ -53,20 +53,20 @@
  					<table class="fragment fade-up">
 						<tbody>
 							<tr>
-								<td>voltage = 0</td>
-								<td></td>
+								<td>voltage</td>
+								<td>0</td>
 							</tr>
                       		<tr>
-								<td>power = 0</td>
-								<td></td>
+								<td>power</td>
+								<td>0</td>
 							</tr>
 							<tr>
-								<td>current = 0</td>
-								<td></td>
+								<td>current</td>
+								<td>0</td>
 							</tr>
 							<tr>
-								<td>resistance = 0</td>
-								<td></td>
+								<td>resistance</td>
+								<td>0</td>
 							</tr>
 						</tbody>
 					</table>
@@ -556,7 +556,7 @@
                     <div class="flexcontainer">
                         <div class="col">
                             <div class = "ltextalign" >
-                                <h5>Given that;</h5><br>
+                                <h5>Given that;</h5>
                                 double d = 1.2; <br>
                                 float f = 1.2F;  <br>
                                 byte b = 123;  <br>
@@ -564,21 +564,14 @@
                             </div>
                         </div>
                         <div class="col2">
-                        <h5>Do the following compile, if so, what is the type of the result of the following operations:</h5>
-                        i) &nbsp;&nbsp;&nbsp;  d + f<br>
-                        ii)&nbsp;&nbsp;&nbsp;  f + b<br>
-                        iii)  &nbsp;&nbsp;&nbsp; b + b<br>
-                        iv)  &nbsp;&nbsp;&nbsp; i * 2<br>
+                            <div class="ltextalign">  
+                                <h5>Do the following compile, if so, what is the type of the result of the following operations:</h5>
+                                i) &nbsp;&nbsp;&nbsp;  d + f<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;double</span><br>
+                                ii)&nbsp;&nbsp;&nbsp;  f + b<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;float</span><br>
+                                iii)  &nbsp;&nbsp;&nbsp; b + b<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;int</span><br>
+                                iv)  &nbsp;&nbsp;&nbsp; i * 2<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;int</span><br>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <h4>Answers</h4>
-                    <div class = "ltextalign" >
-                        i) &nbsp;&nbsp;&nbsp;  d + f <span class ="answtext"> double </span><br>
-                        ii)&nbsp;&nbsp;&nbsp;  f + b <span class ="answtext"> float </span><br>
-                        iii)  &nbsp;&nbsp;&nbsp; b + b <span class ="answtext"> int </span><br>
-                        iv)  &nbsp;&nbsp;&nbsp; i * 2 <span class ="answtext"> int </span><br>
                     </div>
                 </section>
                 <section>
@@ -605,18 +598,12 @@
                         </div>
                         <div class="col2">
                             <h5>Do the following compile, if so, what is the type of the result of the following operations:</h5>
-                        i) &nbsp;&nbsp;&nbsp;  d + ch<br>
-                        ii)&nbsp;&nbsp;&nbsp;  b + ch<br>
-                        iii)  &nbsp;&nbsp;&nbsp; ch + ch<br>
+                            <div class="ltextalign">   
+                                i) &nbsp;&nbsp;&nbsp;  d + ch<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;double</span><br>
+                                ii)&nbsp;&nbsp;&nbsp;  b + ch<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;int</span><br>
+                                iii)  &nbsp;&nbsp;&nbsp; ch + ch<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;int</span><br>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <h4>Answers</h4>
-                    <div class = "ltextalign" >
-                        i) &nbsp;&nbsp;&nbsp;  d + ch <span class ="answtext"> double </span><br>
-                        ii)&nbsp;&nbsp;&nbsp;  b + ch <span class ="answtext"> int </span><br>
-                        iii)  &nbsp;&nbsp;&nbsp; ch + ch<span class ="answtext"> int </span><br>
                     </div>
                 </section>
                 <section>
@@ -629,42 +616,33 @@
                     </blockquote>
                     <small>These are all considered <u>widening</u> conversions as they convert the data into another type that represents a wider range of numbers, the magnitude range of the data will not be lost. Although in the case of converting an integer type to a floating point type, some <u>precision</u> may be lost</small>
                 </section>
-								<section>
-										<div class="flexcontainer">
-												<div class="col">
-														<div class = "ltextalign" >
-																<h5>Given that;</h5>
-																double d = 1.2;<br>
-																int i = 2;<br>
-																byte b = 4;<br>
-																char ch = 'A';
-														</div>
-												</div>
-												<div class="col2">
-														<h5>Are the following statements allowed and if so, what is the value assigned to the lhs (left-hand side) variable </h5>
-														i) &nbsp;&nbsp;&nbsp;  d = i;<br>
-														ii)&nbsp;&nbsp;&nbsp;  i = d;<br>
-														iii)  &nbsp;&nbsp;&nbsp; d = ch;<br>
-														iV)  &nbsp;&nbsp;&nbsp; b = ch<br>
-														V)  &nbsp;&nbsp;&nbsp; ch = b;<br>
-												</div>
-										</div>
-								</section>
-								<section>
-										<h4>Answers</h4>
-										<div class = "ltextalign" >
-												<blockquote>
-												byte &rarr; short &rarr; int &rarr; long &rarr; float &rarr; double<br>
-												char &rarr; int &rarr; long &rarr; float &rarr; double
-												</blockquote>
-												i) &nbsp;&nbsp;&nbsp;  d = i;<span class ="answtext"> double </span><br>
-												ii)&nbsp;&nbsp;&nbsp;  i = d; <span class ="answtext"> Error </span><br>
-												iii)  &nbsp;&nbsp;&nbsp; d = ch; <span class ="answtext"> double (65.0)  </span><br>
-												iV)  &nbsp;&nbsp;&nbsp; b = ch; <span class ="answtext"> Error </span><br>
-												V)  &nbsp;&nbsp;&nbsp; ch = b; <span class ="answtext"> Error (char is unsigned, whereas byte is signed)</span><br>
-
-										</div>
-								</section>
+                    <section>									
+                            <blockquote>
+                                byte &rarr; short &rarr; int &rarr; long &rarr; float &rarr; double<br>
+                                char &rarr; int &rarr; long &rarr; float &rarr; double
+                            </blockquote>
+                            <div class="flexcontainer">
+                                <div class="col">
+                                        <div class = "ltextalign" >
+                                                <h5>Given that;</h5>
+                                                double d = 1.2;<br>
+                                                int i = 2;<br>
+                                                byte b = 4;<br>
+                                                char ch = 'A';
+                                        </div>
+                                </div>
+                                <div class="col2">
+                                    <div class="ltextalign">  
+                                        <h5>Are the following statements allowed and if so, what is the value assigned to the lhs (left-hand side) variable </h5>
+                                        i) &nbsp;&nbsp;&nbsp;  d = i;<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;double</span><br>
+                                        ii)&nbsp;&nbsp;&nbsp;  i = d;<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;Error</span><br>
+                                        iii)  &nbsp;&nbsp;&nbsp; d = ch;<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;double (65.0)</span><br>
+                                        iV)  &nbsp;&nbsp;&nbsp; b = ch<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;Error</span><br>
+                                        V)  &nbsp;&nbsp;&nbsp; ch = b;<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;Error (char is unsigned, whereas byte is signed)</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
                 <section>
                     <h6>Explicit type casts</h6>
                     <small>When it is required by the programming logic, we can explicitly convert a data value of one type to another type.
@@ -836,7 +814,13 @@
 										</table>
                 </section>
                 <section>
-					<pre><code class="hljs" data-line-numbers="|8">
+                    <h5>Consider the following programs.</h5>
+                    <small>
+                        Will they work?<br>
+                        If they will not work, what can be done to allow the programs to work?<br>
+                        If they will work, what would be output by the programs?
+                    </small>
+					<pre><code class="hljs" data-line-numbers="|8" text-align: left>
 public class WhatsGoingOn
 {
    public static void main(String[] args)
@@ -848,18 +832,24 @@ public class WhatsGoingOn
    }
 }
                     </code></pre>
+                    <small>
+                        <div class="fragment fade-up">
+                            Doesn't work! 
+                        </div>
+                    </small>
                 </section>
                 <section>
                     <iframe src="https://paiza.io/projects/e/I5RQMuNnsSwFT8EDJHnULw?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
                 </section>
                 <section>
+                    <h5>Division Program</h5>
                     <pre><code class="hljs" data-line-numbers>
 public class ChangingChar
 {
    public static void main(String[] args)
    {
-      int number = 76;
-      char character = 'E';
+      int number = 76; //value in ASCII is 'L'
+      char character = 'E';  
       System.out.println("character before assignment: "
                           + character);
       character = (char) number;
@@ -868,10 +858,19 @@ public class ChangingChar
    }
 }
                     </code></pre>
+                    <small>
+                        <div class="fragment fade-up">
+                            Works and outputs:<br>
+                            character before assignment: E<br>
+                            character after assignment: L
+                        </div>
+                    </small>
                 </section>
                 <section>
-                    <iframe src="https://paiza.io/projects/e/sCZydXPlIs0EzqAMSa5idA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>    </section>
+                    <iframe src="https://paiza.io/projects/e/aqwrj21yTllY4ERKtSazuA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
                 <section>
+                    <h5>Division Program</h5>               
                     <pre><code class="hljs" data-line-numbers>
 public class Division
 {
@@ -892,8 +891,15 @@ public class Division
       System.out.println(num7);
    }
 }
-
                     </code></pre>
+                    <small>
+                        <div class="fragment fade-up">
+                            Works and outputs:<br>
+                            2 1 3<br>
+                            9 4.5 4.0<br>
+                            4.5
+                        </div>
+                    </small> 
                 </section>
                 <section>
                     <iframe src="https://paiza.io/projects/e/Mv0GEPwk9eR5UHvDKXdJFQ?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
