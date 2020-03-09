@@ -943,6 +943,11 @@ public class Division
 				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
 				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
 				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
 //				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
 //				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
 				},
@@ -966,7 +971,7 @@ public class Division
                     delayInit: false,
                     openOnInit: false,
                     custom: [
-                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, // until I come up with a fix menu_tools print link will have to be updated manually each slide deck. bah!
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
                         ],
                     loadIcons: false
                 },
