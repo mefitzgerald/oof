@@ -144,7 +144,7 @@
                 </section>
                 <!-- Task 2 isEmpty()-->
 				<section data-menu-title="isEmpty()">
-                    <img class="plain" src="../ws_week2/images/isempty.JPG">
+                    <img src="../ws_week2/images/isempty.JPG">
                     <blockquote>
                         String yourGlass = "full";<br>
                         String myGlass = "empty";<br>
@@ -705,12 +705,14 @@
                     <img src="../ws_week2/images/replace.JPG">
                         <blockquote> 
                         String state = "I think therefore I exist!";<br>
-                        System.out.println(state.replace('I','U')); <br>
+                        System.out.println(state.replace('I','U')); 
                         </blockquote> 
                         Output: U think therefore U exist!<br>
                         <blockquote> 
-                        System.out.println(state); <br>
+                        System.out.println(state); 
+                        </blockquote> 
                         Output: I think therefore I exist!<br>
+                        <blockquote> 
                         state = state.replace('I','Q');<br>
                         System.out.println(state);
                         </blockquote> 
@@ -720,9 +722,9 @@
                     <img src="../ws_week2/images/replace.JPG">
                     <h5> Your turn..</h5>
                         System.out.println("computer part".replace('p','m')); <br>
-                        Output: commuter mart<br>
-                        <span class="fragment fade-up">String advice = "He who hesitates is lost?";</span><br>
-                        <br>advice = advice.replace(' ','?');<br>
+                        <span class="fragment fade-up">Output: commuter mart</span><br>
+                        <br>String advice = "He who hesitates is lost?";<br>
+                        advice = advice.replace(' ','?');<br>
                         System.out.println(advice); <br>  
                         <span class="fragment fade-up">Output: He?who?hesitates?is?lost?</span>
                     </section>                                       
@@ -742,12 +744,115 @@
                         lengthAfterTrim = reply.length();<br>
                         System.out.println(reply);
                         </blockquote>
-                        err, let me think... <br>
+                        "err, let me think..." <br>
                         <blockquote>
                         System.out.println("Length before " + lengthBeforeTrim + ", Length after " + lengthAfterTrim);
                         </blockquote>
-                        Length before 26, Length after 20
+                        Length before 23, Length after 20
                     </section>
+                    <section>  
+                    <h5> Before </h5>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">,</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">m</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">n</th>
+                            <th class="strtable">k</th>
+                            <th class="strtable">.</th>
+                            <th class="strtable">.</th>
+                            <th class="strtable">.</th>
+                            <th class="strtable">&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                            <td class="strtable">19</td>
+                            <td class="strtable">20</td>
+                            <td class="strtable">21</td>
+                            <td class="strtable">22</td>
+                        </tr>
+                    </table><br>
+                    <h5> After </h5>
+                    reply = reply.trim();<br>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">,</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">m</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">n</th>
+                            <th class="strtable">k</th>
+                            <th class="strtable">.</th>
+                            <th class="strtable">.</th>
+                            <th class="strtable">.</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                            <td class="strtable">19</td>
+                        </tr>
+                    </table><br>
+                    </section>  
                     <section>
                     <h5> Your turn..</h5>
                     <table class="strtable">
@@ -799,7 +904,7 @@
                             lengthAfterTrim = greet.length();<br>
                             System.out.println(greet);
                         </blockquote>
-                        <span class="fragment fade-up">hi     hello?</span><br>
+                        <span class="fragment fade-up">"hi     hello?"</span><br>
                         <blockquote>
                         System.out.println("Length before " + lengthBeforeTrim + ", Length after " + lengthAfterTrim);
                         </blockquote>
@@ -1005,13 +1110,15 @@
                         <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;&nbsp;fess</span>
                     </section>  
                 </section>
+                
                 <section>
                 <iframe src="https://paiza.io/projects/e/iSsrzzAuFP5ZMKtA1W7vxA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
                 </section>
-                
+                <!-- test quiz
                 <section>
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
                 </section>
+                -->
             </div>
 		</div>
 
