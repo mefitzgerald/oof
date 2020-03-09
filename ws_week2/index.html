@@ -25,7 +25,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-        <title>CSE1OOF Workshop 1</title>
+        <title>CSE1OOF Workshop 2</title>
 	</head>
 
 	<body>
@@ -42,7 +42,9 @@
 					<h1>CSE1OOF</h1>
 					<h3>Workshop 2</h3>
 					<p>
-						<small>Semester 1 2020</small>
+						<small id="demo">Press SHIFT ? for help</small>
+						<button onclick="locFunction()">Try it</button>
+                        
 					</p>
 				</section>
                 <!-- Task 1-->
@@ -75,9 +77,7 @@
                         It's as easy as 
                         <span class="blueText">1</span><span class="greenText">2</span><span class="purpleText">3</span>
                     </div> 
-                    <div class="fragment fade-up">
-                        <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
-                    </div> 
+                    <h5>System.out.println("It's as easy as " + (x + y + z));</h5>
                     <div class="fragment fade-up">
                         It's as easy as 6<br>
                         Because :
@@ -100,9 +100,7 @@
                         (<span class="blueText">1</span> +
                         <span class="greenText">2</span> = 3) then the result is concatenated with z with NO whitespace</small>
                     </div>        
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(x + y + z + "It's as easy as ");</h5>
-                    </div> 
+                    <h5>System.out.println(x + y + z + "It's as easy as ");</h5>
                     <div class="fragment fade-up">
                         <small>6It's as easy as<br>
                         Because : x, y and z are primitive data types (so they contain a value) so their value is added togther and then concatenated with the text String which is an object.</small>                     
@@ -124,9 +122,7 @@
                     <div class="fragment fade-up">
                         1
                     </div>   
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(longer.length() + longest.length());</h5>
-                    </div>
+                    <h5>System.out.println(longer.length() + longest.length());</h5>
                     <div class="fragment fade-up">
                         8
                     </div>  
@@ -136,15 +132,11 @@
                     <div class="fragment fade-up">
                         0
                     </div><br>  
-                    <div class="fragment fade-up">
-                        <h5>System.out.println("12".length());</h5>
-                    </div>
+                    <h5>System.out.println("12".length());</h5>
                     <div class="fragment fade-up">
                         2
                     </div>  <br>  
-                    <div class="fragment fade-up">
                     <h5>System.out.println("u & me".length());</h5>
-                    </div> 
                     <div class="fragment fade-up">
                         6
                     </div> 
@@ -164,9 +156,7 @@
                     <div class="fragment fade-up">
                         false
                     </div> 
-                    <div class="fragment fade-up">
-                        <h5>System.out.println("".isEmpty());</h5>
-                    </div>
+                    <h5>System.out.println("".isEmpty());</h5>
                     <div class="fragment fade-up">
                         true
                     </div> 
@@ -181,9 +171,7 @@
                     <div class="fragment fade-up">
                         false
                     </div> 
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(emptyString.isEmpty());</h5>
-                    </div>
+                    <h5>System.out.println(emptyString.isEmpty());</h5>
                     <div class="fragment fade-up">
                         true
                     </div> 
@@ -237,9 +225,7 @@
                     <div class="fragment fade-up">
                         t
                     </div>
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(a1.charAt(0));</h5>
-                    </div>
+                    <h5>System.out.println(a1.charAt(0));</h5>
                     <div class="fragment fade-up">
                         8
                     </div>
@@ -288,15 +274,11 @@
                     <div class="fragment fade-up">
                         e
                     </div>
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(a1.charAt(-2));</h5>
-                    </div>
+                    <h5>System.out.println(a1.charAt(-2));</h5>
                     <div class="fragment fade-up">
                         !! Out of bounds error!
                     </div>
-                    <div class="fragment fade-up">
-                        <h5>System.out.println("eIgHt".charAt(3));</h5>
-                    </div>
+                    <h5>System.out.println("eIgHt".charAt(3));</h5>
                     <div class="fragment fade-up">
                         H
                     </div>
@@ -316,9 +298,7 @@
                     <div class="fragment fade-up">
                         true
                     </div>  
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(lizard1.equals(insect1)); </h5>
-                    </div>
+                    <h5>System.out.println(lizard1.equals(insect1)); </h5>
                     <div class="fragment fade-up">
                         false
                     </div> 
@@ -329,21 +309,15 @@
                         String insect1 = "dragonfly";<br>
                         String insect2 = "fly";
                     </blockquote>
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(insect2.equalsIgnoreCase("fLy"));</h5>
-                    </div>  
+                    <h5>System.out.println(insect2.equalsIgnoreCase("fLy"));</h5> 
                     <div class="fragment fade-up">
                         true
                     </div>  
-                    <div class="fragment fade-up">
-                        <h5>System.out.println("FLY".equals(insect2));</h5>
-                    </div>  
+                    <h5>System.out.println("FLY".equals(insect2));</h5> 
                     <div class="fragment fade-up">
                         false
                     </div>
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(insect1.equals(lizard1 + insect2));</h5>
-                    </div>  
+                    <h5>System.out.println(insect1.equals(lizard1 + insect2));</h5> 
                     <div class="fragment fade-up">
                         true
                     </div>       
@@ -407,7 +381,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3> Your turn </h3>
+                    <h5> Your turn..</h5>
                     <small>Are the values given to the integer variables by the compareTo() and compareToIgnoreCase() 
                     statements below positive, negative or zero?</small>
                     <blockquote>
@@ -419,35 +393,543 @@
                     </blockquote>
                     <div>
                         <small>
-                        int v1 = robot1.compareTo(robot2);<br>
-                        int w1 = robot4.compareTo(robot1);<br>
-                        int x1 = robot2.compareTo(robot3);<br>
-                        int y1 = robot1.compareToIgnoreCase(robot4);<br>
-                        int z1 = robot3.compareToIgnoreCase("MARVIN");
+                        int v1 = robot1.compareTo(robot2);<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;v1 = -9</span><br>
+                        int w1 = robot4.compareTo(robot1);<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;w1 = -32</span><br>
+                        int x1 = robot2.compareTo(robot3);<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;x1 = -17</span><br>
+                        int y1 = robot1.compareToIgnoreCase(robot4);<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;y1 = 0</span><br>
+                        int z1 = robot3.compareToIgnoreCase("MARVIN");<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;z1 = 17</span>
                         </small> 
                     </div>
                 </section>
                  <section>
                     <iframe src="https://paiza.io/projects/e/5Rf7iNdj4Nvx7KKtVCRHLA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
                 </section>    
-				<section data-menu-title="indexOf() and lastIndexOf()">
-                    <img src="../ws_week2/images/equals.JPG">
+				<section data-menu-title="indexOf()">
+                    <h5> indexOf()</h5>
+                    There are 4 index of methods: <br>
                     <blockquote>
-                        String lizard1 = "dragon";<br>
-                        String insect1 = "dragonfly";<br>
-                        String insect2 = "fly";
+                    public int indexOf(String str)<br>
+                    public int indexOf(String str, int fromIndex)<br>
+                    public int indexOf(int char)<br>
+                    public int indexOf(int char, int fromIndex)
                     </blockquote>
-                    <h5>System.out.println(lizard1.equals("dragon"));</h5>
-                    <div class="fragment fade-up">
-                        true
-                    </div>  
-                    <div class="fragment fade-up">
-                        <h5>System.out.println(lizard1.equals(insect1)); </h5>
-                    </div>
-                    <div class="fragment fade-up">
-                        false
-                    </div> 
-                </section>   
+                    <h5>Returns</h5>
+                    An int value, representing the index of the first occurrence of the character in the string, or -1 if it never occurs<br>
+                </section>
+                <section>
+                    <blockquote>
+                        String fruit = "strawberry blueberry";
+                    </blockquote><br>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">s</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">a</th>
+                            <th class="strtable">w</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">y</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">u</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">y</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                            <td class="strtable">19</td>
+                        </tr>
+                    </table>
+                    <br>
+                    System.out.println(fruit.indexOf('r'));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;2</span><br>
+                    System.out.println(fruit.indexOf('R'));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;-1</span><br>
+                    System.out.println(fruit.indexOf('e',9));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;14</span><br>
+                    System.out.println(fruit.indexOf("err"));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;6</span><br>
+                    System.out.println(fruit.indexOf("err",18));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;-1</span><br>
+                </section>
+                <section>
+                <h5> Your turn..</h5>
+                    <blockquote>
+                        String fruit = "strawberry blueberry";
+                    </blockquote><br>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">s</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">a</th>
+                            <th class="strtable">w</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">y</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">u</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">y</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                            <td class="strtable">19</td>
+                        </tr>
+                    </table>
+                    <br>
+                    System.out.println(fruit.indexOf('l'));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;12</span><br>
+                    System.out.println(fruit.indexOf(' '));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;10</span><br>
+                    System.out.println(fruit.indexOf('l',4));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;12</span><br>
+                    System.out.println(fruit.indexOf("berry"));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;5</span><br>
+                    System.out.println(fruit.indexOf("apple",11));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;-1</span><br>
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/qBCMLi9ws_-taa7_eLxbXg?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+				<section data-menu-title="lastIndexOf()">
+                    <h5> lastIndexOf()</h5>
+                    There are 4 last index of methods: <br>
+                    <blockquote>
+                    public int lastIndexOf(String str)<br>
+                    public int lastIndexOf(String str, int fromIndex)<br>
+                    public int lastIndexOf(int char)<br>
+                    public int lastIndexOf(int char, int fromIndex)
+                    </blockquote>
+                    <h5>Returns</h5>
+                    An int value, representing the index of the first occurrence of the character in the string, or -1 if it never occurs<br>
+                </section>
+                <section>
+                    <blockquote>
+                        String spell = "double toil and trouble";
+                    </blockquote><br>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">d</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">u</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">a</th>
+                            <th class="strtable">n</th>
+                            <th class="strtable">d</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">u</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">e</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                            <td class="strtable">19</td>
+                            <td class="strtable">20</td>
+                            <td class="strtable">21</td>
+                            <td class="strtable">22</td>
+                        </tr>
+                    </table>
+                    <br>
+                    System.out.println(spell.lastIndexOf('b')); <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;20</span><br>
+                    System.out.println(spell.lastIndexOf(','));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;-1</span><br>
+                    System.out.println(spell.lastIndexOf('b',12));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;3</span><br>
+                    System.out.println(spell.lastIndexOf("ub"));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;19</span><br>
+                    System.out.println(spell.lastIndexOf("ub",4));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;2</span><br>
+                </section>
+                <section>
+                <h5> Your turn..</h5>
+                    <blockquote>
+                        String spell = "double toil and trouble";
+                    </blockquote><br>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">d</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">u</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">a</th>
+                            <th class="strtable">n</th>
+                            <th class="strtable">d</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">u</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">e</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                            <td class="strtable">19</td>
+                            <td class="strtable">20</td>
+                            <td class="strtable">21</td>
+                            <td class="strtable">22</td>
+                        </tr>
+                    </table>
+                    <br>
+                    System.out.println(spell.lastIndexOf('e')); <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;22</span><br>
+                    System.out.println(spell.lastIndexOf('"'));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;-1</span><br>
+                    System.out.println(spell.lastIndexOf('e',13));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;5</span><br>
+                    System.out.println(spell.lastIndexOf("ble"));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;20</span><br>
+                    System.out.println(spell.lastIndexOf("ble",4));<span class="fragment fade-up">&nbsp;&nbsp;&nbsp;3</span><br>
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/S8iMoBf-qljmZBAf_YyvHA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section data-menu-title="toLowerCase() and toUpperCase()">
+                <h5>toLowerCase() and toUpperCase()</h5>
+                        String request = "Quiet please.";<br>
+                        <blockquote>
+                        System.out.println(request.toUpperCase());<br>
+                        Output: QUIET PLEASE.
+                        </blockquote>
+                        <blockquote>
+                        System.out.println(request);<br>
+                        Output: Quiet please. (Note the original string is not changed!)
+                        </blockquote>
+                        <blockquote>
+                        request = request.toUpperCase();<br>
+                        System.out.println(request);<br>
+                        Output: QUIET PLEASE<br>
+                        </blockquote>
+                        <blockquote>
+                        System.out.println("3 2 1 BLAST OFF!".toLowerCase());<br>
+                        Output: 3 2 1 blast off! 
+                        </blockquote>                        
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/9MWpEetQSUD6Xvt-L5ObiA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>                </section>              
+                </section>
+				<section data-menu-title="replace()">
+                    
+                    <!-- nested slides -->
+                    <section>
+                    <img src="../ws_week2/images/replace.JPG">
+                        <blockquote> 
+                        String state = "I think therefore I exist!";<br>
+                        System.out.println(state.replace('I','U')); <br>
+                        </blockquote> 
+                        Output: U think therefore U exist!<br>
+                        <blockquote> 
+                        System.out.println(state); <br>
+                        Output: I think therefore I exist!<br>
+                        state = state.replace('I','Q');<br>
+                        System.out.println(state);
+                        </blockquote> 
+                        Output: Q think therefore Q exist!<br>
+                    </section>
+                    <section>
+                    <img src="../ws_week2/images/replace.JPG">
+                    <h5> Your turn..</h5>
+                        System.out.println("computer part".replace('p','m')); <br>
+                        Output: commuter mart<br>
+                        <span class="fragment fade-up">String advice = "He who hesitates is lost?";</span><br>
+                        <br>advice = advice.replace(' ','?');<br>
+                        System.out.println(advice); <br>  
+                        <span class="fragment fade-up">Output: He?who?hesitates?is?lost?</span>
+                    </section>                                       
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/r1vSvHBrc1_FoEFyEy3Rfg?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section data-menu-title="trim()>
+                    <!-- nested slides -->
+                    <section>
+                    <img src="../ws_week2/images/trim.JPG">
+                        <blockquote>
+                        int lengthBeforeTrim, lengthAfterTrim;<br>
+                        String reply = "   err, let me think...   ";<br>
+                        lengthBeforeTrim = reply.length();<br>
+                        reply = reply.trim();<br>
+                        lengthAfterTrim = reply.length();<br>
+                        System.out.println(reply);
+                        </blockquote>
+                        err, let me think... <br>
+                        <blockquote>
+                        System.out.println("Length before " + lengthBeforeTrim + ", Length after " + lengthAfterTrim);
+                        </blockquote>
+                        Length before 26, Length after 20
+                    </section>
+                    <section>
+                    <img src="../ws_week2/images/trim.JPG">
+                    <h5> Your turn..</h5>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">?</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                        </tr>
+                    </table>
+                        <blockquote>
+                            String greet = "   hi     hello?  ";<br>
+                            lengthBeforeTrim = greet.length();<br>
+                            greet = greet.trim();<br>
+                            lengthAfterTrim = greet.length();<br>
+                            System.out.println(greet);
+                        </blockquote>
+                        <span class="fragment fade-up">hi     hello?</span><br>
+                        <span class="fragment fade-up">Length before 18, Length after 13</span><br>
+                    </section>  
+                </section>
+                <section>
+                <iframe src="https://paiza.io/projects/e/kxm8yiOeLUEbmG5qKSGkcw?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+
+                <section data-menu-title="substring()>
+                    <!-- nested slides -->
+                    <section>
+                    <img src="../ws_week2/images/substring.JPG">
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">I</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">w</th>
+                            <th class="strtable">a</th>
+                            <th class="strtable">n</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">b</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">v</th>
+                            <th class="strtable">e</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                        </tr>
+                    </table>
+                        <blockquote>
+                        String s1 = "I want to believe";<br>
+                        String s2 = s1.substring(3);<br>
+                        String s3 = s1.substring(7,12);
+                        </blockquote>
+                        System.out.println(s2); <br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;ant to believe</span><br>
+                        System.out.println(s3); <br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;to be</span>                      
+                    </section>
+                    <section>
+                    <h5> Your turn..</h5>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">p</th>
+                            <th class="strtable">r</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">f</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">s</th>
+                            <th class="strtable">s</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">n</th>
+                            <th class="strtable">a</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">t</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">c</th>
+                            <th class="strtable">s</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                            <td class="strtable">18</td>
+                        </tr>
+                    </table>
+                        <blockquote>
+                            String s4 = "professional ethics";<br>
+                            String s5 = s4.substring(15);<br>
+                            String s6 = s4.substring(18);<br>
+                            String s7 = s4.substring(19);
+                        </blockquote>
+                        System.out.println(s5);
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;&nbsp;hics</span><br>
+                        System.out.println(s6);
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;&nbsp;s</span><br>
+                        System.out.println(s7);
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+                        System.out.println(s4.substring(3,7));
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;&nbsp;fess</span>
+                    </section>  
+                </section>
+                <section>
+                <iframe src="https://paiza.io/projects/e/iSsrzzAuFP5ZMKtA1W7vxA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                
                 <section>
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
                 </section>
@@ -531,6 +1013,11 @@
                     loadIcons: false
                 },
 			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
 
 		</script>
 	</body>
