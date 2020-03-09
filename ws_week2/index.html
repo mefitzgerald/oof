@@ -730,13 +730,13 @@
                 <section>
                     <iframe src="https://paiza.io/projects/e/r1vSvHBrc1_FoEFyEy3Rfg?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
                 </section>
-                <section data-menu-title="trim()>
+                <section data-menu-title="trim()">
                     <!-- nested slides -->
                     <section>
-                    <img src="../ws_week2/images/trim.JPG">
+                    <img src="../ws_week2/images/trim.JPG"><br>
                         <blockquote>
                         int lengthBeforeTrim, lengthAfterTrim;<br>
-                        String reply = "   err, let me think...   ";<br>
+                        String reply = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;err, let me think...&nbsp;&nbsp;&nbsp;";<br>
                         lengthBeforeTrim = reply.length();<br>
                         reply = reply.trim();<br>
                         lengthAfterTrim = reply.length();<br>
@@ -749,7 +749,6 @@
                         Length before 26, Length after 20
                     </section>
                     <section>
-                    <img src="../ws_week2/images/trim.JPG">
                     <h5> Your turn..</h5>
                     <table class="strtable">
                         <tr>
@@ -794,21 +793,103 @@
                         </tr>
                     </table>
                         <blockquote>
-                            String greet = "   hi     hello?  ";<br>
+                            String greet = "&nbsp;&nbsp;hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello?&nbsp;&nbsp;&nbsp;";<br>
                             lengthBeforeTrim = greet.length();<br>
                             greet = greet.trim();<br>
                             lengthAfterTrim = greet.length();<br>
                             System.out.println(greet);
                         </blockquote>
                         <span class="fragment fade-up">hi     hello?</span><br>
+                        <blockquote>
+                        System.out.println("Length before " + lengthBeforeTrim + ", Length after " + lengthAfterTrim);
+                        </blockquote>
                         <span class="fragment fade-up">Length before 18, Length after 13</span><br>
+                    </section>  
+                    <section>  
+                    <h5> Before </h5>
+                                        <table class="strtable">
+                        <tr>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">?</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                            <td class="strtable">13</td>
+                            <td class="strtable">14</td>
+                            <td class="strtable">15</td>
+                            <td class="strtable">16</td>
+                            <td class="strtable">17</td>
+                        </tr>
+                    </table><br>
+                    <h5> After </h5>
+                    greet = greet.trim();<br>
+                    <table class="strtable">
+                        <tr>
+                            <th class="strtable">h</th>
+                            <th class="strtable">i</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">&nbsp;</th>
+                            <th class="strtable">h</th>
+                            <th class="strtable">e</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">l</th>
+                            <th class="strtable">o</th>
+                            <th class="strtable">?</th>
+                        </tr>
+                        <tr>
+                            <td class="strtable">&nbsp;0</td>
+                            <td class="strtable">&nbsp;1</td>
+                            <td class="strtable">&nbsp;2</td>
+                            <td class="strtable">&nbsp;3</td>
+                            <td class="strtable">&nbsp;4</td>
+                            <td class="strtable">&nbsp;5</td>
+                            <td class="strtable">&nbsp;6</td>
+                            <td class="strtable">&nbsp;7</td>
+                            <td class="strtable">&nbsp;8</td>
+                            <td class="strtable">&nbsp;9</td>
+                            <td class="strtable">10</td>
+                            <td class="strtable">11</td>
+                            <td class="strtable">12</td>
+                        </tr>
+                    </table>
                     </section>  
                 </section>
                 <section>
                 <iframe src="https://paiza.io/projects/e/kxm8yiOeLUEbmG5qKSGkcw?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
                 </section>
 
-                <section data-menu-title="substring()>
+                <section data-menu-title="substring()">
                     <!-- nested slides -->
                     <section>
                     <img src="../ws_week2/images/substring.JPG">
@@ -1012,7 +1093,7 @@
                     delayInit: false,
                     openOnInit: false,
                     custom: [
-                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, // until I come up with a fix menu_tools print link will have to be updated manually each slide deck. bah!
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
                         ],
                     loadIcons: false
                 },
