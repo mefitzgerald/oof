@@ -373,6 +373,19 @@ body {
   border: 0;
   box-shadow: none;
   margin: 5px 0px;}
+  
+.reveal section img.plainhalf {
+  border: 0;
+  box-shadow: none;
+  margin: 5px 0px;
+  height="50%"}
+  
+.reveal section img.plainthird {
+  border: 0;
+  box-shadow: none;
+  margin: 5px 0px;
+  height: 30%;
+  }
 
 .reveal a img {
   -webkit-transition: all .15s linear;

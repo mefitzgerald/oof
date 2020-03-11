@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 3">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop </title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 3</h3>
+					<p>
+						<small>Press SHIFT ? for help</small>                       
+					</p>              
+                </section>
+                <section>
+                <h6>Boolean logic</h6>
+                There are two possible values <span class="greenText"> true </span> and <span class="redText">false</span>
+                <blockquote>
+                    3 &gt; 4 <span class="redText">false</span><br>
+                    3 &lt;= 4 <span class="greenText">true</span>
+                </blockquote>
+                </section>
+                <section>
+                <h6>Boolean operator 'and'</h6>
+                In Java the operator is: &amp;&amp;<br><br>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/andtruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        From the truth table, we can see that in an expression with all 
+                        &amp;&amp;, if just one condition is <span class="redText">false</span>, 
+                        the whole condition is <span class="redText">false</span>, 
+                        regardless of how many other expressions are true.
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h5>Boolean operator 'and' example</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/andtruthtable.JPG">
+                    </div>
+                    <div class="col">
+                    5 &gt; 2&nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;11 &lt; 67   ...<span class="greenText"> true </span><br>
+                    5 &lt; 2&nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;11 &lt; 6   ...<span class="redText">false</span><br>
+                    5 &gt; 22&nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;11 &lt; 67   ...<span class="redText">false</span><br>
+                    5 &gt; 22&nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;11 &lt; 6   ...<span class="redText">false</span>
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h6>Boolean operator 'or'</h6>
+                In Java the operator is: &vert;&vert;<br><br>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/ortruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        From the truth table, we can see that in an expression with all 
+                        &vert;&vert;, if just one condition is <span class="greenText"> true </span>, the whole condition is <span class="greenText"> true </span>, 
+                        regardless of how many other expressions are <span class="redText">false</span>.
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h5>Boolean operator 'or'</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/ortruthtable.JPG">
+                    </div>
+                    <div class="col">
+                    5 &gt; 2&nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;11 &lt; 67   ...<span class="greenText"> true </span><br>
+                    5 &gt; 2&nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;11 &lt; 6   ...<span class="greenText"> true </span><br>
+                    5 &gt; 22&nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;11 &lt; 67   ...<span class="greenText"> true </span><br>
+                    5 &gt; 22&nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;11 &lt; 6   ...<span class="redText">false</span>
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h6>Boolean operator 'not'</h6>
+                In Java the operator is: !<br><br>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/nottruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        Evaluate the condition first, then as the last step reverse the answer.
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h6>Boolean operator 'not'</h6>
+                In Java the operator is: !<br><br>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/nottruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        !(11 &lt; 67)   ...<span class="redText"> false </span><br>
+                        !(11 &gt; 67)   ...<span class="greenText"> true </span><br>
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h5> Your turn...</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/andtruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        <small>
+                            What is the value of the following expressions if count is 0 and limit is 10?  
+                            (The expressions are boolean expressions that evaluate to true or false.  
+                            To determine the value of the expression, 
+                            evaluate each operand, then apply the operator as in the truth tables.)  
+                        </small>
+                    </div>
+                </div>
+                <br>
+                (count == 0) &nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;(limit &lt; 20)<span class="fragment fade-up">true</span><br>
+                (count &lt; 0) &nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;(limit &lt;= limit)<span class="fragment fade-up">true</span>           
+                </section>
+                <section>
+                <h5> Your turn...</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/ortruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        <small>
+                            What is the value of the following expressions if count is 0 and limit is 10?  
+                            (The expressions are boolean expressions that evaluate to true or false.  
+                            To determine the value of the expression, 
+                            evaluate each operand, then apply the operator as in the truth tables.)  
+                        </small>
+                    </div>
+                </div>
+                <br>
+                (limit &gt; 20) &nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;(count &lt; -5)<span class="fragment fade-up">false</span><br>
+                (count &lt; 0) &nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;(limit &lt;= limit)<span class="fragment fade-up">true</span>           
+                </section>
+                <section>
+                <h5> Your turn...</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/nottruthtable.JPG">
+                    </div>
+                    <div class="col">
+                        <small>
+                            What is the value of the following expressions if count is 0 and limit is 10?  
+                            (The expressions are boolean expressions that evaluate to true or false.  
+                            To determine the value of the expression, 
+                            evaluate each operand, then apply the operator as in the truth tables.)  
+                        </small>
+                    </div>
+                </div>
+                <br>
+                !(count == 20) &nbsp;&nbsp; &vert;&vert; <span class="fragment fade-up">true</span><br>
+                </section>
+                <section data-menu-title="Precedence Rules">
+                    <h5>Precedence rules (order of operations)</h5>
+                    What is the value of this expression?<br>
+                    <span class="greenText">
+                    9 &lt; 6 &vert;&vert; 0 == 0 &amp;&amp; 7 == 6
+                    </span><br>
+                    <br>
+                    For arithmetic expressions we know that<br> '*' has precedence over '+'<br><br>
+                    <h4>So &nbsp;&nbsp;&nbsp;&nbsp; 3 + 4 * 6<br>
+                    is equivalent to &nbsp;&nbsp;&nbsp;&nbsp; 3 + (4 * 6)</h4>
+                    Boolean operators must also be given a precedence
+                    <br>
+                </section>
+                <section>
+                    <h5>Java operator precedence from highest to lowest</h5>
+                    <img class="plain" src="../ws_week3/images/precedence.JPG"><br>
+                    Brackets below illustrate the order of operations applied to the expression<br>
+                    <!-- running short on time so I had to use screen grabs, works.. is a bit euww-->
+                    <img class="plain" src="../ws_week3/images/precExample.JPG">
+                </section>
+                <section>
+                    <!--
+                    <blockquote>
+                        +&nbsp;&nbsp;-&nbsp;&nbsp;++&nbsp;&nbsp;--&nbsp;&nbsp;!<br>
+                        *&nbsp;&nbsp;/&nbsp;&nbsp;%<br>
+                        +&nbsp;&nbsp;-<br>
+                        &lt; &nbsp;&nbsp; &gt; &nbsp;&nbsp; &lt;= &nbsp;&nbsp; &gt;=<br>
+                        == &nbsp;&nbsp; 1=<br>
+                        &amp;&amp;<br>
+                        &vert;&vert;
+                    </blockquote>
+                    -->
+                    <section>
+                        <h5>Java operator precedence from highest to lowest</h5>
+                        <img  src="../ws_week3/images/precedence.JPG"><br>
+                        <small>What is the value of the following expression where;<br> count is 0 and limit is 10?</small><br>
+                        <img class="plain" src="../ws_week3/images/ws3t2_1.JPG"><br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;true</span>
+                    </section>
+                    <section>
+                        <h5>Java operator precedence from highest to lowest</h5>
+                        <img src="../ws_week3/images/precedence.JPG"><br>
+                        <small>What is the value of the following expression where;<br> count is 0 and limit is 10?</small><br>
+                        <img class="plain" src="../ws_week3/images/ws3t2_2.JPG"><br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;true</span>
+                    </section>
+                    <section>
+                        <h5>Java operator precedence from highest to lowest</h5>
+                        <img src="../ws_week3/images/precedence.JPG"><br>
+                        <small>What is the value of the following expression where;<br> count is 0 and limit is 10?</small><br>
+                        <img class="plain" src="../ws_week3/images/ws3t2_3.JPG"><br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;false</span>
+                    </section>
+                    <section>
+                        <h5>Java operator precedence from highest to lowest</h5>
+                        <img src="../ws_week3/images/precedence.JPG"><br>
+                        <small>What is the value of the following expression where;<br> count is 0 and limit is 10?</small><br>
+                        <img class="plain" src="../ws_week3/images/ws3t2_4.JPG"><br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;false</span>
+                    </section>
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/wjsuGd-Nx8PpeTPb1LIjbQ?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                    <h6>Short-circuit evaluation</h6>
+                    Java uses short-circuit evaluation<br>
+                        <li>If the first part of an &vert;&vert; is true, the second part of the &vert;&vert; is not evaluated (as the whole expression must be true)</li>
+                        <li>If the first part of an &amp;&amp; is false, the second part of the &amp;&amp; is not evaluated (as the whole expression must be false)</li>
+                    <h5>For example</h6>
+                    <img src="../ws_week3/images/shortCircuit.JPG"><br>
+                </section>
+                <section>
+                    <h5>Your turn...</h5>
+                    <small>What is the value of the following expression where;<br> count is 0 and limit is 10?</small><br>
+                    <img class="plain" src="../ws_week3/images/ws3t3_1.JPG"><br>
+                    <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;false</span><br>
+                    <img class="plain" src="../ws_week3/images/ws3t3_2.JPG"><br>
+                    <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;true</span> <br> 
+                    <img class="plain" src="../ws_week3/images/ws3t3_3.JPG"><br>
+                    <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;false</span><br>
+                    <img class="plain" src="../ws_week3/images/ws3t3_4.JPG"><br>
+                    <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;divide by zero error</span>                
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/WEfWaXJhQRyD_Vo06vuFnQ?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                    <h6>Equivalent expressions</h6>
+                        Some boolean expressions can be expressed in various equivalent forms<br>
+                        Choose the one easiest to understand (if possible)
+                </section>
+                <section>
+                    <h6>Relational operators (example)</h6>
+                    <small>
+                    How can we decide to do something if time is not greater than limit?<br>
+                    Assume time is 20 and limit is 30<br>
+                    </small>
+                    <img src="../ws_week3/images/relExample1.JPG"><br>
+                    <small class="redText">
+                    <span class="fragment fade-up">Problems? Look at the order of operations (precedence) !time is a boolean operator acting on an integer type – this will not compile</span>
+                    </small>
+                </section>
+                <section>
+                     <h6>Relational operators (example)</h6>
+                    <small>
+                    How can we decide to do something if time is not greater than limit?<br>
+                    Assume time is 20 and limit is 30<br>
+                    </small>
+                    <img src="../ws_week3/images/relExample2.JPG">
+                </section>               
+                <section>  
+                <h5> Rules for distributing ! over relational operators  </h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week3/images/rulesDist.JPG">
+                    </div>
+                    <div class="col">
+                    <h5>Rewrite without  !</h5>
+                        !(numberOfGames &gt; 5)<br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;numberOfGames &lt; 6</span> <br> 
+                        !(balance + interest &lt;= 2000)<br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;balance + interest &gt; 2000</span> <br> 
+                        !(userInput != 'q')<br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;userInput == 'q'</span> <br> 
+                    </div>
+                </div>
+                </section>               
+                <!-- test quiz
+                <section>
+                <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+                </section>
+                -->
+            </div>
+		</div>
+
+
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/menu/menu.js' }
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>
