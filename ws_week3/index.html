@@ -151,8 +151,8 @@
                     </div>
                 </div>
                 <br>
-                (count == 0) &nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;(limit &lt; 20)<span class="fragment fade-up">true</span><br>
-                (count &lt; 0) &nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;(limit &lt;= limit)<span class="fragment fade-up">true</span>           
+                (count == 0) &nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;(limit &lt; 20)&nbsp;&nbsp; &nbsp;&nbsp; <span class="fragment fade-up">true</span><br>
+                (count &lt; 0) &nbsp;&nbsp; &amp;&amp; &nbsp;&nbsp;(limit &lt;= limit)&nbsp;&nbsp; &nbsp;&nbsp; <span class="fragment fade-up">true</span>           
                 </section>
                 <section>
                 <h5> Your turn...</h5>
@@ -170,8 +170,8 @@
                     </div>
                 </div>
                 <br>
-                (limit &gt; 20) &nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;(count &lt; -5)<span class="fragment fade-up">false</span><br>
-                (count &lt; 0) &nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;(limit &lt;= limit)<span class="fragment fade-up">true</span>           
+                (limit &gt; 20) &nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;(count &lt; -5)&nbsp;&nbsp; &nbsp;&nbsp; <span class="fragment fade-up">false</span><br>
+                (count &lt; 0) &nbsp;&nbsp; &vert;&vert; &nbsp;&nbsp;(limit &lt;= limit)&nbsp;&nbsp; &nbsp;&nbsp; <span class="fragment fade-up">true</span>           
                 </section>
                 <section>
                 <h5> Your turn...</h5>
@@ -189,7 +189,7 @@
                     </div>
                 </div>
                 <br>
-                !(count == 20) &nbsp;&nbsp; &vert;&vert; <span class="fragment fade-up">true</span><br>
+                !(count == 20) &nbsp;&nbsp; &nbsp;&nbsp;  <span class="fragment fade-up">true</span><br>
                 </section>
                 <section data-menu-title="Precedence Rules">
                     <h5>Precedence rules (order of operations)</h5>
@@ -281,7 +281,15 @@
                 <section>
                     <h6>Equivalent expressions</h6>
                         Some boolean expressions can be expressed in various equivalent forms<br>
-                        Choose the one easiest to understand (if possible)
+                        Choose the one easiest to understand (if possible)<br>
+                        <blockquote>
+                            x &lt;= 5 &amp;&amp; x &gt;0<br>
+                            is the same as<br>
+                            !(x &lt;= 0) &amp;&amp; !(x &gt; 6)<br>
+                        </blockquote>
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/KnkuRnfyRK7oLzzUSzYFKQ?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
                 </section>
                 <section>
                     <h6>Relational operators (example)</h6>
@@ -319,6 +327,49 @@
                     </div>
                 </div>
                 </section>               
+                <section> 
+                    <h6>De Morgan’s law</h6>   
+                    <img class="plain" src="../ws_week3/images/deMorgan.JPG"><br>
+                    Distribute the ! over the operators<br>
+                    !(apples &vert;&vert; oranges)<br>
+                        <span class="fragment fade-up">!apples &amp;&amp; !oranges</span> <br>                     
+                    !(input == 'y' &amp;&amp; tries &lt; 5)<br>
+                        <span class="fragment fade-up">!input == 'y') || !(tries &lt; 5)</span> <br> 
+                    !(input == 'n' &amp;&amp; tries &gt;= 6)<br>
+                        <span class="fragment fade-up">!input == 'y') || !(tries &lt; 5)</span> <br>
+                    
+                </section>               
+                <section>   
+                    <h6>De Morgan’s law</h6>
+                     Two negations cancel one another<br>
+                     <img src="../ws_week3/images/cancellation.JPG"><br>
+                     Simplify
+                     !(!(tries &gt; 5))<br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;tries &gt; 5 </span> <br>
+                     !!(bananas != 6)<br>
+                        <span class="fragment fade-up">&nbsp;&nbsp;&nbsp;bananas != 6 </span> <br>                   
+                </section>               
+                <section>  
+                    <iframe src="https://paiza.io/projects/e/1fF3-ng0FgDjoXp_A-e30w?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>               
+                <section>   
+                    <h6>Boolean output with System.out</h6>
+                    Will output the word <span class="greenText">true</span> or <span class="redText">false</span><br>
+                    <img src="../ws_week3/images/boolean_system_out.JPG"><br>                 
+                </section>
+                <section>
+                    <h6>Boolean input with the Scanner class</h6>
+                    Expects true, false, (will accept uppercase and mixed upper and lowercase)<br>   
+                    <img src="../ws_week3/images/boolean_scanner.JPG">                 
+                </section>
+                <section>
+                    <h5>Optional reading</h5>
+                    Please view the Workshop handout on the LMS for;
+                    <li>Boolean operator ‘exclusive or’ (XOR)
+                    <li>Challenge questions
+                </section>
+
+                
                 <!-- test quiz
                 <section>
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>

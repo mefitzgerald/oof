@@ -338,7 +338,11 @@ body {
 .reveal .rednotetext{
     font-style: italic;
     font-size: 0.7em;
-    color: #EE0010
+    color: #EE0010;
+}
+
+.reveal .fragment .fade-up{
+    color: red;
 }
 
 /*********************************************
