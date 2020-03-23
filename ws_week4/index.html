@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 4">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop </title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 4</h3>
+					<p>
+						<small>Press SHIFT ? for help</small>                       
+					</p>              
+                </section>
+                <section>
+                    <h6>While Loops</h6>
+                    <blockquote>
+                    Write a program using while loops to output the first 10 integers on the first line and their cubes on the second line.
+                    </blockquote>
+                    <small>Note that we do not have an easy way to format the output yet…. We will learn about that next…</small><br>
+                    <img src="../ws_week4/images/ws4Task1.JPG">
+                    <img class="plain" src="../ws_week4/images/ws4files.JPG">
+                </section>
+                <section>
+                <h6>Solution</h6>
+				<pre><code class="hljs"  text-align: left>
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        while(i &lt; 11)
+        {
+            System.out.print("\t" + i); 
+            i++; 
+        }
+        System.out.println("\n");
+        i = 1; 
+        while(i &lt; 11)
+        {
+            System.out.print("\t" + i*i*i);
+            i ++; 
+        }
+    }
+}
+                </code></pre> 
+                <img class="plain" src="../ws_week4/images/ws4Task1.JPG">                
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/5fAuAhSMJ7oihkZPtDom5Q?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                <h5>printf </h5>
+                <small>
+                There are several ways of formatting output in Java - one way is to use the printf() method (which can be called with System.out). 
+                Note the <strong>f</strong> in printf means formatted<br><br>
+                <img src="../ws_week4/images/ws4printfmethod.JPG"> <br><br>
+                The first argument is the output string. Any other arguments are a list of values to be put into the output string at certain given places<br><br>
+                So, the output string (first argument) contains<br></small>
+                <li>Ordinary or fixed text</li>
+                <li>Format Specifiers (the places to put the other arguments)</li>
+                <small>The format specifiers also define how an argument will be formatted when it is placed into the output string. </small>
+                </section>
+                <section>
+                <h5>printf Example</h5>
+                <small>
+                In this example, <strong>%s</strong>, <strong>%d</strong> and <strong>%.2f</strong> are the format specifiers for the last 3 arguments, 
+                dogName (a String), dogAge (an int) and weight (a double).<br>
+                <strong>%s</strong> is a format specifier related to a String, <strong>%d</strong> is a format specifier related to an int, 
+                and <strong>%f</strong> is a format specifier related to a double
+                </small>
+				<pre><code class="hljs"  text-align: left>
+String dogName = "Harry";
+int dogAge = 6;
+double weight = 60;
+
+System.out.printf("My dog %s is %d years old and weighs %.2f kgs\n",
+                   dogName, dogAge, weight);
+                </code></pre>
+                <small>Output:</small>
+				<pre><code class="hljs"  text-align: left>
+My dog Harry is 6 years old and weighs 60.00 kgs
+                </code></pre>
+                </section>
+
+                
+                <!-- test quiz
+                <section>
+                <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+                </section>
+                -->
+            </div>
+		</div>
+
+
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/menu/menu.js' }
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>
