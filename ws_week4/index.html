@@ -25,7 +25,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-        <title>CSE1OOF Workshop </title>
+        <title>CSE1OOF Workshop 4</title>
 	</head>
 
 	<body>
@@ -83,22 +83,25 @@ public class Main {
                 <section>
                 <h5>printf </h5>
                 <small>
-                There are several ways of formatting output in Java - one way is to use the printf() method (which can be called with System.out). 
-                Note the <strong>f</strong> in printf means formatted<br><br>
-                <img src="../ws_week4/images/ws4printfmethod.JPG"> <br><br>
-                The first argument is the output string. Any other arguments are a list of values to be put into the output string at certain given places<br><br>
-                So, the output string (first argument) contains<br></small>
+                    There are several ways of formatting output in Java - one way is to use the printf() method (which can be called with System.out). 
+                    Note the <strong>f</strong> in printf means formatted<br><br>
+                    <img src="../ws_week4/images/ws4printfmethod.JPG"> <br><br>
+                    The first argument is the output string. Any other arguments are a list of values to be put into the output string at certain given places<br><br>
+                    So, the output string (first argument) contains<br>
+                </small>
                 <li>Ordinary or fixed text</li>
                 <li>Format Specifiers (the places to put the other arguments)</li>
-                <small>The format specifiers also define how an argument will be formatted when it is placed into the output string. </small>
+                <small>
+                    The format specifiers also define how an argument will be formatted when it is placed into the output string. 
+                </small>
                 </section>
                 <section>
                 <h5>printf Example</h5>
                 <small>
-                In this example, <strong>%s</strong>, <strong>%d</strong> and <strong>%.2f</strong> are the format specifiers for the last 3 arguments, 
-                dogName (a String), dogAge (an int) and weight (a double).<br>
-                <strong>%s</strong> is a format specifier related to a String, <strong>%d</strong> is a format specifier related to an int, 
-                and <strong>%f</strong> is a format specifier related to a double
+                    In this example, <strong>%s</strong>, <strong>%d</strong> and <strong>%.2f</strong> are the format specifiers for the last 3 arguments, 
+                    dogName (a String), dogAge (an int) and weight (a double).<br>
+                    <strong>%s</strong> is a format specifier related to a String, <strong>%d</strong> is a format specifier related to an int, 
+                    and <strong>%f</strong> is a format specifier related to a double
                 </small>
 				<pre><code class="hljs"  text-align: left>
 String dogName = "Harry";
@@ -113,8 +116,326 @@ System.out.printf("My dog %s is %d years old and weighs %.2f kgs\n",
 My dog Harry is 6 years old and weighs 60.00 kgs
                 </code></pre>
                 </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/I0drTqfzIF8hcNEne2Wb9g?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                <h6>Format specifiers</h6>
+                <div class="flexcontainer">
+                    <div class="col">
+                        Start with a % symbol<br>
+                        End with a conversion character (e.g. s, d or f) that determines what type of value will be output<br>
+                        There may be additional optional information between the % and the conversion character.<br>
+                    </div>
+                    <div class="col">
+                        <img class="plain" src="../ws_week4/images/commonconversions.JPG">
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h5>Additional information – an Argument Index</h5>
+                <small>
+                    The first additional optional information is the argument index (a number followed by a $ character – the number is the position of the argument in the list of values).<br>
+                    This allows us to use one of the arguments in the list multiple times or out of order in the output (see the code below in Example1WS04.java from the library area).<br>
+                </small>
+				<pre><code class="hljs"  text-align: left>
+String dogName = "Harry";
+int dogAge = 6;
+double weight = 60;
 
+System.out.printf("My dog %1$s is %2$d years old. I love %1$s.\n",
+                  dogName, dogAge, weight);
+                </code></pre>
+                <small>Output:</small>
+				<pre><code class="hljs"  text-align: left>
+My dog Harry is 6 years old. I love Harry.
+#(Note we don’t have to use all the values in the argument list)
+                </code></pre>
+                </section>                
+                <section> 
+                    <iframe src="https://paiza.io/projects/e/UMj4yTE4JiXVY8khJFE9ug?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>  
+                <section>  
+                <h5>your turn....</h5>
+                <img src="../ws_week4/images/task2wso4.JPG"><br>
+                    <small>
+                        Suzie plays squash.
+                    </small>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs"  text-align: left>
+System.out.printf("%s plays %s.\n", name, sport);
+                            </code></pre>
+                        </div>
+                </section> 
+                <section>  
+                <h5>your turn....</h5>
+                <img src="../ws_week4/images/task2wso4.JPG"><br>
+                    <small>
+                        22 year old Suzie plays B grade squash.
+                    </small>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs"  text-align: left>
+System.out.printf("%d year old %s plays %c grade %s\n", 
+                age, name, grade, sport);
+                            </code></pre>
+                        </div>
+                </section> 
+                <section>  
+                <h5>your turn....</h5>
+                <img src="../ws_week4/images/task2wso4.JPG"><br>
+                    <small>
+                        Court hire is 19.800000. Suzie must pay 19.800000 to play.
+                    </small>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs"  text-align: left>
+System.out.printf("Court hire is %f. %s must pay %1$f to play.\n", 
+                courtHire, name);
+                            </code></pre>
+                        </div>
+                    </small>
+                </section> 
+                <section> 
+                    <iframe src="https://paiza.io/projects/e/koCQdrfmhXPGe-HgMnkaIA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                <h6>Flags</h6> 
+                    <small>
+                    The second additional optional information is called a flag – certain characters are used (between the % and the conversion character) as flags which have set meanings to format the output
+                    </small>
+                    <br>
+                    <img src="../ws_week4/images/commonflags.JPG">
+                </section>
+                <section>
+                <h5> Flag examples part1 </h5>
+                <pre><code class="hljs"  text-align: left>
+int number1 = 23;
+int number2 = -145;
+double number3 = 12321.345;
+double number4 = -99.9;
+
+System.out.printf("1: %d, 2: %d, 3: %f, 4: %f\n",
+                  number1, number2, number3, number4);
+System.out.printf("2: %-10d, 2: %-10d, 3: %-10f, 4: %-10f\n",
+                  number1, number2, number3, number4);
+System.out.printf("3: %+d, 2: %+d, 3: %+f, 4: %+f\n",
+                  number1, number2, number3, number4);
+System.out.printf("4: % d, 2: % d, 3: % f, 4: % f\n",
+                  number1, number2, number3, number4);
+                </code></pre>     
+                    <img class="plain" src="../ws_week4/images/ws4example2pt1.JPG"> 
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/5k5IRAPk2OhU-Iv7CM0MhQ?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                <h5> Flag examples part2 </h5>
+                <pre><code class="hljs"  text-align: left>
+int number1 = 23;
+int number2 = -145;
+double number3 = 12321.345;
+double number4 = -99.9;
+
+System.out.printf("5: %010d, 2: %010d, 3: %010f, 4: %010f\n",
+                  number1, number2, number3, number4);
+System.out.printf("6: %,d, 2: %,d, 3: %,f, 4: %,f\n",
+                  number1, number2, number3, number4);
+System.out.printf("7: %(d, 2: %(d, 3: %(f, 4: %(f\n",
+                  number1, number2, number3, number4);
+System.out.printf("8: %+(d, 2: %+(d, 3: %+(f, 4: %+(f\n",
+                  number1, number2, number3, number4);
+System.out.printf("9: %(+d, 2: %(+d, 3: %(+f, 4: %(+f\n",
+                  number1, number2, number3, number4);
+                </code></pre>     
+                    <img class="plain" src="../ws_week4/images/ws4example2pt2.JPG"> 
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/Z3fg6GFg3TGUDFcouYkKtw?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                <h6>Width and precision</h6>
+                <small>
+                    Width is the minimum number of spaces to use when outputting a value<br>
+                    Precision is the number of decimal places after the decimal point in floating point numbers. For strings, precision is the maximum number of characters to be output
+                </small>
+                <pre><code class="hljs"  text-align: left>
+#Example 3
+String s1 = "Hello Out There!";
+String s2 = "hi";                   
+int n1 = 13;
+double d1 = 123.4567;                           
+System.out.printf("s1: %s, s2: %s, n1: %d d1: %f\n",s1, s2, n1, d1);
+System.out.printf("s1: %10s, s2: %10s, n1: %10d d1: %10f\n",s1, s2, n1, d1);
+System.out.printf("s1: %-10s, s2: %-10s, n1: %-10d d1: %-10f\n", s1, s2, n1, d1);
+System.out.printf("s1: %10.3s, s2: %10.3s, n1: %10d d1: %10.3f\n",s1, s2, n1, d1);
+System.out.printf("s1: %3.10s, s2: %3.10s\n", s1, s2);
+                </code></pre>
+                <img class="plain" src="../ws_week4/images/example3out.JPG">                 
+                </section>
+                <section>
+                    <iframe src="https://paiza.io/projects/e/_wGZrcBWm4-ipYbA8sdq2A?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
+                <section>
+                    <section>
+                    <h5> Your turn... </h5>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                        <img class="plain" src="../ws_week4/images/Task4a.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+12 34.5678 Howdy!
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4b.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+This is an int: 12.
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4c.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+This is an int: 12.This is an int: 12.
+                        </code></pre>
+                    </div>
+                    </section>
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> <br>
+                    <img class="plain" src="../ws_week4/images/Task4d.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+12, 12
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4e.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+12, 24
+                        </code></pre>
+                    </div>
+                    </section>                 
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4f.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+12, 24, 12, 36
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4g.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+        12, 24
+                        </code></pre>
+                    </div>
+                    </section>
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4h.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+        12,         24|
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4i.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+12        , 24        |
+                        </code></pre>
+                    </div>
+                    </section>
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4j.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+0000000012, 0000000024|
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4k.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+ 12.000000,  34.567800|
+                        </code></pre>
+                    </div>
+                    </section> 
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4l.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+     12.00,      34.57|
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4m.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+ 120000.00,  345678.00|
+                        </code></pre>
+                    </div>
+                    </section>                     
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4n.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+120,000.00, 345,678.00|
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4o.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+12,000,000.00, 34,567,800.00|
+                        </code></pre>
+                    </div>
+                    </section> 
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4p.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
++12.000000, +34.567800|
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4q.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+    Howdy!,   Hi There,      Hello
+                        </code></pre>
+                    </div>
+                    </section>                     
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4r.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+     Hello,     Howdy!,   Hi There
+                            </code></pre>
+                        </div>
+                    <img class="plain" src="../ws_week4/images/Task4s.JPG"> <br>
+                    <div class="fragment fade-up">
+                        <pre><code class="hljs" text-align: left>
+  Hi There,      Hello,     Howdy!
+                        </code></pre>
+                    </div>
+                    </section>                     
+                    <section>
+                    <img class="plain" src="../ws_week4/images/Task4.JPG"> 
+                    <img class="plain" src="../ws_week4/images/Task4t.JPG"> <br>
+                        <div class="fragment fade-up">
+                            <pre><code class="hljs" text-align: left>
+Hi There  , Hello     , Howdy!  
+                            </code></pre>
+                        </div>
+                    </section>                                                              
+                </section>               
+                <section>
+                <iframe src="https://paiza.io/projects/e/DDYZ4rg_JHACtEuEpWpkww?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+                </section>
                 
+                
+                      
                 <!-- test quiz
                 <section>
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/f3458955fac214cbc578f2ffa205d236/5df116a1e527' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>

@@ -318,7 +318,7 @@ body {
 .reveal small {
   display: inline-block;
   font-size: 0.7em;
-  line-height: 1.3em;
+  line-height: 1em;
   vertical-align: top; }
 
 .reveal small * {
