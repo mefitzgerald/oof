@@ -45,6 +45,620 @@
 						<small>Press SHIFT ? for help</small>                       
 					</p>              
                 </section>
+                <section>
+                <h6>Testing</h6>
+                <small>Testing strategies can be classified broadly as either black-box or white-box testing.</small><br>
+                                <h5>White box Testing</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week5/images/ws5whitebox.jpg">
+                    </div>
+                    <div class="col">
+                    <blockquote>
+                        <b>White-box testing</b> focuses on the internal workings of the unit/system.  The test data is derived from the paths of execution.
+                    </blockquote>
+                    </div>
+                </div>
+                </section>
+                <section>
+                <h5>Black box Testing</h5>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week5/images/ws5blackbox.JPG">
+                    </div>
+                    <div class="col">
+                    <blockquote>
+                        <b>Black-box testing</b> focuses on the input(s) to and output(s) from a unit or system to ensure the expected outputs are produced for given inputs. No attention is paid to the internal working of the unit/system.
+                    </blockquote>
+                    </div>
+                </div>
+                <small>
+                <br>
+                    In this workshop we will look at two black-box testing strategies:<br>
+                    1.	Testing each category of input<br>
+                    2.	Testing boundary values
+                </small>
+                </section>                
+                <section>  
+                    <h5>Category Testing</h5>
+                    <blockquote>
+                        In category testing we decide what kinds of values are to be dealt with<br>and test each category. 
+                    </blockquote>
+                    <img class="plain" src="../ws_week5/images/ws5category.JPG">
+                    <span class="redText" >This form of testing is also called equivalence partitioning and the categories called equivalence classes.</span>
+                </section>                
+                 <section>  
+                <div class="flexcontainer">
+                    <div class="col">
+                        <h5>Category Testing Example</h5>
+                        <small>
+                            In this case we have two categories: positive values and non-positive values.  <br><br>To category test we would then pick a representative value from each category and run the program with it, and check the result against the expected output.<br><br>   
+                        </small>                         
+                    </div>
+                    <div class="col2">  
+                        <img class="plain" src="../ws_week5/images/ws5ex1.JPG">  
+                        <img class="plain" src="../ws_week5/images/ws5ex1pt3.JPG"> 
+                    </div>  
+                </div>                      
+                </section>                
+                <section>
+                <h5>Your turn...</h5>                
+                <div class="flexcontainer">
+                    <div class="col">
+                        <small>
+                            Consider a program which reads a mark between 0 and 100 inclusive from the user and outputs the equivalent grade. <br><br>Develop some category test cases for this problem.
+                        </small>
+                    </div>
+                    <div class="col">
+                        <img  src="../ws_week5/images/ws5task1.JPG"> 
+                    </div>
+                </div>
+                <br><h5>Example catagories</h5> 
+                <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">             
+                </section>    
+                <section>    
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category U</td>
+                                <td>-22</td>
+                                <td>“Enter a value between 0-100 inclusive” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category F</td>
+                                <td>22</td>
+                                <td>“Grade is F” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>                         
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category D</td>
+                                <td>53</td>
+                                <td>“Grade is D” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>                         
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category C</td>
+                                <td>67</td>
+                                <td>“Grade is C” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>                         
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category B</td>
+                                <td>75</td>
+                                <td>“Grade is B” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>                         
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category A</td>
+                                <td>99</td>
+                                <td>“Grade is A” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>       
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category 0</td>
+                                <td>122</td>
+                                <td>“Enter a value between 0-100 inclusive” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>   
+                    <section>    
+                    <h5>Your turn...</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task1demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Category DT</td>
+                                <td>"ninty"</td>
+                                <td>“Invalid data type” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>   
+                </section>   
+                <section>  
+                    <h5>Boundary value testing</h5>
+                    <blockquote>
+                        An input value is a boundary value if it is a value at which the program changes behaviour.
+                    </blockquote>
+                    <img class="plain" src="../ws_week5/images/boundrydemo.jpg"><br>
+                    <span class="redText" >In boundary value testing we identify the boundary values and test the program for those values.  Boundary value testing usually involves the boundaries between equivalence classes.</span>
+                </section>                        
+                <section>  
+                <div class="flexcontainer">
+                    <div class="col">
+                        <h5>Boundry Testing Example</h5>
+                        <small>
+                            In this case we expect the program’s behaviour to change at the point between the equivalence class for positive values and the equivalence class for non-positive values. <br><br> To boundary test we would then pick boundary values of 1 and 0, and run the program with these values and check the results against the expected outputs.
+                        </small>                         
+                    </div>
+                    <div class="col2">  
+                        <img class="plain" src="../ws_week5/images/ws5ex2.JPG">  
+                        <img class="plain" src="../ws_week5/images/ws5ex2pt2.JPG"> 
+                    </div>  
+                </div>   
+                </section>                
+                <section>
+                <h5>Your turn...</h5>                
+                <div class="flexcontainer">
+                    <div class="col">
+                        <small>
+                            Consider a program which reads a mark between 0 and 100 inclusive from the user and outputs the equivalent grade. <br><br>What are the boundary value tests for this program?  <i>Note each boundary value in the table makes up a test case.</i>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <img  src="../ws_week5/images/ws5task1.JPG"> 
+                    </div>
+                </div>
+                <br><h5>Example boundries</h5> 
+                <img class="plain" src="../ws_week5/images/ws5boundry.jpg">             
+                </section> 
+                <section>    
+                    <section>    
+                    <h5>Max-/Max Boundries for Lower Invalid Values</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max-</td>
+                                <td>-2</td>
+                                <td>“Enter a value between 0-100 inclusive” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max</td>
+                                <td>-1</td>
+                                <td>“Enter a value between 0-100 inclusive” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>  
+                    <section>    
+                    <h5>Min/Min+ Boundries for F</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min Test</td>
+                                <td>0</td>
+                                <td>“Grade is F” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min+ Test</td>
+                                <td>1</td>
+                                <td>“Grade is F” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                    <section>    
+                    <h5>Max-/Max Boundries for F</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max- Test</td>
+                                <td>48</td>
+                                <td>“Grade is F” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max Test</td>
+                                <td>49</td>
+                                <td>“Grade is F” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                    <section>
+                    <h5>Your turn .. Min/Min+ Boundries for D</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min Test</td>
+                                <td>50</td>
+                                <td>“Grade is D” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min+ Test</td>
+                                <td>51</td>
+                                <td>“Grade is D” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                    <section>    
+                    <h5>Your turn .. Max-/Max Boundries for D</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max- Test</td>
+                                <td>58</td>
+                                <td>“Grade is D” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max Test</td>
+                                <td>59</td>
+                                <td>“Grade is D” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>      
+
+                    <section>
+                    <h5>Your turn .. Min/Min+ Boundries for C</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min Test</td>
+                                <td>60</td>
+                                <td>“Grade is C” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min+ Test</td>
+                                <td>61</td>
+                                <td>“Grade is C” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                    <section>    
+                    <h5>Your turn .. Max-/Max Boundries for C</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max- Test</td>
+                                <td>68</td>
+                                <td>“Grade is C” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max Test</td>
+                                <td>69</td>
+                                <td>“Grade is C” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>    
+ 
+                    <section>
+                    <h5>Your turn .. Min/Min+ Boundries for A</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min Test</td>
+                                <td>80</td>
+                                <td>“Grade is A” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min+ Test</td>
+                                <td>81</td>
+                                <td>“Grade is A” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                    <section>    
+                    <h5>Your turn .. Max-/Max Boundries for A</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max- Test</td>
+                                <td>99</td>
+                                <td>“Grade is A” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Max Test</td>
+                                <td>100</td>
+                                <td>“Grade is A” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>   
+                     <section>
+                    <h5>Your turn .. Min/Min+ for Upper Invalid Values</h5> 
+                    <img class="plain" src="../ws_week5/images/ws5task2demo.jpg">  
+                    <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min Test</td>
+                                <td>101</td>
+                                <td>“Enter a value between 0-100 inclusive” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                        <br>
+                        <div class="fragment fade-up">
+                            <table class = "standardtable">
+                              <tr>
+                                <th>Test description</th>
+                                <th>Input value</th>
+                                <th>Expected result</th>
+                              </tr>
+                              <tr>
+                                <td>Min+ Test</td>
+                                <td>102</td>
+                                <td>“Enter a value between 0-100 inclusive” is output to screen</td>
+                              </tr>
+                            </table>  
+                        </div>
+                    </section>
+                </section>
+                <section>
+                <h5>Unit Testing</h5>
+                    <blockquote>
+                        In unit testing we test each method in the program separately.  Sometimes we write small programs in order to test particular methods or classes during the development process.  Such programs are referred to as driver programs (or drivers).
+                    </blockquote><br>
+                    <img class="plain" src="../ws_week5/images/junit5-banner.png">
+                </div>
+                </section>                  
             </div>
 		</div>
 
