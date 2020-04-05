@@ -3,6 +3,9 @@
 ## Index
 [Workshop 1](https://mefitzgerald.github.io/oof/ws_week1/#/)  
 [Workshop 2](https://mefitzgerald.github.io/oof/ws_week2/#/)  
+[Workshop 3](https://mefitzgerald.github.io/oof/ws_week3/#/)  
+[Workshop 4](https://mefitzgerald.github.io/oof/ws_week4/#/)  
+[Workshop 5](https://mefitzgerald.github.io/oof/ws_week5/#/)  
 
 ## Support   
 The presentations are built with Reveal.js, with documentation located at;   
