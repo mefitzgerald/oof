@@ -381,7 +381,7 @@ public void displayAll()
                 </section>                
                  <section>    
                 <h5>Putting it all together</h5>               
-                <img class="plain" src="../ws_week6/images/finalCircle.png" height="550" width="auto">                        
+                <img class="plain" src="../ws_week6/images/finalcircle.png" height="550" width="auto">                        
 
                 </section>                     
                 <section>    
@@ -841,6 +841,12 @@ public String toString()
                 </div>
                 </section> 
                 <section>    
+                <h5>Putting it all together</h5>  
+                <small>(Zoom in and out with Alt-click)</small>
+                <img class="plain" src="../ws_week6/images/mcresults.png" height="550" width="auto">                        
+
+                </section> 
+                <section>    
                     <iframe src="https://www.codiva.io/p/6ad05356-93a8-49fb-9a6c-127e9082406c" width="100%" height="600" seamless="seamless" overflow: hidden;></iframe>
                 </section>                                 
                 <section>
@@ -907,13 +913,30 @@ public String toString()
                 </section> 
                 <section> 
                 <h6>Command Line Arguments</h6>
-                <iframe height="550px" width="100%" src="https://repl.it/@mefitzgerald/argstest?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				<pre><code class="hljs"  text-align: left>
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Number of args: "+args.length);
+    int argsLength = +args.length;  //The .length method will return an int so
+    System.out.println(argsLength);   
+    System.out.println("First Arg: "+args[0]);
+    System.out.println("Second Arg: "+args[1]);
+  }
+}
+                </code></pre>  
+                <small> Command Line & Output</small><br>
+                    <img class="plain" src="../ws_week6/images/argsoutput.JPG">  
                 </section> 
                 <section> 
                     <h6>Binary Files</h6> 
                     <small>A binary file is a file that contains data in machine-readable form.</small>
                     <img class="plain" src="../ws_week6/images/hexedit.png">                
                 </section> 
+                <section> 
+                <h6>Reading Binary Files</h6>
+                <iframe src="https://repl.it/@mefitzgerald/BinaryRead?lite=true" width="100%" height="500" seamless="seamless" overflow: hidden;></iframe>
+                </section> 
+             
                 <section> 
                     <h6>Hex Editors</h6>
                     <small>A hex editor is a computer program used to view and edit binary files. </small>
