@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 6">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop 6</title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 6</h3>
+					<p>
+						<small>Press SHIFT ? for help</small> <br>                      
+						<small>Press f for fullscreen</small> <br>                      
+						<small>Press CAPS for pointer</small>                       
+					</p>              
+                </section>
+                <section>
+                <h6>Defining Classes</h6>
+                <small>Remember that generally, the steps to define a class are ;</small><br>
+                    <ol>
+                      <li>Sketch a model of the class</li>
+                      <li>Define the class header</li>
+                      <li>Define the attributes</li>
+                      <li>Define the constructors</li>
+                      <li>Define the methods</li>
+                    </ol> 
+                </section>   
+                <section>   
+                <h5>Sketch a model of the class</h5>
+                <img class="plain"  src="../ws_week6/images/task1circleclass.JPG" width="40%" height="40%"><br>
+
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="fragment fade-up">private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void displayAll()</span></td>
+                    </tr>
+                </table>                   
+                </section>                 
+                <section>    
+                <h5>Define the class header</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public class Circle
+{
+
+}
+                </code></pre>                                  
+                </section>    
+                <section>    
+                <h5>Define the attributes</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="redText" >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public class Circle
+{
+    private double radius;
+}
+                </code></pre>                                  
+                </section>  
+                <section>    
+                <h5>Define the constructors</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText" >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public class Circle
+{
+    private double radius;
+    public Circle(double theRadius)
+    {
+        radius = theRadius;
+    }
+}
+                </code></pre>                                  
+                </section> 
+                <section>    
+                <h5>Define the methods</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public void displayRadius()
+{
+    System.out.println("Radius: " + radius);
+}
+                </code></pre>                                  
+                </section> 
+                <section>    
+                <h5>Define the methods</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public void displayDiameter()
+{
+    double diameter = 2 * radius;
+    System.out.println("Diameter: " + diameter);
+}
+                </code></pre>                                  
+                </section> 
+                <section>    
+                <h5>Define the methods</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public void displayPerimeter()
+{
+    double perimeter = 2 * Math.PI * radius;
+    System.out.println("Perimeter: " + perimeter);
+}
+                </code></pre>                                  
+                </section> 
+                <section>    
+                <h5>Define the methods</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public void displayArea()
+{
+    double area = Math.PI * radius * radius;
+    System.out.println("Area: " + area);
+}
+                </code></pre>                                  
+                </section> 
+                <section>    
+                <h5>Define the methods</h5>
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">Circle</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double radius</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public Circle(double theRadius)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void displayRadius()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayDiameter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayPerimeter()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayArea()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void displayAll()</span></td>
+                    </tr>
+                </table> 
+				<pre><code class="hljs"  text-align: left>
+public void displayAll()
+{
+    displayRadius();
+    displayDiameter();
+    displayPerimeter();
+    displayArea();
+}
+                </code></pre>                                  
+                </section>                
+                 <section>    
+                <h5>Putting it all together</h5>               
+                <img class="plain" src="../ws_week6/images/finalCircle.png" height="550" width="auto">                        
+
+                </section>                     
+                <section>    
+                    <iframe src="https://www.codiva.io/p/81d04e78-54b1-49e3-a691-b91704c26090" width="100%" height="600" seamless="seamless" overflow: hidden;></iframe>
+                </section> 
+                <section>    
+                <h5>Your Turn... The MoneyCard Class</h5>   
+                <img  src="../ws_week6/images/task2moneycardclass.JPG"><br>               
+                <small>Remember that generally, the steps to define a class are ;</small><br>
+                    <ol>
+                      <li>Sketch a model of the class</li>
+                      <li>Define the class header</li>
+                      <li>Define the attributes</li>
+                      <li>Define the constructors</li>
+                      <li>Define the methods</li>
+                    </ol> 
+                </section>   
+                <section>   
+                <h5>Sketch a model of the class</h5>
+                <img class="plain"  src="../ws_week6/images/task2moneycardclass.JPG" width="70%" height="70%"><br>
+
+                <table class="classtable" width=50%>
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="fragment fade-up">private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="fragment fade-up">private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="fragment fade-up">private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="fragment fade-up">private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span class="fragment fade-up">public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="fragment fade-up">public String toString()</span></td>
+                    </tr>
+                </table>                   
+                </section>   
+                <section>   
+                <h5>Define the class header</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span>private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span>public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public class MoneyCard
+{
+    //Class Attributes, Constructors and Methods to go here
+}
+                    </code></pre>    
+                </div>
+                </section>    
+                <section>   
+                <h5>Define the attributes</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="redText">private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="redText">private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="redText">private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span class="redText">private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span>public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public class MoneyCard
+{
+    private String cardNumber;
+    private String customerName;
+    private String currency;
+    private double balance;
+    
+    //Class Constructors and Methods to go here
+}
+                    </code></pre>    
+                </div>
+                </section>   
+                <section>   
+                <h5>Define the constructors</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span class="redText" >public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table> 
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>  
+    public MoneyCard(String cardNo, String custName, String currType)
+    {
+        this.cardNumber = cardNo;
+        this.customerName = custName;
+        this.currency = currType;
+        this.balance = 0;    
+    }
+                    </code></pre>    
+                </div>
+                </section> 
+                <section>   
+                <h5>Define the methods</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span >public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public void addFunds(double amount)
+{
+    if (amount &gt;= 0)
+    {
+        System.out.println(amount + " is not a valid amount to add!");
+    } 
+    else
+    {
+        balance = balance + amount;
+    }
+}
+                    </code></pre>    
+                </div>
+                </section>  
+                <section>   
+                <h5>Define the methods</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span >public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public void makePurchase(double amount)
+{
+    if (amount &lt;= 0)
+    {
+      System.out.println("Not a valid amount");
+    } else if (amount > balance)
+    {
+        System.out.println("Not enough funds");
+    } else
+    {
+        balance -= amount;
+    }
+}
+                    </code></pre>    
+                </div>
+                </section>  
+                <section>   
+                <h5>Define the methods</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span >public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public double getBalance()
+{
+    return balance;
+}
+                    </code></pre>    
+                </div>
+                </section> 
+                <section>   
+                <h5>Define the methods</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span >public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public void displayMoneyCard()
+{
+    System.out.println("MoneyCard details: "
+                       + "\n\tcardNumber: " + cardNumber
+                       + "\n\tcustomerName: " + customerName
+                       + "\n\tcurrency: " + currency
+                       + "\n\tbalance: " + balance);
+}
+                    </code></pre>    
+                </div>
+                </section> 
+                <section>   
+                <h5>Define the methods</h5>
+                <table class="classtable">
+                    <tr>
+                        <th class="classtable">MoneyCard</th>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String cardNumber</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String customerName</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private String currency</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtable"><span >private double balance</span></td>
+                    </tr>
+                    <tr class="classtablemethods">
+                        <td class="classtablemethods" ><span >public MoneyCard(String cardNo, String custName, String currType)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void addFunds(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void makePurchase(double amount)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span>public double getBalance()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span >public void displayMoneyCard()</span></td>
+                    </tr>
+                    <tr>
+                        <td class="classtablemethods"><span class="redText">public String toString()</span></td>
+                    </tr>
+                </table>                   
+                <div class="fragment fade-up">
+                    <pre><code class="hljs"  text-align: left>
+public String toString()
+{
+    return "MoneyCard{" +
+      "cardNumber='" + cardNumber + '\'' +
+      ", customerName='" + customerName + '\'' +
+      ", currency='" + currency + '\'' +
+      ", balance=" + balance +
+      '}';
+}
+                    </code></pre>    
+                </div>
+                </section> 
+                <section>    
+                    <iframe src="https://www.codiva.io/p/6ad05356-93a8-49fb-9a6c-127e9082406c" width="100%" height="600" seamless="seamless" overflow: hidden;></iframe>
+                </section>                                 
+                <section>
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Assignment B Concepts</h3>
+                </section>
+                <section>
+                <h6>Memory Units</h6>
+                <small>Memory (in bytes) can be defined in both decimal and binary units.</small><br>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week6/images/tablemem.JPG">   
+                    </div>
+                    <div class="col">
+                        <small>Conversion example</small><br>
+                        <blockquote>
+                            Bytes to MiB <br>
+                            78964367 bytes = 78964367/1024<sup>2</sup><br>
+                            78964367 bytes = 75.31 MiB<br>                          
+                        </blockquote>
+                    </div>
+                </div> 
+                </section> 
+                <section>
+                <h6>Hexadecimal numbers</h6>
+                <div class="flexcontainer">
+                    <div class="col">
+                        <img class="plain" src="../ws_week6/images/numchart.jpg">   
+                    </div>
+                    <div class="col">
+                        The hexadecimal numeral system, often shortened to "hex", is a numeral system made up of 16 symbols (base 16). <br><br>
+                        The standard numeral system is called decimal (base 10) and uses ten symbols: 0,1,2,3,4,5,6,7,8,9. <br><br>
+                    </div>
+                </div> 
+                </section> 
+                <section> 
+                <h6>Printing Hexadecimal</h6>
+                
+                <small> Print f formatting with the Hex format specifier</small>
+                <blockquote>
+                    int i = 14;<br>
+                    System.out.printf("%x \n", i); <br>
+                    OUTPUTS:  e
+                </blockquote>
+                <br>
+                <small>Using the Integer and Long classes that belongs to the java.lang package, which means any class is free to use the methods in this class without importing any package.</small>
+                <blockquote>                
+                long l = 1234;<br>
+                    System.out.println(Long.toHexString(l)) ;<br>
+                    OUTPUTS:  4d2
+                </blockquote>                
+                </section> 
+                <section>    
+                <h6>Integer Class</h6>
+                    <iframe src="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#toHexString-int-" width="100%" height="500" seamless="seamless" overflow: hidden;></iframe>
+                </section>                
+                <section>   
+                <h6>Long Class</h6>
+                    <iframe src="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html#toHexString-long-"  width="100%" height="500" seamless="seamless" overflow: hidden;></iframe>
+                </section>
+                <section>    
+                    <iframe src="https://www.codiva.io/p/24f3946a-491f-4882-bf94-a2cbd4c43f44" width="100%" height="600" seamless="seamless" overflow: hidden;></iframe>
+                </section> 
+                <section> 
+                <h6>Command Line Arguments</h6>
+                <iframe height="550px" width="100%" src="https://repl.it/@mefitzgerald/argstest?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                </section> 
+                <section> 
+                    <h6>Binary Files</h6> 
+                    <small>A binary file is a file that contains data in machine-readable form.</small>
+                    <img class="plain" src="../ws_week6/images/hexedit.png">                
+                </section> 
+                <section> 
+                    <h6>Hex Editors</h6>
+                    <small>A hex editor is a computer program used to view and edit binary files. </small>
+                    <iframe src="https://hexed.it/"  width="100%" height="500" seamless="seamless" overflow: hidden;></iframe>
+                </section>
+                <!-- example of full page site embed. handy as!
+                    <section data-background-iframe="https://www.browxy.com/user/mefitzy/ws6t1" data-background-interactive>    
+                    </section>                      
+                -->           
+            </div>
+		</div>
+
+
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/mouse-pointer/mouse-pointer.js', async: true },
+                    { src: '../plugin/menu/menu.js' }
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>

@@ -271,6 +271,40 @@ body {
 .reveal table tbody tr:last-child td {
   border-bottom: none; }
   
+ .reveal table.classtable  {
+    font-size: 0.6em;
+    line-height: 0.95;
+    padding: 5px;
+    margin: auto;
+    table-layout: auto;
+    white-space: nowrap;
+    border: 1px solid;
+}
+
+.reveal table.classtable th
+{
+    color: white;
+    background-color: black;
+    line-height: 1;
+    padding: 6px;
+    text-align:center;
+}
+
+.reveal table.classtable td {
+    text-align: left;
+    padding: 0.05em 0.2em 0.05em 0.2em;
+    border: 1px solid; }
+    
+.reveal table.classtablemethods td, 
+.reveal table.classtablemethods tr {
+    text-align: left;
+    colour: red;
+    padding: 0.05em 0.2em 0.05em 0.2em;
+    border: 1px solid grey; 
+    background-color: grey;    
+    } 
+    
+  
  .reveal table.condensedtable  {
     font-size: 0.6em;
     line-height: 0.95;
@@ -458,8 +492,10 @@ body {
 }
 .col{
     flex: 1;
+    margin: auto;
 }
 
 .col2{
     flex: 2;
+    margin: auto;
 }
