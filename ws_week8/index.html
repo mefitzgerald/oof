@@ -106,14 +106,345 @@ public class Employee
 				</code></pre> 
 				</section>
 				<section>	  
-				<h6>More Javadoc tags</h6>
-				<iframe src="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#tag" width="100%" height="600" seamless="seamless" overflow: hidden;></iframe>			
-                </section> 
+				<h5>More Javadoc tags</h5>
+				<img src="../ws_week8/images/tags.JPG"><br>		
+                
+				<a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#tag">Click to view Tag conventions</a>
+				</section> 
                 <section>    
+				<h5>Documentation Example</h5>	
+				<pre><code class="hljs" text-align: left>				
+/**
+ * Represents an employee.
+ *
+ * @author Doug Lowe
+ * @version 1.5
+ * @since 1.0
+ */
+public class Employee
+{
+    private String lastName;
+    private String firstName;
+    private Double salary;
 
-                    <section data-background-iframe="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#tag" data-background-interactive>    
-                    </section>                      
-           
+    /**
+     * Creates an employee with the specified name.
+     *
+     * @param lastName  The employee’s last name.
+     * @param firstName The employee’s first name.
+     */
+    public Employee(String lastName, String firstName)
+    {
+        this.lastName = lastName;
+        this.firstName = firstName;
+    }
+
+    /**
+     * Gets the employee’s last name.
+     *
+     * @return A string representing the employee’s last
+     * name.
+     */
+    public String getLastName()
+    {
+        return this.lastName;
+    }
+
+    /**
+     * Sets the employee’s last name.
+     *
+     * @param lastName A String containing the employee’s
+     *                 last name.
+     */
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    /**
+     * Gets the employee’s first name.
+     *
+     * @return A string representing the employee’s first
+     * name.
+     */
+    public String getFirstName()
+    {
+        return this.firstName;
+    }
+
+    /**
+     * Sets the employee’s first name.
+     *
+     * @param firstName A String containing the
+     *                  employee’s first name.
+     */
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    /**
+     * Gets the employee’s salary.
+     *
+     * @return A double representing the employee’s salary.
+     */
+    public double getSalary()
+    {
+        return this.salary;
+    }
+
+    /**
+     * Sets the employee’s salary.
+     *
+     * @param salary A double containing the employee’s
+     *               salary.
+     */
+    public void setSalary(double salary)
+    {
+        this.salary = salary;
+    }
+}
+				</code></pre>
+                </section>    
+                <section>    
+				<h6>Generating the HTML</h6>
+				You can run javadoc on a single class or a whole package
+				<blockquote>
+					javadoc Employee.java
+				</blockquote>
+				<img class="plain" src="../ws_week8/images/buildjavadoc.JPG">
+				
+                </section>    
+                <section 
+					data-background-iframe="https://mefitzgerald.github.io/oof/javadocDemo/" data-background-interactive>    
+				</section>                                 
+				<section>   
+				<h6>Method Signatures</h6>	
+				<img class="plain" src="../ws_week8/images/signature.JPG">
+				</section>  
+				<section>   
+				<h5>Method Overloading</h5>	
+				<blockquote>
+					Within one class, you can have two (or more) definitions of a single method name. This
+					is called <strong>overloading</strong> the method name. 
+				</blockquote><br>
+				<h5>Method Overloading Rules</h5>	
+					<small>
+					When you overload a method name, any two definitions of the method name must have either different signatures, either; <br><br>
+					<div class="redText">
+						Different numbers of parameters <br>OR<br>
+						Parameters must be of differing types <br>OR<br>
+						The same types of parameters in a different order (ie int float, float int) 
+					</div>
+					</small>
+				</section>  
+				<section>    
+				<h6>Method Overloading Example</h6>
+				<pre><code class="hljs" text-align: left>
+public class MyClass { 
+  
+    // Overloaded sum(). This sum takes two int parameters 
+    public int sum(int x, int y) 
+    { 
+        return (x + y); 
+    } 
+  
+    // Overloaded sum(). This sum takes three int parameters 
+    public int sum(int x, int y, int z) 
+    { 
+        return (x + y + z); 
+    } 
+  
+    // Overloaded sum(). This sum takes two double parameters 
+    public double sum(double x, double y) 
+    { 
+        return (x + y); 
+    }  
+} 
+				</code></pre>
+				</section> 				
+				<section>    	
+					<iframe src="https://paiza.io/projects/e/fyEWsMGIS-l5Kxvvz67rqQ?theme=textmate" width="100%" height="600" scrolling="no" seamless="seamless"></iframe>				
+				</section>                                 
+				<section> 
+				<br>
+				<h5>Method Overloading Your turn...</h5>
+				Are these overloaded methods valid?<br>
+					<section> 
+					<br>
+					<pre><code class="hljs" text-align: left>
+int mymethod(int a, int b, float c)
+int mymethod(int var1, int var2, float var3)			
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Compile time error. Argument lists are exactly same. Both methods are having same number, data types and same sequence of data types.
+					</small>
+					</div>
+					<pre><code class="hljs" text-align: left>
+int mymethod(int a, int b)
+int mymethod(float var1, float var2)				
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: valid, as there are different types of parameters
+					</small>
+					</div>
+					</section> 
+					<section> 
+					<br>
+					<pre><code class="hljs" text-align: left>
+int mymethod(int a, int b)
+int mymethod(int num)
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: valid, as there are different number of parameters
+					</small>
+					</div>
+					<pre><code class="hljs" text-align: left>
+float mymethod(int a, float b)
+float mymethod(float var1, int var2)
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Perfectly fine. Valid case of overloading. Sequence of the data types of parameters are different, first method is having (int, float) and second is having (float, int).
+					</small>
+					</div>
+					</section>   
+					<section> 
+					<br>
+					<pre><code class="hljs" text-align: left>
+int mymethod(int a, int b)
+float mymethod(int var1, int var2)
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Compile time error. Argument lists are exactly same. Even though return type of methods are different, it is not a valid case. Since return type of method doesn’t matter while overloading a method.
+					</small>
+					</div>
+					<pre><code class="hljs" text-align: left>
+float mymethod(String a, float b)
+float mymethod(float var1, int varB)
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Perfectly fine. Valid case of overloading. Sequence of the data types of parameters are different, first method is having (String, float) and second is having (float, int).
+					</small>
+					</div>
+					</section> 					
+				</section>                                 
+				<section> 
+				<h5>Constructor Overloading</h5>	
+				<small>	
+					In Java, a constructor looks similar to a method but has no return type. 
+					Constructors can also be overloaded like Java methods. 
+					An overloaded constructor provides multiple ways to set up a new object.
+					Like method overloading, the overloaded constructors differ by the number, types and sequence of the parameters passed to them.
+					Remember a constructor with no parameter is the default constructor
+				</small>	
+				<pre><code class="hljs" text-align: left>
+public class Demo
+{
+	private String someString;
+
+	public Demo()
+	{
+		this.someString = "1";
+	}
+	public Demo(int Input)
+	{
+		this.someString = Integer.toString(Input);
+	}
+	public Demo(String Input)
+	{
+		this.someString= Input;
+	}
+	public Demo(Double Input)
+	{
+		this.someString= Double.toString(Input);
+	}
+}				
+				</code></pre>
+				
+				</section>                                 
+				<section>  
+				<h5>Constructor Gotcha!</h5>
+				<small>
+					When we don’t implement any constructor, the java compiler inserts the default constructor into our code during compilation, 
+					however if we implement any constructor then compiler doesn’t generate a default constructor, which can cause errors if a no argument object is created.
+				</small>
+				<pre><code class="hljs" text-align: left>
+public class Demo
+{
+	private String someString;
+	this.someString = "1";
+	}
+	public Demo(int Input)
+	{
+		this.someString = Integer.toString(Input);
+	}
+  
+	public static void main(String args[])
+	{
+		//This statement would invoke no-arg constructor
+		Demo obj = new Demo();
+	}
+}	
+</code></pre>			
+				</section>  
+				<section>    
+					<iframe src="https://paiza.io/projects/e/RLYyH8D0hjgX8fCHwAoF4A?theme=textmate" width="100%" height="600" scrolling="no" seamless="seamless"></iframe>				
+				</section> 		
+				<section> 	 
+				<br>
+				<h5>Constructor Overloading Your turn...</h5>
+				Are these overloaded constructors valid?<br>
+					<section> 
+					<br>
+					<pre><code class="hljs" text-align: left>
+public MyObject(double a, int b, float c)
+public MyObject(double var1, int var2, float var3)			
+public MyObject(int var1, int var2, float var3)			
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Compile time error. Argument lists in the first 2 are exactly same. Both methods are having same number, data types and same sequence of data types.
+					</small>
+					</div>
+					<pre><code class="hljs" text-align: left>
+public MyObject(int a, int b)
+public MyObject(float var1, int var2)				
+public MyObject(int var2, float var1)				
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: valid, as there are different types of parameters in differet sequences
+					</small>
+					</div>
+					</section> 		
+					<section> 
+					<br>
+					<pre><code class="hljs" text-align: left>
+public MyObject(int a, int b)
+public MyObject(int var1, Double var2)
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Perfectly fine. Valid case of overloading. 
+					</small>
+					</div>
+					<pre><code class="hljs" text-align: left>
+public MyObject(String a, float b)
+public MyObject(String str1, float var1, int varB)
+public MyObject(float var1, int varB)
+					</code></pre>
+					<div class="fragment fade-up">
+					<small>
+						Result: Perfectly fine. Valid case of overloading.
+					</small>
+					</div>
+					</section> 					
             </div>
 		</div>
 

@@ -6,6 +6,9 @@
 [Workshop 3](https://mefitzgerald.github.io/oof/ws_week3/#/)  
 [Workshop 4](https://mefitzgerald.github.io/oof/ws_week4/#/)  
 [Workshop 5](https://mefitzgerald.github.io/oof/ws_week5/#/)  
+[Workshop 6](https://mefitzgerald.github.io/oof/ws_week6/#/)  
+[Workshop 8](https://mefitzgerald.github.io/oof/ws_week8/#/)  
+[Demo Javadoc](https://mefitzgerald.github.io/oof/javadocDemo/)
 
 ## Support   
 The presentations are built with Reveal.js, with documentation located at;   
@@ -17,4 +20,4 @@ https://github.com/rajgoel/reveal.js-plugins/
 
 ## Usage
 Feel free to fork your own copy, you will need to enable github pages via the Settings>GitHub Pages 
-menu and selct 'Master' as the source. I have it set up as a private repo with visabl github pages. 
+menu and selct 'Master' as the source. I have it set up as a private repo with visable github pages. 
