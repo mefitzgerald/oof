@@ -66,34 +66,54 @@
                 <section>
 				<h6>Javadoc description</h6>
 					A Javadoc comment is set off from code by standard multi-line comment tags <code>/*</code> and <code>*/</code>. The opening tag, has an extra asterisk, as in <code>/**</code>.
-					The first paragraph is a description of the method documented.
+				<pre><code class="hljs"  text-align: left>
+/**
+ * Represents an employee.
+ *
+ * @author Doug Lowe
+ * @version 1.5
+ * @since 1.0
+ */
+public class Employee
+{
+    private String lastName;
+    private String firstName;
+    private Double salary;
+				</code></pre> 
 				</section>
 				<section>
-				# Following the description are a varying number of descriptive tags, signifying:
-				## The parameters of the method (<code>@param</code>)
-				## What the method returns (<code>@return</code>)
-				## Any exceptions the method may throw (<code>@throws</code>)
-				## Other less-common tags such as <code>@see</code> (a "see also" tag)
+				<h6>Javadoc tags</h6>
+				Following the description are a varying number of descriptive tags, such as <strong>@param</strong> and <strong>@return</strong><br>
+				<pre><code class="hljs"  text-align: left>
+    /**
+     * Gets the employee’s last name.
+     *
+     * @return A string representing the employee’s last name.
+     */
+    public String getLastName()
+    {
+        return this.lastName;
+    }
+    /**
+     * Sets the employee’s last name.
+     *
+     * @param lastName A String containing the employee’s last name.
+     */
+	     public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+				</code></pre> 
 				</section>
-				<section>	
-                    <pre><code class="hljs"  text-align: left>
-public String toString()
-{
-    return "MoneyCard{" +
-      "cardNumber='" + cardNumber + '\'' +
-      ", customerName='" + customerName + '\'' +
-      ", currency='" + currency + '\'' +
-      ", balance=" + balance +
-      '}';
-}
-                    </code></pre>    
+				<section>	  
+				<h6>More Javadoc tags</h6>
+				<iframe src="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#tag" width="100%" height="600" seamless="seamless" overflow: hidden;></iframe>			
                 </section> 
                 <section>    
 
-                <!-- example of full page site embed. handy as!
-                    <section data-background-iframe="https://www.browxy.com/user/mefitzy/ws6t1" data-background-interactive>    
+                    <section data-background-iframe="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#tag" data-background-interactive>    
                     </section>                      
-                -->           
+           
             </div>
 		</div>
 
