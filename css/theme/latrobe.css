@@ -425,17 +425,28 @@ body {
   box-shadow: none;
   margin: 5px 0px;}
   
-.reveal section img.plainhalf {
+.reveal section img.plaineighty {
   border: 0;
   box-shadow: none;
   margin: 5px 0px;
-  height="50%"}
+  height: 80%;
+  width: 80%;
+  }
   
-.reveal section img.plainthird {
+.reveal section img.plainfifty {
+  border: 0;
+  box-shadow: none;
+  margin: 5px 0px;
+  height: 50%;
+  width: 50%;
+  }
+  
+.reveal section img.plainthirty {
   border: 0;
   box-shadow: none;
   margin: 5px 0px;
   height: 30%;
+  width: 30%;
   }
 
 .reveal a img {

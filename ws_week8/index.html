@@ -408,9 +408,9 @@ public MyObject(double var1, int var2, float var3)
 public MyObject(int var1, int var2, float var3)			
 					</code></pre>
 					<div class="fragment fade-up">
-					<small>
-						Result: Compile time error. Argument lists in the first 2 are exactly same. Both methods are having same number, data types and same sequence of data types.
-					</small>
+						<small>
+							Result: Compile time error. Argument lists in the first 2 are exactly same. Both methods are having same number, data types and same sequence of data types.
+						</small>
 					</div>
 					<pre><code class="hljs" text-align: left>
 public MyObject(int a, int b)
@@ -430,22 +430,218 @@ public MyObject(int a, int b)
 public MyObject(int var1, Double var2)
 					</code></pre>
 					<div class="fragment fade-up">
-					<small>
-						Result: Perfectly fine. Valid case of overloading. 
-					</small>
+						<small>
+							Result: Valid case of overloading, both constructors are of different types. 
+						</small>
 					</div>
 					<pre><code class="hljs" text-align: left>
 public MyObject(String a, float b)
 public MyObject(String str1, float var1, int varB)
+public MyObject(float var1, int varB, String str1)
 public MyObject(float var1, int varB)
 					</code></pre>
 					<div class="fragment fade-up">
-					<small>
-						Result: Perfectly fine. Valid case of overloading.
-					</small>
+						<small>
+							Result: Valid case of overloading, types and numbers of parameters are different.
+						</small>
 					</div>
 					</section> 					
-            </div>
+				</section> 					
+				<section> 	
+				<h6> Control Flow Statements Review</h6> 
+				<div class="flexcontainer">
+                    <div class="col">
+                        <img class="plaineighty" src="../ws_week8/images/flow.jpg">   
+                    </div>
+                    <div class="col">
+						<small>The statements inside your source files are generally executed from top to bottom, 
+						in the order that they appear. <br></small> <blockquote>Control flow statements, however, break up the flow 
+						of execution by employing decision making, looping, and branching, enabling your 
+						program to conditionally execute particular blocks of code.</blockquote>
+                    </div>
+                </div>
+				</section> 	
+				<section> 	
+				<h6> if-then Statement</h6>
+				It tells your program to execute a certain section of code only if a particular test evaluates to true.<br>
+					<pre><code class="hljs" text-align: left>
+String emotion = "happy";
+if(emotion.equalsIgnoreCase("happy")
+{
+	System.out.println("I am Happy");
+}
+					</code></pre>				
+				</section> 	
+				<section> 	
+				<h6> if-then-else Statement</h6>
+				The if-then-else statement provides a secondary path of execution when an "if" clause evaluates to false.<br>
+					<pre><code class="hljs" text-align: left>
+emotion = "sad";
+if(emotion.equalsIgnoreCase("happy"))
+{
+	System.out.println("I am Happy");
+}
+else
+{
+	System.out.println("I am Sad");
+}
+					</code></pre>				
+				</section> 
+				<section> 
+				<h6> else-if Statement</h6>
+				Use the else if statement to specify a new condition if the first condition is false<br>
+					<pre><code class="hljs" text-align: left>
+emotion = "excited";
+if(emotion.equalsIgnoreCase("happy"))
+{
+	System.out.println("I am Happy");
+}
+else if(emotion.equalsIgnoreCase("excited"))
+{
+	System.out.println("I am Excited");
+} 
+else
+{
+	System.out.println("I am Sad");
+}
+					</code></pre>				
+				</section> 	
+				<section> 	
+				<h6> Switch Statement</h6>
+				<small>
+					Unlike if-then and if-then-else statements, the switch statement can have a number of possible execution paths. 
+					A switch works with the byte, short, char, and int primitive data types. 
+					It also works with enumerated types, the String class, 
+					and a few special classes that wrap certain primitive types: Character, Byte, Short, and Integer.<br>
+				</small>
+					<pre><code class="hljs" text-align: left>
+String trafficLightColour = "yellow";
+String actionString;        
+switch (trafficLightColour) {
+	case "red":  actionString = "stop";
+			 break;
+	case "yellow":  actionString = "slow";
+			 break;
+	case "green":  actionString = "go";
+			 break;
+	default: actionString = "Invalid traffic light colour";
+			 break;
+}
+					</code></pre>				
+				</section> 				
+				<section> 
+					<iframe src="https://paiza.io/projects/e/Lo9XEHRLSj6xawucgiMulA?theme=textmate" width="100%" height="600" scrolling="no" seamless="seamless"></iframe>				
+				</section> 
+				<section> 	
+				<h6>Turnery operator</h6>
+				<small>
+					Is a condensed form of the if-else statement that also returns a value.	<br>
+					The ternary operator ?: in Java is the only operator which accepts three operands:
+				</small>				
+				<blockquote>variable = booleanExpression ? expression1 : expression2</blockquote>
+				<small>				
+					The very first operand must be a boolean expression, the second and the third operands can be any expression that returns some value. <br>
+					The ternary construct returns expression1 as an output if the first operand evaluates to true, expression2 otherwise.
+				</small>					
+					<pre><code class="hljs" text-align: left>
+Double number = -5.5;
+String result;
+
+result = (number > 0.0) ? "positive" : "not positive";
+System.out.println(number + " is " + result);
+					</code></pre>
+				</section>
+				<section> 	
+					<iframe src="https://paiza.io/projects/e/luN82cu3kla1MQvOYmk87A?theme=textmate" width="100%" height="600" scrolling="no" seamless="seamless"></iframe>
+				</section> 				
+				<section> 	
+				<h6>while loop</h6>
+				The while loop loops through a block of code as long as a specified condition (boolean) is true.<br>
+					<pre><code class="hljs" text-align: left>
+int count = 1;
+while (count < 6) //specified condition, evaluates to false when count = 6
+{
+	System.out.println("Count is: " + count);
+	count++;
+}
+//with break & continue
+count = 1;
+while (true) {
+	if(count > 5)
+	{
+		System.out.println("Break, breaks out of the loop");
+		break;
+	}
+	if(count == 3)
+	{
+		count++;
+		System.out.println("Continue starts the loop again");
+		continue;
+	}
+	System.out.println("Count is: " + count);
+	count++;
+}
+					</code></pre>				
+				</section> 			
+				<section> 	
+				<h6>do-while loop</h6>
+				This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.					
+				<pre><code class="hljs" text-align: left>
+int numeral = 1;
+do{
+	System.out.println("Count is: " + numeral);
+	numeral++;            
+}while(numeral < 6);
+					</code></pre>				
+				</section> 	
+				<section> 	
+				<h6>for loop</h6>
+				<small>Running the same code multiple times is called iteration. <br>This type of loop is so common that there is another statement, the for loop, that expresses it more concisely.</small>
+				<pre><code class="hljs" text-align: left>
+for (int i = 2; i <= 8; i += 2) 
+{
+    System.out.print(i + ", ");
+}
+System.out.println("Who do we appreciate?");
+					</code></pre>
+					<small>
+						For loops have three components in parentheses, separated by semicolons: <br> <span class ="redText">the initializer, the condition, and the update.</span><br>
+						1.The initializer runs once at the very beginning of the loop. (It is equivalent to the line before the while statement.)<br>
+						2.The condition is checked each time through the loop. If it is false, the loop ends. Otherwise, the body of the loop is executed (again).<br>
+						3.At the end of each iteration, the update runs, and we go back to step 2.	
+					</small>					
+				</section> 
+				<section> 	
+				<h6>for-each loop</h6>
+				There is also a "for-each" loop, which is used exclusively to loop through elements in an array:
+				<pre><code class="hljs" text-align: left>
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+//syntax (Variable type in array variable name : array name)
+for (String c : cars) 
+{
+  System.out.println(c);
+}
+					</code></pre>				
+				</section>				
+				<section> 	
+					<iframe src="https://paiza.io/projects/e/eXAodGRvZNVDVm4ncFmCRA?theme=textmate" width="100%" height="600" scrolling="no" seamless="seamless"></iframe>				</section> 	
+				<section> 
+					<h6>Nested Loops </h6>
+				<small>Like conditional statements, loops can be nested one inside the other. Nested loops allow you to iterate over two variables. For example, we can generate a “multiplication table” like this:</small>					
+				<pre><code class="hljs" text-align: left>
+for (int x = 1; x <= 10; x++) {
+    for (int y = 1; y <= 10; y++) {
+        System.out.printf("%4d", x * y);
+    }
+    System.out.println();
+}
+					</code></pre>	
+					<small>Each loop repeats their corresponding statements 10 times. The outer loop iterates from 1 to 10 only once, but the inner loop iterates from 1 to 10 each of those 10 times. As a result, the printf method is invoked 100 times.	</small>				
+				</section> 
+				<section> 	
+					<iframe src="https://paiza.io/projects/e/eOYSwBtahtT9M0Dr973DtA?theme=textmate" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>				</section> 				
+				</section>
+			</div>
 		</div>
 
 
