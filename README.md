@@ -8,6 +8,7 @@
 [Workshop 5](https://mefitzgerald.github.io/oof/ws_week5/#/)  
 [Workshop 6](https://mefitzgerald.github.io/oof/ws_week6/#/)  
 [Workshop 8](https://mefitzgerald.github.io/oof/ws_week8/#/)  
+[Workshop 9](https://mefitzgerald.github.io/oof/ws_week9/#/)  
 [Demo Javadoc](https://mefitzgerald.github.io/oof/javadocDemo/)
 
 ## Support   

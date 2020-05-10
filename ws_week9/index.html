@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 9">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop 9</title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 9</h3>
+					<p>
+						<small>Press SHIFT ? for help</small> <br>                      
+						<small>Press f for fullscreen</small> <br>                      
+						<small>Press CAPS for pointer</small>                       
+					</p>              
+                </section>
+				
+                <section>
+				<h6>Searching Arrays Part 1</h6>
+				<div class="flexcontainer">
+                    <div class="col2">
+                    <pre><code>
+public class IntArray
+{
+   private int[] values;
+
+   public IntArray(int size)
+   {
+      if (size > 0)
+      {
+         values = new int[size];
+      }
+      else
+      {
+         values = new int[10];
+      }
+
+      fillArray();
+   }
+
+   public void fillArray()
+   {
+      // random integers from 0 to 19 inclusive
+      for (int i = 0; i < values.length; ++i)
+      {
+         values[i] = (int)(Math.random()*20);
+      }
+   }
+
+   public void displayArray()
+   {
+      for (int i = 0; i < values.length; ++i)
+      {
+         System.out.print(values[i] + " ");
+      }
+      System.out.println();
+   }
+}
+					</code></pre>  				
+					</div>
+                    <div class="col">
+                        <small><span class="fragment" data-code-focus="2">Carefully look over the IntArray Class that allows manipulation of an array of integers.  
+						<br><br>Instance methods are provided to (re)populate an array with random numbers and display its contents.
+						<span class="fragment" data-code-focus="20-27"></span><span class="fragment" data-code-focus="29-36"></span>
+						<br><br>Further functionality is required, namely to search the array for a given value and to sort the array in ascending order.
+						<br><br>
+						(Zoom in and out with Alt-click)
+						</small><br>
+                    </div>
+                </div> 
+				</section>				
+				<section>	
+					<h6>Part 1 Searching an Array</h6>
+					<blockquote>To find a value in an unsorted array, we must start at the beginning and iterate through the array looking for the search key</blockquote>
+					<img class="plain" src="../ws_week9/images/valuesarr.JPG">
+					<li>For example, to search for the value 8 in the array above, start by looking at position 0, then 1, then 2 (where 8 is found)</li>
+					<li>To search for the value 2, start by looking at position 0, then 1, then 2, then 3, then 4, then 5, then 6, then 7</li>
+					<li>As there are no more elements in the array, that search was unsuccessful</li>					
+				</section>			
+				
+				<section>	
+				<h5>Task 1</h5>
+				<img class="plain" src="../ws_week9/images/task1q.JPG"><pre>
+public int search(int target)
+{<div class="fragment fade-up">		
+	for (int i = 0; i < values.length; i++)
+	{				</div><div class="fragment fade-up">
+		if (target == values[i])
+		{
+			return i;
+		}
+	}</div><div class="fragment fade-up">
+	return -1;	
+}</div></pre>	<small>Code long at home: </small>			
+				<a href="https://repl.it/@mefitzgerald/ws9skeleton" target="_blank"><small>https://repl.it/@mefitzgerald/ws9skeleton</small></a>
+				</section>				
+
+				<section>	
+				<h5>Task 2</h5>
+				<img class="plain" src="../ws_week9/images/task2q.JPG"><pre>
+public int searchLast(int target)
+{<div class="fragment fade-up">		
+	for (int i = values.length - 1; i >= 0; i--)
+	{				</div><div class="fragment fade-up">
+		if (target == values[i])
+		{
+			return i;
+		}
+	}</div><div class="fragment fade-up">
+	return -1;	
+}</div></pre></section>	
+				<section>
+				<h6>Part 2: Sorting an array</h6>
+				Sometimes we wish to sort an array so that the values in the array are organised in a specific order <br><br>
+				<img src="../ws_week9/images/sortarr.JPG">
+				</section>
+				
+				<section>
+				<h5>How do we sort it into numerical order?</h5>
+				<small>Many sort algorithms have been developed for example;</small>
+				<img class="plaineighty" src="../ws_week9/images/sort.gif">
+				<small>(Note we are not looking at efficiency of sorting algorithms or optimised solutions here – you will consider that in other subjects such as Algorithms and Data Structures)</small>
+				</section>
+
+				<section>
+                <div class="top">	
+				<h5>Bubble sort</h5>					
+				<img class="plaineighty" src="../ws_week9/images/bubblesort.JPG"><br>
+					</div>
+					<div class="bottom">
+					<p class="fragment step-fade-in-then-out">The array elements are in any order and we want to rearrange them into order from minimum to maximum (ascending order)</p>
+					<p class="fragment step-fade-in-then-out">So we repeatedly compare neighbouring elements and swap them if they are not in the correct order relative to each other.  After the first pass, the largest element is in the correct position (it has bubbled up into the last position) and does not need to be checked in the second pass.  </p>
+					<p class="fragment step-fade-in-then-out">After the second pass, the next largest element is also in the correct position (it has bubbled up into the second last position) and so on.</p>
+					<p class="fragment step-fade-in-then-out">The dark shaded area is the sorted part of the array which grows by 1 after each pass.</p>
+				</div>	
+				</section>				
+				<section>
+				<h5>Task 3</h5>
+				Show the passes in using bubble sort to sort the following array of strings in alphabetical order<br>
+				<img class="plain" src="../ws_week9/images/task3initial.JPG"><br>					
+				</section>	
+				<section>
+				<h5>First Pass</h5>
+				<img class="plain" src="../ws_week9/images/task31.JPG"><br>				
+				</section>					
+				<section>
+				<h5>Second Pass</h5>
+				<img class="plain" src="../ws_week9/images/task32.JPG"><br>				
+				</section>	
+				<section>
+				<h5>Third Pass</h5>
+				<img class="plain" src="../ws_week9/images/task33.JPG"><br>				
+				</section>					
+				<section>
+				<h5>Fourth Pass</h5>
+				<img class="plain" src="../ws_week9/images/task34.JPG"><br>			
+				And now the array is sorted :)
+				</section>				
+				<section>				
+				<h6>Algorithm for bubble sort</h6>
+				<img src="../ws_week9/images/bsalg.JPG"><br>	
+				</section>
+				<section>
+				<h6>Swapping elements in arrays</h6>
+				So sometimes we need to swap elements, for example, swap the values at index 1 and index 2<br><br>
+				<h5>Step 1</h5>
+				Copy the first value into the temporary store<br>
+				<img class="plain" src="../ws_week9/images/swap1.JPG"><br>
+				</section>
+				<section>
+				<h5>Step 2</h5>
+				Copy the second value into the position of the first value<br>
+				<img class="plain" src="../ws_week9/images/swap2.JPG"><br>
+				</section>
+				<section>
+				<h5>Step 3</h5>
+				Copy the temporary value into the position of the second value<br>
+				<img class="plain" src="../ws_week9/images/swap3.JPG"><br>
+				</section>	
+				<section>	
+				<h5>Task 4</h5>
+				Complete the code for the method swap<pre>
+private void swap(int index1, int index2)
+{<div class="fragment fade-up">		
+	int temp = values[index1];</div><div class="fragment fade-up">
+	values[index1] = values[index2]; </div><div class="fragment fade-up">
+	values[index2]= temp;
+}</div></pre></section>					
+				<section>	
+				<h5>Task 5</h5>
+				Complete the code for the method bubbleSort<pre>
+public void bubbleSort()
+{<div class="fragment fade-up">		
+	int n = values.length;</div><div class="fragment fade-up">
+        //outer loop for each pass
+        for(int i = 0; i < n; i++) {</div><div class="fragment fade-up">
+          //inner loop to iterate through arrap
+            for(int j=1; j < (n-i); j++) {</div><div class="fragment fade-up">
+			//compare array values
+            if(values[j-1] > values[j]) {
+			</div><div class="fragment fade-up">
+			swap(j,j-1);
+                }
+            }
+        }
+    }
+}</div></pre></section>		
+				<section>	
+				<h5>Note:</h5>
+				Skeleton code relevant to this workshop (IntArray.java and IntArrayTest.java)
+				can be copied from the csilib area into a suitable directory in your own latcs account if
+				you wish to test your code.
+				<pre>cp /home/1st/csilib/cse1oof/ws09/* .	</pre>		
+				</section>				
+				
+				<section>
+					<iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws9task1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>				
+				</section>				
+			</div>
+		</div>
+
+
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/mouse-pointer/mouse-pointer.js', async: true },
+                    { src: '../plugin/menu/menu.js' },
+					{
+					  src: '../plugin/reveal-code-focus/reveal-code-focus.js',
+					  async: true,
+					  callback: function() {
+						RevealCodeFocus();
+					  }
+					}
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>

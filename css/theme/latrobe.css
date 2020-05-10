@@ -73,6 +73,13 @@ body {
 }
 
 /*********************************************
+ * CODE HIGHLIGHTING
+ *********************************************/
+ 
+.line { display: block; }
+.line.focus { background: #4B4B4B; }
+
+/*********************************************
  * HEADINGS
  *********************************************/
 .reveal h1,
@@ -216,14 +223,17 @@ body {
 .reveal pre {
   display: block;
   position: relative;
-  width: 90%;
-  margin: 20px auto;
+  width: 98%;
+  margin: 10px auto;
+  padding: 10px;
   text-align: left;
-  font-size: 0.55em;
+  font-size: 0.65em;
   font-family: monospace;
-  line-height: 1.2em;
+  background: rgba(211,211,211, 0.8);
+  line-height: 1.1em;
   word-wrap: break-word;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+  color: black;
+  }
 
 .reveal code {
   font-family: monospace;
@@ -474,6 +484,14 @@ body {
     height:0px;
     line-height: 0px;
     font-size: 0px;}
+	
+.reveal .slides section .fragment.step-fade-in-then-out {
+	opacity: 0;
+	display: none; }
+	
+.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
+	opacity: 1;
+	display: inline; }
 
 /*********************************************
  * PROGRESS BAR
@@ -509,4 +527,28 @@ body {
 .col2{
     flex: 2;
     margin: auto;
+}
+
+.flexcontainerrow{
+    display: flex; 
+}
+.row
+    flex: 1;
+	flex-direction: row;
+    margin: auto;
+}
+
+.row{
+    flex: 2;
+	flex-direction: row;
+    margin: auto;
+}
+
+/* Split the screen in half */
+.top {
+  height: 50vh;
+}
+
+.bottom {
+  height: 50vh;
 }
