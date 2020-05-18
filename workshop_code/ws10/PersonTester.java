@@ -1,98 +1,102 @@
 import java.util.Scanner;
+
 public class PersonTester
 {
-  private Scanner kb;
-  private Person [ ] people;
-  private final int SIZE = 15;
-  private int current;
-  
-  //Task1
-  public PersonTester()
-  {
-    this.people = new Person[ SIZE ];
-    this.kb = new Scanner(System.in);
-  }
-  
-  //Task2
-  public void addPerson()
-  {
-    for(int i = 0; i < SIZE; i++)
+    private Scanner kb;
+    private Person[] people;
+    private final int SIZE = 15;
+    private int current;
+
+    //Task1
+    public PersonTester()
     {
-       if(people[i] == null)
-       {
-         System.out.println("Please enter person name:");
-         String name = this.kb.nextLine();
-         System.out.println("Please enter person phone:");
-         String phone = this.kb.nextLine();
-         people[i] = new Person(name, phone);
-         break;
-       }
+        this.people = new Person[SIZE];
+        this.kb = new Scanner(System.in);
+        this.current = 0;
     }
-  }
-  
-  public void display()
-  {
-    Boolean isEmpty = true;
-    for (Person p: this.people)
+
+    //Task2
+    public void addPerson()
     {
-      if(p != null)
-      {
-        System.out.println(p.getName() + " " + p.getPhone());
-        isEmpty = false;
-      }
+        for (int i = 0; i < SIZE; i++)
+        {
+            if (people[i] == null)
+            {
+                System.out.println("Please enter person name:");
+                String name = this.kb.nextLine();
+                System.out.println("Please enter person phone:");
+                String phone = this.kb.nextLine();
+                people[i] = new Person(name, phone);
+                current++;
+                break;
+            }
+        }
     }
-    if(isEmpty)
+
+    public void display()
     {
-      System.out.println("Array is empty");
+        boolean isEmpty = true;
+        for (Person p : this.people)
+        {
+            if (p != null)
+            {
+                System.out.println(p.getName() + " " + p.getPhone());
+                isEmpty = false;
+            }
+        }
+        if (isEmpty)
+        {
+            System.out.println("Array is empty");
+        }
     }
-  }
-  
-  public int search( Person p )
-  {
-    for(int i = 0; i < SIZE; i++)
+
+    public int search(Person p)
     {
-       if(people[i].getName().equals(p.getName()) && people[i].getPhone().equals(p.getPhone()))
-       {
-         return i;
-       }
+        for (int i = 0; i < current; i++)
+        {
+            if (people[i].getName().equals(p.getName()) && people[i].getPhone().equals(p.getPhone()))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
-    return -1;
-  }
-  
-  public Person removePerson( int index )
-  {
-    if (index < 0 || index > SIZE)
+
+    public Person removePerson(int index)
     {
-      System.out.println("ERROR:Invalid index");
-      return null;
+        if (index < 0 || index > SIZE)
+        {
+            System.out.println("ERROR:Invalid index");
+            return null;
+        }
+        else if (people[index] == null)
+        {
+            System.out.println("ERROR:Null index");
+            return null;
+        }
+        else
+        {
+            Person copyPerson = new Person(people[index]);
+
+            for (int i = index; i < SIZE - 1; i++)
+            {
+                people[i] = people[i + 1];
+            }
+            people[SIZE-1] = null;
+            return copyPerson;
+        }
     }
-    else if(people[index] == null)
+
+    public static void main(String[] args)
     {
-      System.out.println("ERROR:Null index");
-      return null;
+        PersonTester pt = new PersonTester();
+        pt.addPerson();
+        pt.display();
+        Person a = new Person("bob", "300");
+        System.out.println("Search result: " + pt.search(a));
+        pt.removePerson(22);
+        pt.removePerson(5);
+        System.out.println(pt.removePerson(0));
+        pt.display();
     }
-    else
-    {
-      Person copyPerson = new Person(people[index]);
-      
-      for(int i = index; i < SIZE-1; i++)
-      {
-        people[i] = people[i+1];
-      }
-      return copyPerson;
-    }
-  }
-  
-  public static void main( String [ ] args )
-  {
-    PersonTester pt = new PersonTester( );
-    pt.addPerson();
-    pt.display();
-    Person a = new Person("bob", "300");
-    System.out.println("Search result: " + pt.search(a));  /*
-    pt.removePerson(22);
-    pt.removePerson(5);
-    System.out.println(pt.removePerson(0));
-    pt.display();*/
-  }
 }

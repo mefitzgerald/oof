@@ -203,6 +203,135 @@ public class Person
 				<br><img  src="../ws_week10/images/skeleton.JPG">
 				</section>
 				<section>	
+					<h5>Task 1</h5>
+					<small>Write the java code for the PersonTester( ) constructor. This constructor should
+					instantiate the array and do any other initialization required</small><pre>
+public PersonTester()
+{<div class="fragment fade-up">		
+	this.people = new Person[SIZE];</div><div class="fragment fade-up">
+	this.kb = new Scanner(System.in); </div><div class="fragment fade-up">
+	this.current = 0;</div>
+}</pre></section>	
+				<section>	
+					<h5>Task 2</h5>
+					<small>Write the code for a method named addPerson. This method must check that there is
+					space in the array. If there is space in the array then the user is prompted (asked) to enter
+					the details of a Person, which is then added to the array</small><pre>
+public void addPerson()
+{<div class="fragment fade-up">	
+	for (int i = 0; i < SIZE; i++)
+	{</div><div class="fragment fade-up">
+		if (people[i] == null)
+		{
+			System.out.println("Please enter person name:");
+			String name = this.kb.nextLine();
+			System.out.println("Please enter person phone:");
+			String phone = this.kb.nextLine();
+			people[i] = new Person(name, phone);
+			current++;
+			break;
+		}
+	}</div>   
+}</pre></section>	
+				<section>	
+					<h5>Task 2 Option</h5>
+					<small>In this version we use the current variable to check if the array is full, 
+					and if not the object is added to the array</small><pre>
+public void addPerson()
+{<div class="fragment fade-up">	
+	if(current < SIZE)
+	{</div><div class="fragment fade-up">
+		System.out.println("Please enter person name:");
+		String name = this.kb.nextLine();
+		System.out.println("Please enter person phone:");
+		String phone = this.kb.nextLine();
+		people[i] = new Person(name, phone);
+		current++;
+	}</div>   
+}</pre></section>	
+				<section>	
+					<h5>Task 3</h5>
+					<small>Write the code for a method named display. This method displays the contents of the
+					people array. This method should display an appropriate message if there are no
+					Person objects in the array.</small><pre>
+public void display()
+{<div class="fragment fade-up">	
+	boolean isEmpty = true;
+	for (Person p : this.people)
+	{</div><div class="fragment fade-up">
+		if (p != null)
+		{
+			System.out.println(p.getName() + " " + p.getPhone());
+			isEmpty = false;
+		}
+	}</div><div class="fragment fade-up">
+	if (isEmpty)
+	{
+		System.out.println("Array is empty");
+	}
+}</div></pre></section>
+				<section>	
+					<h5>Task 4</h5>
+					<small>Write a method search, which takes as a parameter an existing Person object. This
+					method returns the index in the people array of a Person object that matches the
+					Person object that is passed in as a parameter. The objects match if the names and the
+					phone numbers are the same. This method returns -1 if the Person is not found in the
+					array.</small><pre>
+public int search(Person p)
+{<div class="fragment fade-up">
+	for (int i = 0; i < current; i++)
+	{</div><div class="fragment fade-up">
+		if (people[i].getName().equals(p.getName()) 
+			&& people[i].getPhone().equals(p.getPhone()))
+		{
+			return i;
+		}
+	}</div><div class="fragment fade-up">
+	return -1;
+}</div></pre></section>
+				<section>	
+					<h5>Task 5</h5>
+					<small>Write a method search, which takes as a parameter an existing Person object. This
+					method returns the index in the people array of a Person object that matches the
+					Person object that is passed in as a parameter. The objects match if the names and the
+					phone numbers are the same. This method returns -1 if the Person is not found in the
+					array.</small><pre>
+public Person removePerson(int index)
+{<div class="fragment fade-up">
+	if (index < 0 || index > SIZE)
+	{
+		System.out.println("ERROR:Invalid index");
+		return null;
+	}</div><div class="fragment fade-up">
+	else if (people[index] == null)
+	{
+		System.out.println("ERROR:Null index");
+		return null;
+	}
+}</div></pre></section>
+				<section>	
+					<h5>Task 5</h5>
+					<small>Write a method search, which takes as a parameter an existing Person object. This
+					method returns the index in the people array of a Person object that matches the
+					Person object that is passed in as a parameter. The objects match if the names and the
+					phone numbers are the same. This method returns -1 if the Person is not found in the
+					array.</small><pre>
+        else
+        {<div class="fragment fade-up">
+            Person copyPerson = new Person(people[index]);
+			</div><div class="fragment fade-up">
+            for (int i = index; i < SIZE - 1; i++)
+            {
+                people[i] = people[i + 1];
+            }
+            people[SIZE-1] = null;
+            return copyPerson;
+        }
+    }</div></pre></section>
+				<section data-background-iframe="https://trinket.io/embed/java/3d83b0ed73">
+				</section>
+				
+				<section>	
 				<h5>Note:</h5>
 				After the workshop, you can make a directory in your latcs account for this worksheet and cd into it.  
 				Some files in this worksheet can be copied from the library area into your current directory using:
