@@ -33,6 +33,21 @@ public class PersonTester
         }
     }
 
+    //Task2
+    public void addPersonV2()
+    {
+        if (current < SIZE)
+        {
+            System.out.println("Please enter person name:");
+            String name = this.kb.nextLine();
+            System.out.println("Please enter person phone:");
+            String phone = this.kb.nextLine();
+            people[current] = new Person(name, phone);
+            current++;
+        }
+    }
+
+    //Task 3
     public void display()
     {
         boolean isEmpty = true;
@@ -50,6 +65,7 @@ public class PersonTester
         }
     }
 
+    //Task 4
     public int search(Person p)
     {
         for (int i = 0; i < current; i++)
@@ -62,6 +78,7 @@ public class PersonTester
         return -1;
     }
 
+    //Task 5
     public Person removePerson(int index)
     {
         if (index < 0 || index > SIZE)
@@ -82,7 +99,9 @@ public class PersonTester
             {
                 people[i] = people[i + 1];
             }
-            people[SIZE-1] = null;
+            people[SIZE - 1] = null;
+            current--;
+            System.out.println("One person object has been removed, current count = " + current);
             return copyPerson;
         }
     }
@@ -91,6 +110,7 @@ public class PersonTester
     {
         PersonTester pt = new PersonTester();
         pt.addPerson();
+        pt.addPersonV2();
         pt.display();
         Person a = new Person("bob", "300");
         System.out.println("Search result: " + pt.search(a));

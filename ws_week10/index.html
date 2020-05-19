@@ -245,7 +245,7 @@ public void addPerson()
 		String name = this.kb.nextLine();
 		System.out.println("Please enter person phone:");
 		String phone = this.kb.nextLine();
-		people[i] = new Person(name, phone);
+		people[current] = new Person(name, phone);
 		current++;
 	}</div>   
 }</pre></section>	
@@ -291,11 +291,12 @@ public int search(Person p)
 }</div></pre></section>
 				<section>	
 					<h5>Task 5</h5>
-					<small>Write a method search, which takes as a parameter an existing Person object. This
-					method returns the index in the people array of a Person object that matches the
-					Person object that is passed in as a parameter. The objects match if the names and the
-					phone numbers are the same. This method returns -1 if the Person is not found in the
-					array.</small><pre>
+					<small>Write a method removePerson that takes as a parameter the index of the Person to
+					remove from the array. This method returns the Person that is removed from the array.
+					Note that this method must check that the index passed in as a parameter is valid. 
+					If the index is valid then the Person at that index is returned, but before returning the
+					Person, the array must be compacted. That is, the existing Person objects (if any) are
+					moved down one index and the last Person object is set to null. </small><pre>
 public Person removePerson(int index)
 {<div class="fragment fade-up">
 	if (index < 0 || index > SIZE)
@@ -311,11 +312,7 @@ public Person removePerson(int index)
 }</div></pre></section>
 				<section>	
 					<h5>Task 5</h5>
-					<small>Write a method search, which takes as a parameter an existing Person object. This
-					method returns the index in the people array of a Person object that matches the
-					Person object that is passed in as a parameter. The objects match if the names and the
-					phone numbers are the same. This method returns -1 if the Person is not found in the
-					array.</small><pre>
+					<small>..continued</small><pre>
         else
         {<div class="fragment fade-up">
             Person copyPerson = new Person(people[index]);
@@ -325,6 +322,7 @@ public Person removePerson(int index)
                 people[i] = people[i + 1];
             }
             people[SIZE-1] = null;
+			current--;
             return copyPerson;
         }
     }</div></pre></section>
