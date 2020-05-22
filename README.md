@@ -13,7 +13,7 @@
 [Workshop 11](https://mefitzgerald.github.io/oof/ws_week11/#/)   
 [Demo Javadoc](https://mefitzgerald.github.io/oof/javadocDemo/)
 
-## Support   
+## Support     
 The presentations are built with Reveal.js, with documentation located at;   
 https://github.com/hakimel/reveal.js  
 
