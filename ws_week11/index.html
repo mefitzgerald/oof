@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 10">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop 10</title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 10</h3>
+					<p>
+						<small>Press SHIFT ? for help</small> <br>                      
+						<small>Press f for fullscreen</small> <br>                      
+						<small>Press CAPS for pointer</small>                       
+					</p>              
+                </section>
+				
+                <section>
+					<h6>Primitive Array Review</h6>
+					<small>
+						We have seen that creating arrays in Java is a 2 step process.<br><br>
+						First, we need to declare the object reference (variable) that will contain the starting memory address of the array, 
+						when we instantiate (construct) the array, using the<span class= "redText" > <strong> new </strong></span>operator. 
+						We indicate that this object reference is going to contain the address of an array by using the <span class= "redText" ><strong> [   ] </strong></span>
+					</small><br><br>
+					<img src="../ws_week10/images/arrStep1.JPG">
+				</section>	
+				
+				<section>
+					<small>
+						Second, we allocate the memory for the array using the <span class= "redText" > <strong> new </strong></span> operator.
+					</small><br>
+					<img src="../ws_week10/images/arrStep2.JPG"><br>
+					<small>
+						Arrays are contiguous, meaning that the memory allocated must be in one continuous
+						block. As well, each element of an array must be of the same type. The type comes from
+						our object reference declaration. In the example above it is int. So each element of the
+						example array, intArray, can contain an int.<br><br>
+					</small>
+				</section>	
+				
+				<section>
+				<h6>Array Declaring & Creation Syntax</h6>
+					<small>
+						So putting both steps togther, the syntax to create an Array is;
+					</small><br>
+					<img src="../ws_week10/images/arrSyntax.JPG"><br>
+					<small>
+						The Length may be given as any expression that evaluates to a nonnegative integer. In particular, Length can be an int variable.
+						<br><br>For Example
+					</small><br>
+						<img class="plain" src="../ws_week10/images/example1.JPG">
+				</section>
+					
+				<section>	
+				<h6>Primitive Array element default values</h6>
+				<small>
+					If we have an array of <span class= "redText" > <strong> primitive data types </strong></span>, then each element of the array is initialized to
+					the default value for that primitive data type.	
+					<br><img class ="plain" src="../ws_week10/images/primitiveArr.JPG"><br>
+				</small>
+				</section>	
+				<section>	
+					<iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws10example?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>				
+				</section>		
+				<section>
+				<h5>The Person class</h5>
+					<pre><code class="hljs">
+public class Person
+{
+   private String name;
+   private String phone;
+
+   public Person()
+   {
+      this( "unknown", "unknown" );
+   }
+
+   public Person(String name, String phone)
+   {
+      this.name = name;
+      this.phone = phone;
+   }
+
+     // copy constructor
+  public Person( Person p )
+  {
+     name = p.name;
+     phone = p.phone;
+  }
+
+   public void setName(String newName)
+   {
+      name = newName;
+   }
+
+   public void setPhone(String newPhone)
+   {
+      phone = newPhone;
+   }
+
+   public String getName()
+   {
+      return name;
+   }
+
+   public String getPhone()
+   {
+      return phone;
+   }
+
+   public String toString()
+   {
+      return "Person[name: " + name + " phone: " + phone + "]";
+   }
+}
+
+					</code></pre>
+				</section>
+                <section>
+					<h6>Object Arrays</h6>
+					<small>
+						Arrays of objects are actually arrays of object references.<br><br>
+						To declare an array of object (references) we do the same things as we do for arrays of
+						primitive data types.
+						Put the type first. It is just that in this case the type is a class, not a primitive data type.<br>
+					</small><br><br>
+					<img src="../ws_week10/images/personArr1.JPG">
+				</section>				
+				<section>
+					<small>As with all arrays, we have to use the new operator to allocate the memory for the array.</small><br>
+						<img src="../ws_week10/images/personArr2.JPG">
+					<small>We still do not have any Person objects. What we have is an array of object references to
+					Person objects, 4 byte variables that can contain the starting memory address of a
+					Person object.
+					The contents of each element of the array is null, indicating no address. This is true of
+					any array of object references.</small><br>
+						<img class = "plain" src="../ws_week10/images/personArrNull.JPG">
+				</section>
+				<section>
+				<img class = "plain" src="../ws_week10/images/personArrNull2.jpg">
+				<small>
+					Even though there is a <strong>getName( )</strong> method in the Person class, if we were to write this line of code;
+				</small>
+					<br> <img class = "plain" src="../ws_week10/images/getName.JPG"><br>		
+				<small>	
+					Because the contents of index 1 of the people array is null. This would cause a
+					<strong>nullPointerException </strong>(crash the program) when we tried to run the program.
+				</small><br>	
+				
+				</section>
+				<section>
+				<small>So we need to instantiate Person objects first, storing the starting memory addresses that
+				new returns in the people array</small><br>
+				<br><img  src="../ws_week10/images/refExample.JPG">					
+				</section>
+				<section>
+					<img class="plain"  src="../ws_week10/images/notNull.JPG">
+					<small>Now if we try to run the line of code</small>
+					<br><img  src="../ws_week10/images/getName2.JPG">
+					<small>what java would see would be:</small>
+					<br><img  src="../ws_week10/images/getName3.JPG">
+					<small>Since there is a <strong>Person object</strong> at this memory address, and <strong>Person objects</strong> have a
+					<strong>getName( ) method</strong>, now our program returns a copy of the name.</small>
+				</section>
+				<section>
+				<h5>Your turn</h5>
+				<small>Using the <strong>Person class</strong> and the following skeleton of a driver program, complete the
+				Tasks that add methods to the driver program <strong>PersonTester.java</strong><br></small>
+				<br><img  src="../ws_week10/images/skeleton.JPG">
+				</section>
+				<section>	
+					<h5>Task 1</h5>
+					<small>Write the java code for the PersonTester( ) constructor. This constructor should
+					instantiate the array and do any other initialization required</small><pre>
+public PersonTester()
+{<div class="fragment fade-up">		
+	this.people = new Person[SIZE];</div><div class="fragment fade-up">
+	this.kb = new Scanner(System.in); </div><div class="fragment fade-up">
+	this.current = 0;</div>
+}</pre></section>	
+				<section>	
+					<h5>Task 2</h5>
+					<small>Write the code for a method named addPerson. This method must check that there is
+					space in the array. If there is space in the array then the user is prompted (asked) to enter
+					the details of a Person, which is then added to the array</small><pre>
+public void addPerson()
+{<div class="fragment fade-up">	
+	for (int i = 0; i < SIZE; i++)
+	{</div><div class="fragment fade-up">
+		if (people[i] == null)
+		{
+			System.out.println("Please enter person name:");
+			String name = this.kb.nextLine();
+			System.out.println("Please enter person phone:");
+			String phone = this.kb.nextLine();
+			people[i] = new Person(name, phone);
+			current++;
+			break;
+		}
+	}</div>   
+}</pre></section>	
+				<section>	
+					<h5>Task 2 Option</h5>
+					<small>In this version we use the current variable to check if the array is full, 
+					and if not the object is added to the array</small><pre>
+public void addPerson()
+{<div class="fragment fade-up">	
+	if(current < SIZE)
+	{</div><div class="fragment fade-up">
+		System.out.println("Please enter person name:");
+		String name = this.kb.nextLine();
+		System.out.println("Please enter person phone:");
+		String phone = this.kb.nextLine();
+		people[current] = new Person(name, phone);
+		current++;
+	}</div>   
+}</pre></section>	
+				<section>	
+					<h5>Task 3</h5>
+					<small>Write the code for a method named display. This method displays the contents of the
+					people array. This method should display an appropriate message if there are no
+					Person objects in the array.</small><pre>
+public void display()
+{<div class="fragment fade-up">	
+	boolean isEmpty = true;
+	for (Person p : this.people)
+	{</div><div class="fragment fade-up">
+		if (p != null)
+		{
+			System.out.println(p.getName() + " " + p.getPhone());
+			isEmpty = false;
+		}
+	}</div><div class="fragment fade-up">
+	if (isEmpty)
+	{
+		System.out.println("Array is empty");
+	}
+}</div></pre></section>
+				<section>	
+					<h5>Task 4</h5>
+					<small>Write a method search, which takes as a parameter an existing Person object. This
+					method returns the index in the people array of a Person object that matches the
+					Person object that is passed in as a parameter. The objects match if the names and the
+					phone numbers are the same. This method returns -1 if the Person is not found in the
+					array.</small><pre>
+public int search(Person p)
+{<div class="fragment fade-up">
+	for (int i = 0; i < current; i++)
+	{</div><div class="fragment fade-up">
+		if (people[i].getName().equals(p.getName()) 
+			&& people[i].getPhone().equals(p.getPhone()))
+		{
+			return i;
+		}
+	}</div><div class="fragment fade-up">
+	return -1;
+}</div></pre></section>
+				<section>	
+					<h5>Task 5</h5>
+					<small>Write a method removePerson that takes as a parameter the index of the Person to
+					remove from the array. This method returns the Person that is removed from the array.
+					Note that this method must check that the index passed in as a parameter is valid. 
+					If the index is valid then the Person at that index is returned, but before returning the
+					Person, the array must be compacted. That is, the existing Person objects (if any) are
+					moved down one index and the last Person object is set to null. </small><pre>
+public Person removePerson(int index)
+{<div class="fragment fade-up">
+	if (index < 0 || index > SIZE)
+	{
+		System.out.println("ERROR:Invalid index");
+		return null;
+	}</div><div class="fragment fade-up">
+	else if (people[index] == null)
+	{
+		System.out.println("ERROR:Null index");
+		return null;
+	}
+}</div></pre></section>
+				<section>	
+					<h5>Task 5</h5>
+					<small>..continued</small><pre>
+        else
+        {<div class="fragment fade-up">
+            Person copyPerson = new Person(people[index]);
+			</div><div class="fragment fade-up">
+            for (int i = index; i < SIZE - 1; i++)
+            {
+                people[i] = people[i + 1];
+            }
+            people[SIZE-1] = null;
+			current--;
+            return copyPerson;
+        }
+    }</div></pre></section>
+				<section data-background-iframe="https://trinket.io/embed/java/3d83b0ed73">
+				</section>
+				
+				<section>	
+				<h5>Note:</h5>
+				After the workshop, you can make a directory in your latcs account for this worksheet and cd into it.  
+				Some files in this worksheet can be copied from the library area into your current directory using:
+				<pre>cp  /home/1st/csilib/cse1oof/ws10/*  .</pre>		
+				</section>				
+				
+				<section>
+					<iframe height="600px" width="100%" src="https://repl.it/@mefitzgerald/ws9task1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>				
+				</section>				
+			</div>
+		</div>
+
+
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/mouse-pointer/mouse-pointer.js', async: true },
+                    { src: '../plugin/menu/menu.js' },
+					{
+					  src: '../plugin/reveal-code-focus/reveal-code-focus.js',
+					  async: true,
+					  callback: function() {
+						RevealCodeFocus();
+					  }
+					}
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>
