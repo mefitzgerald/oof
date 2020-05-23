@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 11">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop 11</title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 11</h3>
+					<p>
+						<small>Press SHIFT ? for help</small> <br>                      
+						<small>Press f for fullscreen</small> <br>                      
+						<small>Press CAPS for pointer</small>                       
+					</p>              
+                </section>
+				
+                <section>
+					<h6>Inheritance</h6>
+					<small>
+						Inheritance is when classes may be children of other classses, with the methods and variables of the parent class<br><br>
+						Inheritance was covered in the first lecture this week, so we'll just go over it briefly here. The below diagram is an example of inheritance in a family tree of animal species.
+					</small><br><br>
+					<img src="../ws_week11_4oof/images/inheritance_dia.jpg">
+				</section>	
+				
+				<section>
+					<small>
+						Inheritance in java classes is very similar, and the syntax is shown belov
+					</small><br>
+					<pre>
+class Vehicle {
+	protected String brand;
+	public void start() {
+		// Start the vehicle
+	{
+}
+
+class Car extends Vehicle {
+	// This class will contain the attribute brand and the method start()
+}
+				</pre>
+				</section>	
+
+				<section>	
+					<h5>Task 1</h5>
+					<small>To put inheritance into play, we need to first create a parent class. Please write a class named Animal.
+The Animal class has the following attributes:<br>
+food this is a String and may be more than one word.<br>
+The Animal class has the following methods:<br>
+a default constructor (the default food is grass)<br>
+a constructor that takes one parameter, String food<br>
+a toString method that returns the name of the class and the food.<br>
+an accessor method getFood, that returns the food of the Animal</small><pre>
+class Animal {
+{<div class="fragment fade-up">	protected String food;</div><div class="fragment fade-up">
+	public Animal () {
+		food = "grass";
+	}</div><div class="fragment fade-up">
+	public Animal (String f) {
+		food = f;
+		
+	... continued on next slide</div>
+</pre></section>	
+				<section>	
+					<h5>Task 1, continued</h5>
+					<small>
+The Animal class has the following methods:<br>
+a default constructor (the default food is grass)<br>
+a constructor that takes one parameter, String food<br>
+a toString method that returns the name of the class and the food.<br>
+an accessor method getFood, that returns the food of the Animal</small><pre>
+class Animal
+{
+	protected String food;
+	public Animal () {
+		food = "grass"; 
+	}
+	public Animal (String f) {
+		food = f;
+	}<div class="fragment fade-up">
+	public String toString() {
+		return  (this.getClass().getName() + "\n" + food);
+	}</div><div class="fragment fade-up">
+	public String getFood() {
+		return food;
+	}
+}
+	</div>
+</pre></section>
+<section>	
+					<h5>Task 2</h5>
+					<small>
+Write a class Emu which is a sub-class of Animal
+The Emu class has the following attribute:<br>
+speed (this is a double)</br>
+The Emu class has the following methods:<br>
+a constructor that takes one parameter, double speed (the food for an Emu is insects)<br>
+a toString method that returns the details of the Emu class, including the nformation in the base class<br>
+an accessor method that returns the speed of the Emu</small><pre>
+class Emu extends Animal
+{ <div class="fragment fade-up">	protected double speed;</div><div class="fragment fade-up">	public Emu (double s) {
+		food = "insects";
+		speed = s
+	}</div><div class="fragment fade-up">	public String toString() {
+		return  (this.getClass().getName() + "\n" + food + "\n" + speed);
+	}</div><div class="fragment fade-up">
+	public String getSpeed() {
+		return speed;
+	}
+}
+	</div>
+</pre></section>
+
+<section>	
+					<h5>Task 3</h5>
+					<small>
+Write a class Koala which is a sub-class of Animal.
+The Koala class has the following attribute:<br>
+sleep this is an integer and is the number of hours that the Koala sleeps<br>
+The Koala class has the following methods:<br>
+a constructor that takes two parameters, String food and int sleep
+(the food for a Koala is gum leaves) <br>
+a toString method that returns the details of the Koala class,
+including the information in the base class<br>
+an accessor method that returns the number of hours that
+the Koala sleeps</small><pre>
+class Koala extends Animal
+{ <div class="fragment fade-up">	protected int sleep;</div><div class="fragment fade-up">	public Koala (food f, int s) {
+		food = f;
+		sleep = s
+	}</div><div class="fragment fade-up">	public String toString() {
+		return (this.getClass().getName() + "\n" + food + "\n" + sleep);
+	}</div><div class="fragment fade-up">
+	public String getSleep() {
+		return sleep;
+	}
+}
+	</div>
+</pre></section>
+
+<section>	
+					<h5>Task 4</h5>
+					<small>
+Write a code fragment (assume it is in a driver program), that declares an array,
+of size 10 that can hold Animal, Emu and Koala objects
+</small><pre>
+<div class="fragment fade-up">Animal[] zoo = new Animal[10];</div>
+</pre>
+</section>
+
+<section>	
+					<h5>Task 5</h5>
+					<small>
+Write a code fragment that instantiates one Emu object, one Koala object
+and one Animal object 
+</small><pre>
+<div class="fragment fade-up">zoo[0] = new Emu(25);
+</div><div class="fragment fade-up">zoo[1] = new Koala("Gum Leaves", 20);
+</div><div class="fragment fade-up">zoo[2] = new Animal ("Nuts");</div>
+</pre>
+</section>
+
+<section>	
+					<h5>Task 6</h5>
+					<small>
+Write a code fragment that would display the contents of the array
+</small><pre>
+<div class="fragment fade-up">for (int i=0; i< zoo.length; i++ {
+</div><div class="fragment fade-up">	if (zoo[i] != null) {
+</div><div class="fragment fade-up">		System.out.println(zoo[i].toString());
+	}
+}</div>
+</pre>
+</section>
+<section>
+
+					<h5>Task 7</h5>
+					<small>
+Write a code fragment that would display the speed of the Emu
+Again, assume that you are in a driver program and using the array that you
+Instantiated in Tasks 4 and 5
+</small><pre>
+<div class="fragment fade-up">System.out.println (zoo[0].getSpeed());</div>
+</pre>
+</section>
+<section> <h5>Any questions?</h5></section>
+							
+			</div>
+		</div>
+
+
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/mouse-pointer/mouse-pointer.js', async: true },
+                    { src: '../plugin/menu/menu.js' },
+					{
+					  src: '../plugin/reveal-code-focus/reveal-code-focus.js',
+					  async: true,
+					  callback: function() {
+						RevealCodeFocus();
+					  }
+					}
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h6',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>
