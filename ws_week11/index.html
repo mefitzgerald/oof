@@ -226,6 +226,7 @@ public class Emu extends Animal
 					<pre><code class="hljs">
      public String toString()
     {
+		//this.getFood() also works
         return "Emu{" + "food=" + super.getFood() + ", speed=" + this.speed + "}";
     }
 					</code></pre>
@@ -263,7 +264,8 @@ public class Emu extends Animal
     }
 
     public String toString()
-    {
+    {	
+		//this.getFood() also works
         return "Emu{" + "food=" + super.getFood() + ", speed=" + this.speed + "}";
     }
 }
@@ -330,6 +332,7 @@ public class Koala extends Animal
 					<pre><code class="hljs">
     public String toString()
     {
+		//this.getFood() also works
         return "Koala{" + "food=" + super.getFood() + ", sleep=" + this.sleep + "}";
     }
 					</code></pre>
@@ -361,13 +364,14 @@ public class Koala extends Animal
         this.sleep = sleep;
     }
 
-    public double getSleep()
+    public int getSleep()
     {
         return this.sleep;
     }
 
     public String toString()
     {
+		//this.getFood() also works
         return "Koala{" + "food=" + super.getFood() + ", sleep=" + this.sleep + "}";
     }
 }
@@ -429,6 +433,7 @@ Animal[] animals = new Animal[10];
         {
             if (animal != null && animal.getClass().getName().equals("Emu"))
             {
+				//or if (animal != null && animal instanceof Emu)
                 System.out.println("Emu speed = " + ((Emu) animal).getSpeed());
             }
         }
@@ -471,18 +476,26 @@ public class AnimalDriver
                 System.out.println("Emu speed = " + ((Emu) animal).getSpeed());
             }
         }
+		
+		//display emu speed V2
+        for (Animal animal : animals)
+        {
+            if (animal != null && animal instanceof Emu)
+            {
+                System.out.println("Emu speed = " + ((Emu) animal).getSpeed());
+            }
+        }
     }
 }
 				</code></pre>
 				</small>
 				</section>		
 				
-				<section data-background-iframe="https://trinket.io/embed/java/b5b6512dee">
+				<section data-background-iframe="https://trinket.io/embed/java/191ff67291">
 				</section>				
 			
 			</div>
 		</div>
-
 
 		<script src="../js/reveal.js"></script>
 		<script>
