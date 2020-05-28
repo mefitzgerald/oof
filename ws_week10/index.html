@@ -317,16 +317,19 @@ public Person removePerson(int index)
         {<div class="fragment fade-up">
             Person copyPerson = new Person(people[index]);
 			</div><div class="fragment fade-up">
-            for (int i = index; i < SIZE - 1; i++)
+            for (int i = index; i < current - 1; i++)
             {
                 people[i] = people[i + 1];
+            }</div><div class="fragment fade-up">
+            if(current > 0)
+            {
+              people[current-1] = null;
+              current--;
             }
-            people[SIZE-1] = null;
-			current--;
             return copyPerson;
         }
     }</div></pre></section>
-				<section data-background-iframe="https://trinket.io/embed/java/3d83b0ed73">
+				<section data-background-iframe="https://trinket.io/embed/java/d1c20c620f">
 				</section>
 				
 				<section>	
