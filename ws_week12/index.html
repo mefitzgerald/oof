@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+        <!-- Meta data -->
+		<meta charset="utf-8">
+		<meta name="description" content="Workshop 11">
+		<meta name="author" content="Richard">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/latrobe.css" id="theme">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <title>CSE1OOF Workshop 11</title>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Start Slide">
+                     <!--
+                    Note, Latrobe logo is in repo base all other images should be stored in local image dir
+                    as per example below;
+                    <img class="plain" src="../ws_week1/images/alphalgsmall.png">
+                    -->
+                    <img class="plain" src="../images/alphalgsmall.png">
+					<h1>CSE1OOF</h1>
+					<h3>Workshop 12</h3>
+					<p>
+						<small>Press SHIFT ? for help</small> <br>                      
+						<small>Press f for fullscreen</small> <br>                      
+						<small>Press CAPS for pointer</small>                       
+					</p>              
+                </section>
+				
+                <section>
+				<br><br>
+					<h5>An Introduction to Enumerated Types</h5>
+					<small>
+						Sometimes a piece of data can take on a limited range of predetermined values. For
+						example, the days of the week are limited to Monday, Tuesday, Wednesday, Thursday,
+						Friday, Saturday and Sunday. What type of variable or attribute is most appropriate for
+						storing this type of data?
+					</small><br><br>
+					<section><br><br><br>
+					<h5>A character?</h5>
+					<div class="flexcontainer">
+						<div class="col">
+							<img class="plain" src="../ws_week12/images/1char.JPG">   
+						</div>
+						<div class="col">
+							<img src="../ws_week12/images/1char2.JPG">  
+						</div>
+					</div>
+					</section>	
+					<section><br><br><br>
+					<h5>A String?</h5>
+					<div class="flexcontainer">
+						<div class="col">
+							<img class="plain" src="../ws_week12/images/1str.JPG">   
+						</div>
+						<div class="col">
+							<img src="../ws_week12/images/1str2.JPG">  
+						</div>
+					</div>
+					</section>	
+					<section><br><br><br>
+					<h5>An int?</h5>
+					<div class="flexcontainer">
+						<div class="col">
+							<img class="plain" src="../ws_week12/images/1int.JPG">   
+						</div>
+						<div class="col">
+							<img src="../ws_week12/images/1int2.JPG">  
+						</div>
+					</div>
+					</section>	
+				</section>	
+				<section>	
+					<h6>The enum type</h6>
+					<small>
+					Ideally we would like a type that can only take on one of the allowed values and is
+					intuitive to use. An enumerated type is a data type that allows a variable of that type to
+					take on only a fixed set of values.<br><br>
+					The allowed values are specified when the type is defined:<br><br></small>
+					<img src="../ws_week12/images/weekday.JPG">
+				</section>	
+				<section>	
+					<h6>enum variables</h6>
+					<img src="../ws_week12/images/weekday.JPG">
+					<small>
+						We can create a variable or attribute of an enumerated type:<br>
+						<span class="redText" >WeekDay today;</span><br>
+						A variable of this type can then only take on one of the values defined in the enum.
+						To specify a value we must use the name of the enum, the dot operator and the value:<br>
+						<span class="redText" >today = WeekDay.WEDNESDAY;</span><br>
+						We can compare enumerated type values using the .equals() method or the ==
+						operator:<br>
+						<span class="redText" >if (today == WeekDay.FRIDAY)</span><br>
+						We can display an enumerated type value:<br>
+						<span class="redText" >System.out.println(today);</span><br>
+						would output the text<br>
+						<span class="redText" >WEDNESDAY</span>
+					</small>
+				</section>	
+
+				<section>	
+					<small>
+						An enum can be declared where it is used or it can be placed in a separate file when it
+						is to be used by a number of classes. When it is placed in a file on its own, the filename
+						follows the java convention.
+						The <span class="redText" >WeekDay</span> enum would be in a file called<span class="redText" > WeekDay.java</span> and would just contain the
+						following declaration:
+					</small><br><br>
+					<img src="../ws_week12/images/enumFile.JPG">
+				</section>					
+				<section>	
+					<h5>Task 1</h5>
+					<small/>
+					The following example declares an enum where it is used, what is the program output?
+					<pre><code class="hljs">
+public class Weather
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature currentTemp = Temperature.HOT;
+		if (currentTemp.equals(Temperature.HOT)){
+		System.out.println("Phew! It's " + currentTemp + " today");
+		}
+		else{
+		System.out.println("It's not too hot today, it's " + currentTemp);
+		}
+		currentTemp = Temperature.WARM;
+		if (currentTemp == Temperature.HOT){
+		System.out.println("Phew! It's " + currentTemp + " today");
+		}
+		else{
+		System.out.println("It's not too hot today, it's " + currentTemp);
+		}
+	}
+}
+				</code></pre>
+				<div class="fragment fade-up">
+					Phew! It's HOT today<br>
+					It's not too hot today, it's WARM
+					</div>
+				</small>
+				</section>		
+				
+				<section>	
+					<h5>Live example</h5>
+					<iframe height="500px" width="100%" src="https://repl.it/@mefitzgerald/ws12t1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>		
+				<section>
+				<h5>Enumerated types and the switch statement</h5>
+				<div class="flexcontainer">
+					<div class="col2">
+						<img src="../ws_week12/images/switch.JPG">   
+					</div>
+					<div class="col">
+						<small>We can use an enumerated type as the controlling expression in a switch statement.<br><br>
+							The enumerated type's values are then used as case labels. <br><br>When the enumerated
+							type’s values are used as case labels in a switch statement, the <span class="redText" >enum</span> name does not
+							need to be specified.<br><br> It is already known from the type of the switch’s condition
+							variable
+						</small>
+					</div>
+				</div>
+				</section>	
+				<section>
+				<h5>The ordinal() method</h5>
+				<small>Enumerated types are really a type of class and as such, have methods associated with
+					them. Also, each possible value an enumerated type can take is an object of the <span class="redText" >enum</span>.<br>
+					The ordinal value of an enumerated type’s value is its position in the enumerated type’s
+					list of values. In the <span class="redText" >Temperature </span>example the ordinal values for the temperatures are:<br><br>
+					<img src="../ws_week12/images/temp.JPG">  <br><br>
+					By default the possible values are numbered in the order that they are specified. The
+					ordinal values start at 0.
+				</small>
+				</section>	
+				<section>	
+					<h5>Task 2</h5>
+					<small/>
+					What is output by the Weather2 program?
+					<pre><code class="hljs">
+public class Weather2
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature temp = Temperature.HOT;
+		System.out.println(temp.ordinal() + " " + temp);
+		temp = Temperature.WARM;
+		System.out.println(temp.ordinal() + " " + temp);
+		temp = Temperature.MILD;
+		System.out.println(temp.ordinal() + " " + temp);
+		temp = Temperature.COOL;
+		System.out.println(temp.ordinal() + " " + temp);
+		temp = Temperature.COLD;
+		System.out.println(temp.ordinal() + " " + temp);
+	}
+}				
+</code></pre>
+				<div class="fragment fade-up">
+					0 HOT<br>
+					1 WARM<br>
+					2 MILD<br>
+					3 COOL<br>
+					4 COLD
+					</div>
+				</small>
+				</section>	
+				<section>	
+					<h5>Live example</h5>
+					<iframe height="500px" width="100%" src="https://repl.it/@mefitzgerald/ws12t2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>				
+				</section>	
+				
+				<section>					
+					<h5>The compareTo() method</h5>
+					<small>The compareTo() method returns a value based on the order of the values in the
+					enumerated type.
+					<pre><code class="hljs">
+public class Weather3
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature t1 = Temperature.HOT;
+		Temperature t2 = Temperature.COOL;
+		comparison(t1, t2);  //Task 3.1
+	}
+	
+	public static void comparison(Temperature temp1, Temperature temp2)
+	{
+		if (temp1.compareTo(temp2) == 0){
+			System.out.println("The temperatures are the same, they are both: " + temp1);
+		}
+		else if (temp1.compareTo(temp2) < 0){
+			System.out.println(temp1 + " is hotter than " + temp2);
+		}
+		else{
+			System.out.println(temp1 + " is colder than " + temp2);
+		}
+	}
+}				
+</code></pre>
+				<span class="fragment fade-up">HOT is hotter than COOL </span>
+				</small>
+				</section>	
+				
+				<section>					
+				<h5>The compareTo() method</h5>
+				<small>The compareTo() method returns a value based on the order of the values in the
+				enumerated type.
+					<pre><code class="hljs">
+public class Weather3
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature t2 = Temperature.COOL;
+		Temperature t3 = Temperature.WARM;
+		comparison(t2, t3);//Task 3.2
+	}
+	
+	public static void comparison(Temperature temp1, Temperature temp2)
+	{
+		if (temp1.compareTo(temp2) == 0){
+			System.out.println("The temperatures are the same, they are both: " + temp1);
+		}
+		else if (temp1.compareTo(temp2) < 0){
+			System.out.println(temp1 + " is hotter than " + temp2);
+		}
+		else{
+			System.out.println(temp1 + " is colder than " + temp2);
+		}
+	}
+}				
+</code></pre>
+				<span class="fragment fade-up">COOL is colder than WARM </span>
+				</small>
+				</section>	
+				<section>					
+				<h5>The compareTo() method</h5>
+				<small>The compareTo() method returns a value based on the order of the values in the
+				enumerated type.
+					<pre><code class="hljs">
+public class Weather3
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature t3 = Temperature.WARM;
+		Temperature t4 = Temperature.WARM;
+		comparison(t1, t2);
+		comparison(t2, t3);
+		comparison(t3, t4); //Task 3.3
+	}
+	
+	public static void comparison(Temperature temp1, Temperature temp2)
+	{
+		if (temp1.compareTo(temp2) == 0){
+			System.out.println("The temperatures are the same, they are both: " + temp1);
+		}
+		else if (temp1.compareTo(temp2) < 0){
+			System.out.println(temp1 + " is hotter than " + temp2);
+		}
+		else{
+			System.out.println(temp1 + " is colder than " + temp2);
+		}
+	}
+}				
+</code></pre>
+
+				<span class="fragment fade-up">The temperatures are the same, they are both: WARM </span>
+				</small>
+				</section>	
+				<section>
+				<h5>The compareTo() method</h5>
+				<small>The compareTo() method returns a value based on the order of the values in the
+				enumerated type.
+					<pre><code class="hljs">
+public class Weather3
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature t1 = Temperature.HOT;
+		Temperature t4 = Temperature.WARM; 
+		comparison(t4, t1);//Task 3.4
+	}
+	
+	public static void comparison(Temperature temp1, Temperature temp2)
+	{
+		if (temp1.compareTo(temp2) == 0){
+			System.out.println("The temperatures are the same, they are both: " + temp1);
+		}
+		else if (temp1.compareTo(temp2) < 0){
+			System.out.println(temp1 + " is hotter than " + temp2);
+		}
+		else{
+			System.out.println(temp1 + " is colder than " + temp2);
+		}
+	}
+}				
+</code></pre>
+				<span class="fragment fade-up">WARM is colder than HOT </span>
+				</small>
+				</section>	
+				<section>
+				<h5>The compareTo() method</h5>
+				<small>The compareTo() method returns a value based on the order of the values in the
+				enumerated type.
+					<pre><code class="hljs">
+public class Weather3
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature t4 = Temperature.WARM;
+		comparison(t4, Temperature.MILD); //Task 3.5
+	}
+	
+	public static void comparison(Temperature temp1, Temperature temp2)
+	{
+		if (temp1.compareTo(temp2) == 0){
+			System.out.println("The temperatures are the same, they are both: " + temp1);
+		}
+		else if (temp1.compareTo(temp2) < 0){
+			System.out.println(temp1 + " is hotter than " + temp2);
+		}
+		else{
+			System.out.println(temp1 + " is colder than " + temp2);
+		}
+	}
+}				
+</code></pre>
+				<span class="fragment fade-up">WARM is hotter than MILD </span>
+				</small>
+				</section>	
+				<section>	
+					<h5>Live example</h5>
+					<iframe height="400px" width="100%" src="https://repl.it/@mefitzgerald/ws12t3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>	
+				
+				<section>
+				<h5>The compareTo() method</h5>
+				<small>The <span class="redText" >valueOf()</span> method takes a <span class="redText" >String</span> value and returns the enumerated type value
+				associated with that <span class="redText" >String</span>.
+				The <span class="redText" >String</span> value must match exactly the enumerated type value.
+					<pre><code class="hljs">
+public class Weather4
+{
+	enum Temperature {HOT, WARM, MILD, COOL, COLD}
+	public static void main(String[] args)
+	{
+		Temperature t1 = Temperature.valueOf("HOT");
+		System.out.println(t1);
+		Temperature t2 = Temperature.valueOf("Cold");
+		System.out.println(t2);
+	}
+}				
+</code></pre>
+				<div class="fragment fade-up">
+					<img class="plain" src="../ws_week12/images/t4.JPG">   
+				</div>
+				</small>
+				</section>	
+
+
+
+
+
+				
+				<section data-background-iframe="https://trinket.io/embed/java/191ff67291">
+				</section>				
+			
+			</div>
+		</div>
+		<script src="../js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+                embedded: false,
+                help: true,
+                hideAddressBar: true,
+                slideNumber: 'c/t',
+                viewDistance: 5,
+                mobileViewDistance: 4,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1000,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js' },
+					{ src: '../plugin/search/search.js', async: true },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/chalkboard/chalkboard.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+                    { src: '../plugin/mouse-pointer/mouse-pointer.js', async: true },
+                    { src: '../plugin/menu/menu.js' },
+					{
+					  src: '../plugin/reveal-code-focus/reveal-code-focus.js',
+					  async: true,
+					  callback: function() {
+						RevealCodeFocus();
+					  }
+					}
+				],
+ 				chalkboard: {
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+                    theme: "whiteboard",  // or "chalkboard"
+				},
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+                    //add ins for presenter remote
+                    37: 'prev',
+                    38: 'prev',
+                    39: 'next',
+                    40: 'next',
+//				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+                menu: {
+                    side: 'left',
+                    width: 'normal',
+                    numbers: false,
+                    titleSelector: 'h5',
+                    useTextContentForMissingTitles: false,
+                    hideMissingTitles: true,
+                    markers: true,
+                    custom: false,
+                    themes: false,
+                    themesPath: '../css/theme/',
+                    navigationMode: 'linear',
+                    transitions: false,
+                    openButton: true,
+                    openSlideNumber: true,
+                    keyboard: true,
+                    sticky: false,
+                    autoOpen: true,
+                    delayInit: false,
+                    openOnInit: false,
+                    custom: [
+                        { title: 'Tools', icon: '<i class="fas fa-tools"></i>', src: 'menu_tools.html' }, 
+                        ],
+                    loadIcons: false
+                },
+			});
+            
+            function locFunction() {
+              var x = location.pathname;
+              document.getElementById("demo").innerHTML = x;
+            }
+
+		</script>
+	</body>
+</html>
