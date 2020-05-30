@@ -4,7 +4,7 @@
 	<head>
         <!-- Meta data -->
 		<meta charset="utf-8">
-		<meta name="description" content="Workshop 11">
+		<meta name="description" content="Workshop 12">
 		<meta name="author" content="Richard">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -25,7 +25,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-        <title>CSE1OOF Workshop 11</title>
+        <title>CSE1OOF Workshop 12</title>
 	</head>
 
 	<body>
@@ -308,8 +308,6 @@ public class Weather3
 	{
 		Temperature t3 = Temperature.WARM;
 		Temperature t4 = Temperature.WARM;
-		comparison(t1, t2);
-		comparison(t2, t3);
 		comparison(t3, t4); //Task 3.3
 	}
 	
@@ -400,7 +398,7 @@ public class Weather3
 				</section>	
 				
 				<section>
-				<h5>The compareTo() method</h5>
+				<h5>The valueOf() method</h5>
 				<small>The <span class="redText" >valueOf()</span> method takes a <span class="redText" >String</span> value and returns the enumerated type value
 				associated with that <span class="redText" >String</span>.
 				The <span class="redText" >String</span> value must match exactly the enumerated type value.
@@ -422,15 +420,134 @@ public class Weather4
 				</div>
 				</small>
 				</section>	
-
-
-
-
-
+				<section>	
+					<blockquote>
+						Note: Remember that an enum is really a special type of class that has a fixed number of instances – one for each of its possible values
+					</blockquote><br>
+				<h5>The values() method (a class method)</h5>
+				<small>
+					Each possible value of an enumerated type is an instance object of the enum
+					Each enumerated type has a values() method that returns an array of objects of that
+					type – one for each possible value
+					Consider the enumerated type Gender to represent the different types of language
+					gender in the German language<br><br>
+					<img src="../ws_week12/images/values1.JPG">  <br><br>
+					Calling the values method on the Gender enum would return an array containing the
+					three objects of the Gender enum
+				</small>
+				</section>	
+				<section>
+				<h5>values() example</h5>
+					<pre><code class="hljs">
+public static void main(String[] args)
+{
+	Gender[] possibleGenders = Gender.values();
+	System.out.println("The possible Genders are:");
+	for (int i = 0; i < possibleGenders.length; ++i)
+	{
+		System.out.println(possibleGenders[i]);
+	}
+}				
+</code></pre>
+				<div class="fragment fade-up">
+					<img class="plain" src="../ws_week12/images/values2.JPG">
+				</div>
+				</section>
+				<section>
+				<small>
+					Remember the <span class="redText" >ordinal()</span> method of enumerated types discussed earlier. <br>
+					<blockquote>
+						The ordinal value of an enumerated type’s value is its position in the enumerated type’s list of values.
+					</blockquote><br>
+					In the <span class="redText" >Gender</span>  example the ordinal values for the genders are:<br><br>
+						<img src="../ws_week12/images/values3.JPG"><br><br>
+					We can now see a relationship between the ordinal value and the index in the <span class="redText" >values</span> 
+					array for each possible value of the enumerated type.
+				</small>
+				</section>
+				<section>
+				<h5>Adding Information to enums</h5>
+					Sometimes we may want to store more information within an <span class="redText" >enum</span>  than just the type's names.<br>
+					As an <span class="redText" >enum</span>  is really a special type of class that has a fixed number of instances, it can
+					be given additional attributes and methods.<br>
+					Note that the constructor in an <span class="redText" >enum</span>  is not given an access modifier - it cannot be made
+					public as code outside the <span class="redText" >enum</span>  cannot create new instances of it.<br>
+				</section>
+				<section>
+				<h5>Task 4</h5>
+				<small>
+				<div class="flexcontainer">
+					<div class="col">
+							<pre><code class="hljs">
+public enum MultiBirth
+{
+	TWINS (2),
+	TRIPLETS (3),
+	QUADRUPLETS (4),
+	QUINTUPLETS (5),
+	SEXTUPLETS (6);
+	private int numberOfBabies;
+	MultiBirth(int number){
+		numberOfBabies = number;
+	}
+	public int getNumber(){
+		return numberOfBabies;
+	}
+}
+</code></pre>
+					</div>
+					<div class="col">						
+						<div class="fragment fade-up">
+							<img class="plaineighty" src="../ws_week12/images/t4out.JPG">
+						</div>
+					</div>
+				</div>
 				
-				<section data-background-iframe="https://trinket.io/embed/java/191ff67291">
+				<pre><code class="hljs">
+public class Nursery
+{
+  public static void main(String[] args)
+  {
+	MultiBirth[] mbValues = MultiBirth.values();
+	for (int i = 0; i < mbValues.length; ++i)
+	{
+	  System.out.println(mbValues[i].ordinal() 
+	  + " " + mbValues[i].toString() + " " 
+	  + mbValues[i].getNumber());
+	}
+  }
+}				
+</code></pre>
+				</small>
+				</section>
+				<section>
+				<iframe height="500px" width="100%" src="https://repl.it/@mefitzgerald/ws124?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>		
+				<section>	
+					<h5> Summary of Instance methods </h5>
+					<img class="plaineighty" src="../ws_week12/images/instance.JPG">
+				</section>	
+				<section>	
+					<h5> Summary of Class methods </h5>
+					<img class="plaineighty" src="../ws_week12/images/class.JPG"><br>
+					<blockquote>
+						NOTE: You will NOT be asked to produce code using enums in any assessments in
+						CSE1OOF or CSE4OOF. You may be expected to be able to understand simple code
+						given to you and work out what that code does, as in the previous tasks.
+					</blockquote>
 				</section>				
-			
+				<section>	
+					<h5> Notes </h5>
+					<small>
+					You will NOT be asked to produce code using enums in any assessments in
+					CSE1OOF or CSE4OOF. You may be expected to be able to understand simple code
+					given to you and work out what that code does, as in the previous tasks.<br><br>
+					After the workshop, you can make a directory in your latcs account for this
+					worksheet and cd into it. All files in this worksheet can be copied from the library area into
+					your current directory using:<br>
+					</small>
+					<pre>cp /home/1st/csilib/cse1oof/ws11/* .</pre>
+				</section>				
 			</div>
 		</div>
 		<script src="../js/reveal.js"></script>
