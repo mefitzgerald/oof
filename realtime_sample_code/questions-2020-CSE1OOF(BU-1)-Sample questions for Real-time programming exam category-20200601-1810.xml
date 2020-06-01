@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top</text>
+
+    </category>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top/Sample questions for Real-time programming exam category</text>
+
+    </category>
+  </question>
+
+<!-- question: 18741904  -->
+  <question type="essay">
+    <name>
+      <text>Arrays</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Write a Java program to that will create an double array of length 5 and filled with random values. The array should be then displayed to screen. Then calculate average value of the array elements and display it to screen with 2 decimal places.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>15.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>20</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 18741905  -->
+  <question type="essay">
+    <name>
+      <text>Class Question</text>
+    </name>
+    <questiontext format="html">
+      <text>Write a class called Pet in a file called Pet.java to represent a pet. For each pet, store the pet's name, the type of animal it is (e.g. cat, dog or bird) and its age (an integer value). The constructor for this class must take values for each of the attributes. The only attribute that can be changed is the age of the pet. Include appropriate accessor(getter) and mutator(setter) methods as well as the method increaseAge() which increases the age of the pet by 1. Include a main method that creates an instance of a pet that is a 3-year old dog named Fido then print the pet object name and age to screen. Then increase the age of the dog by 1, and display the dogs adjusted age using an accessor(getter) method.</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 18741906  -->
+  <question type="essay">
+    <name>
+      <text>Command Line</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p>Write a Java
+program <b>Commandline.java</b>&nbsp;that satisfies the following requirements. </p>
+
+<p><!--[if !supportLists]-->The program reads
+ONE positive integer&nbsp;m&nbsp;as a command line argument.&nbsp;</p>
+
+<p><!--[if !supportLists]-->The program then displays the factorial of the integer n.</p><p>Factorial of n is the <em>product of all positive descending integers</em>. Factorial of <em>n</em> is denoted by n!. i.e. 4!&nbsp;=&nbsp;4*3*2*1&nbsp;=&nbsp;24&nbsp; <br></p>
+
+
+
+<p>For example, running
+the following command after Commandline.java compiles&nbsp;</p>
+
+<p>&gt;&gt; java Commandline 4<br></p>
+
+<p>prints&nbsp;&nbsp;</p>24<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>15.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 18741907  -->
+  <question type="essay">
+    <name>
+      <text>Control Structures</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p>Write a program
+for checking how full a student tutorial is. For this, ask user to enter an integer value of the number of students in attendance using the&nbsp; Scanner class.</p><p>The program should display the following results;</p></p><ul><li>If there is 0 students attending the program should display "The tutorial room is empty"</li><li>If there is less than 10 students attending the program should display "The tutorial room is almost empty"</li><li>If there is 10-30 students attending (inclusive) the program should display "The tutorial room has many students, but there are still seats available"</li><li>If there are over 30 students attending the program should display "The tutorial room is full"</li></ul>The program should only accept positive integers and display an error message if invalid input is received. <br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>10.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 18741908  -->
+  <question type="essay">
+    <name>
+      <text>Loops</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p></p><p>Using the
+nested for loops, write a program that will print a triangle using ‘*’ of size 3. <br></p><p>Output:</p>
+
+<pre></pre><pre id="tab-content-console-preb74d3705-b5ea-402e-8322-0c3a67dddd96">  * 
+ * * 
+* * * </pre><br><p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>15.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>20</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+</quiz>
