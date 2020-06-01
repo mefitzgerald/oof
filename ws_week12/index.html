@@ -49,6 +49,66 @@
                 </section>
 				
                 <section>
+					<h5>The Character Class</h5>
+					<small>The Character class wraps a value of the primitive type char in an object.<br>
+					An object of type Character contains a single field whose type is char.<br></small>
+						<pre><code class="hljs">				
+//create a Character object 
+Character chObj = new Character('c');
+						</pre></code>		
+					<small>
+					If we pass a primitive char into a method that expects an object, the compiler automatically converts the char to a Character class object. This feature is called Autoboxing and Unboxing.<br><br>
+					</small>
+					<blockquote>Note : The Character class is immutable like String class i.e once it’s object is created, it cannot be changed.</blockquote>				
+				</section>
+                <section>
+					<h5>The Character Class methods</h5>
+					<img class="plain" src="../ws_week12/images/characterTable.JPG">  
+                </section>
+<section data-background-iframe="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html#method.summary" data-background-interactive>
+</section>
+				<section>
+				<h5>isLetter() example</h5>
+					<pre><code class="hljs">
+System.out.println(Character.isLetter('a'));
+System.out.println(Character.isLetter('9'));			
+</code></pre>
+				<div class="fragment fade-up">
+					<div class="greenText">
+						true<br>
+						false
+					</div>
+				</div><br>
+				<h5>isDigit() example</h5>
+					<pre><code class="hljs">
+System.out.println(Character.isDigit('a'));
+System.out.println(Character.isDigit('9'));   		
+</code></pre>
+				<div class="fragment fade-up">
+					<div class="greenText">
+						false<br>
+						true
+					</div>				
+				</div>				
+				</section>		
+				<section>
+				<h5>isLetterOrDigit example</h5>
+					<pre><code class="hljs">
+System.out.println(Character.isLetterOrDigit('a'));
+System.out.println(Character.isLetterOrDigit('9'));  
+System.out.println(Character.isLetterOrDigit(' '));   
+System.out.println(Character.isLetterOrDigit('&'));     		
+</code></pre>
+				<div class="fragment fade-up">
+					<div class="greenText">
+						true<br>
+						true<br>
+						false<br>
+						false
+					</div>				
+				</div>				
+				</section>					
+                <section>
 				<br><br>
 					<h5>An Introduction to Enumerated Types</h5>
 					<small>
@@ -536,18 +596,6 @@ public class Nursery
 						given to you and work out what that code does, as in the previous tasks.
 					</blockquote>
 				</section>				
-				<section>	
-					<h5> Notes </h5>
-					<small>
-					You will NOT be asked to produce code using enums in any assessments in
-					CSE1OOF or CSE4OOF. You may be expected to be able to understand simple code
-					given to you and work out what that code does, as in the previous tasks.<br><br>
-					After the workshop, you can make a directory in your latcs account for this
-					worksheet and cd into it. All files in this worksheet can be copied from the library area into
-					your current directory using:<br>
-					</small>
-					<pre>cp /home/1st/csilib/cse1oof/ws11/* .</pre>
-				</section>	
 				<section data-menu-title="Real Time Coding Prep">
                     <img class="plain" src="../images/alphalgsmall.png">
 					<h1>CSE1OOF/CSE4OOF</h1>
@@ -586,9 +634,9 @@ public class Nursery
 					<iframe height="550px" width="100%" src="https://www.codiva.io/p/b1764796-6656-4a07-afb1-f4b452c77362" ></iframe>
                 </section>		
                 <section>	
-					<h6> Files on Putty</h6>
-					sample files can be downloaded with the following command <br>
-					<pre>cp /home/staff/mefitzgerald/realtime2020/* .</pre>
+					<h6> Files on latcs8</h6>
+					Sample files can be downloaded with the following command <br>
+					<pre>cp /home/student/csilib/cse1oof/2020/realtime/* .</pre>
                 </section>					
 			</div>
 		</div>
