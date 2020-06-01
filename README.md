@@ -11,6 +11,7 @@
 [Workshop 9](https://mefitzgerald.github.io/oof/ws_week9/#/)  
 [Workshop 10](https://mefitzgerald.github.io/oof/ws_week10/#/)   
 [Workshop 11](https://mefitzgerald.github.io/oof/ws_week11/#/)   
+[Workshop 12](https://mefitzgerald.github.io/oof/ws_week12/#/)   
 [Demo Javadoc](https://mefitzgerald.github.io/oof/javadocDemo/)
 
 ## Support     
